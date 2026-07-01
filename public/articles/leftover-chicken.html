@@ -33,11 +33,11 @@
       .ingredient-overview { width:min(900px,calc(100vw - 40px)); margin:42px 0 70px 50%; transform:translateX(-50%); }
       .ingredient-overview > h2 { margin:0 0 12px; font-size:25px; }
       .ingredient-overview > .section-note { margin:0 0 20px; color:#7a807a; font-size:11px; }
-      .ingredient-layout { display:grid; grid-template-columns:minmax(0,44%) minmax(0,56%); gap:30px; align-items:start; padding-top:28px; border-top:2px solid #9a796b; }
-      .ingredient-photo { margin:0; }
-      .ingredient-photo img { width:100%; aspect-ratio:1/1; display:block; object-fit:cover; }
+      .ingredient-layout { display:grid; grid-template-columns:220px minmax(0,1fr); gap:30px; align-items:start; padding-top:28px; border-top:2px solid #9a796b; }
+      .ingredient-photo { width:220px; margin:0; }
+      .ingredient-photo img { width:220px; height:180px; display:block; object-fit:cover; }
       .ingredient-photo figcaption { margin-top:9px; color:#858985; font-size:10px; line-height:1.6; }
-      .ingredient-groups { display:grid; gap:22px; }
+      .ingredient-groups { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 28px; }
       .ingredient-group h3 { display:flex; justify-content:space-between; gap:16px; margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid var(--line); font-size:17px; }
       .ingredient-group h3 span { color:#777d77; font:500 10px/1.5 var(--sans); white-space:nowrap; }
       .ingredient-list { display:grid; gap:3px; margin:0; padding:0; list-style:none; font-size:14px; }
@@ -56,7 +56,7 @@
       .affiliate-box .button { margin-top:12px; }
       .share-strip { display:flex; gap:10px; margin-top:45px; }
       .share-strip button,.share-strip a { flex:1; min-height:48px; display:grid; place-items:center; border:1px solid var(--line); background:white; font-size:12px; cursor:pointer; }
-      @media(max-width:600px){.article-body{font-size:15px}.article-cover{width:100%;height:72vw;border-radius:0}.ingredient-overview{width:100%;margin-left:0;transform:none}.ingredient-layout{grid-template-columns:1fr;gap:22px}.ingredient-photo{width:100%;margin:auto}.ingredient-group h3{font-size:16px}.ingredient-list{font-size:13px}.recipe-figure{width:100%}.recipe-figure img{height:auto;aspect-ratio:3/2}.article-hero{margin-top:25px}.article-body h2{font-size:24px}}
+      @media(max-width:600px){.article-body{font-size:15px}.article-cover{width:100%;height:72vw;border-radius:0}.ingredient-overview{width:100%;margin-left:0;transform:none}.ingredient-layout{grid-template-columns:1fr;gap:22px}.ingredient-photo{width:180px;margin:0}.ingredient-photo img{width:180px;height:145px}.ingredient-groups{grid-template-columns:1fr}.ingredient-group h3{font-size:16px}.ingredient-list{font-size:13px}.recipe-figure{width:100%}.recipe-figure img{height:auto;aspect-ratio:3/2}.article-hero{margin-top:25px}.article-body h2{font-size:24px}}
     </style>
     <script type="application/ld+json">
       {
@@ -117,11 +117,11 @@
 
         <section class="ingredient-overview" aria-labelledby="ingredient-title">
           <h2 id="ingredient-title">재료</h2>
-          <p class="section-note">치킨마요 덮밥 1인분 기준 · 1큰술=15ml</p>
+          <p class="section-note">각 레시피 1인분 기준 · 1큰술=15ml, 1작은술=5ml</p>
           <div class="ingredient-layout">
             <figure class="ingredient-photo">
-              <img src="/images/leftover-chicken/01-ingredients-anchor.webp" srcset="/images/leftover-chicken/01-ingredients-anchor-640.webp 640w, /images/leftover-chicken/01-ingredients-anchor-1080.webp 1080w" sizes="(max-width:600px) 360px, 260px" width="1536" height="1024" loading="lazy" decoding="async" alt="치킨마요 덮밥에 필요한 남은 치킨, 밥, 달걀, 양파와 마요네즈" />
-              <figcaption>사진은 활용 1 ‘치킨마요 덮밥’의 재료 구성입니다.</figcaption>
+              <img src="/images/leftover-chicken/00-ingredient-overview.webp" width="600" height="450" loading="lazy" decoding="async" alt="남은 후라이드 치킨 3조각과 밥, 달걀, 양파, 마요네즈 재료" />
+              <figcaption>남은 치킨 활용 요리의 기본 재료</figcaption>
             </figure>
             <div class="ingredient-groups">
               <section class="ingredient-group">
@@ -134,6 +134,30 @@
                 <h3>덮밥 재료 <span>약 10분</span></h3>
                 <ul class="ingredient-list">
                   <li><span>밥</span><span>1공기(210g)</span></li><li><span>달걀</span><span>1개(약 50g)</span></li><li><span>양파</span><span>¼개(약 50g)</span></li><li><span>마요네즈</span><span>2큰술(30g)</span></li><li><span>간장</span><span>1큰술</span></li><li><span>올리고당</span><span>½큰술</span></li><li><span>물</span><span>2큰술</span></li>
+                </ul>
+              </section>
+              <section class="ingredient-group">
+                <h3>볶음밥 재료 <span>약 10분</span></h3>
+                <ul class="ingredient-list">
+                  <li><span>찬밥</span><span>1공기(210g)</span></li><li><span>대파</span><span>½대(약 40g)</span></li><li><span>식용유</span><span>1큰술</span></li><li><span>간장</span><span>½큰술</span></li>
+                </ul>
+              </section>
+              <section class="ingredient-group">
+                <h3>또띠아 재료 <span>약 10분</span></h3>
+                <ul class="ingredient-list">
+                  <li><span>또띠아</span><span>1장(20cm)</span></li><li><span>양상추</span><span>2장(약 30g)</span></li><li><span>모차렐라 치즈</span><span>40g</span></li><li><span>고추장</span><span>½큰술</span></li><li><span>케첩</span><span>1큰술</span></li>
+                </ul>
+              </section>
+              <section class="ingredient-group">
+                <h3>샐러드 재료 <span>약 8분</span></h3>
+                <ul class="ingredient-list">
+                  <li><span>양상추</span><span>80g</span></li><li><span>오이</span><span>⅓개(약 70g)</span></li><li><span>방울토마토</span><span>5개(약 75g)</span></li><li><span>플레인 요거트</span><span>2큰술(30g)</span></li><li><span>레몬즙</span><span>1작은술</span></li><li><span>소금</span><span>한 꼬집</span></li>
+                </ul>
+              </section>
+              <section class="ingredient-group">
+                <h3>라면 재료 <span>약 7분</span></h3>
+                <ul class="ingredient-list">
+                  <li><span>라면</span><span>1봉</span></li><li><span>물</span><span>제품 표시량</span></li><li><span>대파</span><span>¼대(약 20g)</span></li><li><span>후추</span><span>2~3번 톡톡</span></li>
                 </ul>
               </section>
             </div>
