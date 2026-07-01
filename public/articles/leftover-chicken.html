@@ -59,6 +59,13 @@
       .ingredient-box strong { display:block; margin-bottom:6px; font-family:var(--serif); font-size:17px; }
       .recipe-tags { display:flex; flex-wrap:wrap; gap:7px; margin:0 0 20px; padding:0; list-style:none; }
       .recipe-tags li { padding:6px 10px; color:var(--green); border:1px solid #cfdbcf; border-radius:999px; background:#f4f8f2; font-size:10px; line-height:1; }
+      .step-title { margin:32px 0 16px !important; font-size:20px !important; }
+      .recipe-steps { margin:0 0 30px; padding:0; list-style:none; counter-reset:recipe-step; }
+      .recipe-steps li { position:relative; min-height:54px; margin-bottom:15px; padding:0 0 15px 52px; border-bottom:1px solid #ebe8e0; color:#404640; line-height:1.8; counter-increment:recipe-step; }
+      .recipe-steps li::before { content:counter(recipe-step); position:absolute; left:0; top:1px; width:34px; height:34px; display:grid; place-items:center; color:#fff; background:var(--green); border-radius:50%; font:700 12px/1 var(--sans); }
+      .recipe-steps strong { display:block; margin-bottom:2px; color:var(--ink); font-family:var(--serif); font-size:16px; }
+      .step-tip { margin:26px 0 38px; padding:18px 20px; color:#4f584f; background:#fff5e9; border-left:3px solid #e5a27e; font-size:13px; line-height:1.75; }
+      .step-tip strong { color:var(--red); }
       .affiliate-box { margin-top:70px; padding:35px; text-align:center; background:var(--green); color:white; }
       .affiliate-box h2 { margin:0 0 12px; color:white; }
       .affiliate-box p { color:#cdd8d0; }
@@ -101,10 +108,11 @@
             "keywords":"남은 치킨 요리, 치킨마요 덮밥, 10분 요리, 치밥",
             "recipeIngredient":["남은 치킨 2~3조각","밥 1공기","달걀 1개","양파 1/4개","마요네즈 적당량","간장 1큰술","올리고당 1/2큰술","물 2큰술"],
             "recipeInstructions":[
-              {"@type":"HowToStep","text":"남은 치킨의 뼈를 제거하고 먹기 좋은 크기로 자릅니다."},
-              {"@type":"HowToStep","text":"팬에 얇게 썬 양파, 간장, 올리고당, 물을 넣고 2분간 졸입니다."},
-              {"@type":"HowToStep","text":"달걀을 부드럽게 스크램블합니다."},
-              {"@type":"HowToStep","text":"밥 위에 달걀, 양파, 치킨, 마요네즈를 차례로 올립니다."}
+              {"@type":"HowToStep","name":"치킨 뼈 제거","text":"치킨의 관절을 살짝 비틀어 드러난 뼈를 천천히 당겨 제거하고, 작은 뼈가 남지 않았는지 확인합니다."},
+              {"@type":"HowToStep","name":"치킨 자르기","text":"뼈를 제거한 치킨을 튀김옷이 떨어지지 않게 2.5cm 크기로 자릅니다."},
+              {"@type":"HowToStep","name":"양파 소스 만들기","text":"3mm로 썬 양파, 간장, 올리고당, 물을 중약불에서 2분간 졸입니다."},
+              {"@type":"HowToStep","name":"달걀 익히기","text":"약불에서 달걀을 저어 70% 정도 익었을 때 불을 끕니다."},
+              {"@type":"HowToStep","name":"완성하기","text":"밥 위에 달걀, 양파 소스, 데운 치킨을 올리고 마요네즈를 뿌립니다."}
             ]
           }
         ]
@@ -118,7 +126,7 @@
         <p class="eyebrow">LEFTOVER GUIDE</p>
         <h1>남은 치킨 활용 레시피 5가지<br />에어프라이어 없이 바삭하게</h1>
         <p class="lead">먹다 남은 치킨도 프라이팬 하나면 다시 바삭하게. 치킨마요부터 치밥, 또띠아, 샐러드, 라면까지 맛있는 한 끼로 바꿔보세요.</p>
-        <p class="article-meta">2026. 07. 01 · 읽는 시간 7분</p>
+        <p class="article-meta">2026. 07. 01 · 읽는 시간 12분</p>
       </header>
       <figure class="article-cover"><img src="/images/leftover-chicken/01-ingredients-anchor.webp" srcset="/images/leftover-chicken/01-ingredients-anchor-640.webp 640w, /images/leftover-chicken/01-ingredients-anchor-1080.webp 1080w, /images/leftover-chicken/01-ingredients-anchor.webp 1536w" sizes="(max-width: 1080px) 100vw, 1080px" width="1536" height="1024" fetchpriority="high" decoding="async" alt="남은 후라이드 치킨과 치킨마요 덮밥에 사용할 밥, 달걀, 양파, 마요네즈" /></figure>
       <article class="article-body" data-tags="남은치킨 간단 10분 혼밥 한식 밥 면 고기 분식 따뜻 가벼운 매콤 고소">
@@ -178,22 +186,34 @@
         <div class="note"><strong>보관 팁</strong><br />양념 치킨과 후라이드 치킨은 따로 담고, 용기 바닥에 키친타월을 한 장 깔면 과도한 수분을 줄이는 데 도움이 됩니다.</div>
 
         <h2>에어프라이어 없이 바삭하게 데우는 법</h2>
-        <ol>
-          <li>냉장 치킨을 꺼내 10분 정도 두어 차가운 기운을 줄입니다.</li>
-          <li>코팅 팬을 약불로 예열한 뒤 기름 없이 치킨을 올립니다.</li>
-          <li>뚜껑을 1분만 덮어 속을 데우고, 이후에는 뚜껑을 열어 수분을 날립니다.</li>
-          <li>중약불에서 여러 번 굴려가며 겉면이 바삭해질 때까지 데웁니다.</li>
+        <ol class="recipe-steps">
+          <li><strong>냉장 치킨을 10분 먼저 꺼내둡니다.</strong>속과 겉의 온도 차이를 줄여야 겉은 타지 않고 속까지 따뜻해집니다. 실온에 오래 방치하지 말고 10분을 넘기지 마세요.</li>
+          <li><strong>코팅 팬을 약불로 1분 예열합니다.</strong>기름은 두르지 않습니다. 팬 위 10cm에 손을 댔을 때 은근한 열기가 느껴지는 정도면 치킨을 서로 닿지 않게 올립니다.</li>
+          <li><strong>뚜껑은 처음 1분만 덮습니다.</strong>갇힌 열로 속살을 먼저 데운 다음 바로 뚜껑을 열어 수증기를 빼세요. 계속 덮어두면 튀김옷이 더 눅눅해집니다.</li>
+          <li><strong>중약불에서 4~6분 굴려가며 굽습니다.</strong>집게로 40~50초마다 면을 바꾸고, 튀김옷을 가볍게 두드렸을 때 단단한 소리가 나면 꺼냅니다. 가장 두꺼운 조각을 잘라 속까지 뜨거운지 확인하세요.</li>
         </ol>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/02-pan-reheat.webp" srcset="/images/leftover-chicken/02-pan-reheat-640.webp 640w, /images/leftover-chicken/02-pan-reheat-1080.webp 1080w, /images/leftover-chicken/02-pan-reheat.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="기름을 두르지 않은 프라이팬에서 남은 후라이드 치킨을 데우는 모습" />
           <figcaption>앞에서 준비한 같은 치킨을 기름 없이 천천히 데워 겉면의 수분을 날립니다.</figcaption>
         </figure>
-        <p>양념 치킨은 소스가 쉽게 타므로 물 한 큰술을 팬 가장자리에 넣고 아주 약한 불에서 짧게 데우는 편이 좋습니다.</p>
+        <div class="step-tip"><strong>양념 치킨은 다르게:</strong> 소스가 쉽게 타므로 물 1큰술을 팬 가장자리에 넣고 아주 약한 불에서 2~3분만 짧게 데우세요.</div>
 
         <h2 id="chicken-mayo" data-menu-id="chicken-mayo" data-tags="밥 든든 고소 순한 간단 10분 혼밥 따뜻 부드러운 한식">활용 1. 가장 실패 없는 치킨마요 덮밥</h2>
         <ul class="recipe-tags" aria-label="치킨마요 덮밥 태그"><li>#밥</li><li>#든든</li><li>#고소</li><li>#10분</li><li>#혼밥</li><li>#간단</li></ul>
         <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각(150~200g), 밥 1공기(210g), 달걀 1개, 양파 ¼개(약 50g), 마요네즈 2큰술, 간장 1큰술, 올리고당 ½큰술, 물 2큰술</div>
-        <p>뼈를 제거한 치킨을 먹기 좋은 크기로 자릅니다. 팬에 얇게 썬 양파와 간장, 올리고당, 물 두 큰술을 넣고 2분간 졸이세요. 달걀은 부드럽게 스크램블한 뒤 밥 위에 양파와 치킨, 마요네즈를 차례로 올리면 10분 만에 완성입니다.</p>
+        <h3 class="step-title">만드는 순서</h3>
+        <ol class="recipe-steps">
+          <li><strong>관절을 먼저 찾아 뼈를 분리합니다.</strong>치킨을 5분 정도 실온에 두어 너무 차갑지 않게 합니다. 집게로 한쪽을 잡고 관절이 꺾이는 방향으로 살짝 비튼 뒤, 드러난 뼈를 천천히 당기세요. 손가락으로 살을 훑어 작은 뼈가 남지 않았는지 반드시 확인합니다.</li>
+          <li><strong>한입 크기 2.5cm로 자릅니다.</strong>튀김옷이 떨어지지 않도록 집게로 가볍게 고정하고 결의 반대 방향으로 자릅니다. 너무 잘게 자르면 데울 때 수분이 빠지므로 네다섯 조각 정도가 알맞습니다.</li>
+          <li><strong>양파 소스를 2분간 졸입니다.</strong>양파는 약 3mm 두께로 얇게 썹니다. 팬에 양파·간장 1큰술·올리고당 ½큰술·물 2큰술을 넣고 중약불에서 저어가며 끓이세요. 양파 가장자리가 투명해지고 소스가 숟가락에 얇게 묻으면 불을 끕니다.</li>
+          <li><strong>달걀은 70%만 익힙니다.</strong>약불 팬에 푼 달걀을 붓고 가장자리부터 안쪽으로 천천히 밀어 모읍니다. 표면에 촉촉함이 남았을 때 불을 끄면 잔열로 부드럽게 완성됩니다.</li>
+          <li><strong>밥 위에 순서대로 담습니다.</strong>따뜻한 밥 210g에 스크램블, 양파 소스, 데운 치킨을 올리고 마요네즈 2큰술을 가늘게 뿌립니다. 치킨은 마지막에 올려야 바삭함이 오래갑니다.</li>
+        </ol>
+        <figure class="recipe-figure">
+          <img src="/images/leftover-chicken/08-chicken-debone-1080.webp" srcset="/images/leftover-chicken/08-chicken-debone-640.webp 640w, /images/leftover-chicken/08-chicken-debone-1080.webp 1080w" sizes="(max-width:760px) calc(100vw - 40px), 520px" width="1080" height="720" loading="lazy" decoding="async" alt="집게로 남은 치킨의 뼈를 분리하고 한입 크기로 자르는 과정" />
+          <figcaption>관절 방향으로 뼈를 빼낸 뒤 2.5cm 정도로 자릅니다. 작은 뼈가 남지 않았는지 손끝으로 한 번 더 확인하세요.</figcaption>
+        </figure>
+        <div class="step-tip"><strong>실패 방지:</strong> 양파 소스를 센 불에서 오래 끓이면 짜고 끈적해집니다. 중약불에서 양파가 투명해지는 순간까지만 졸이세요.</div>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/03-chicken-mayo-bowl.webp" srcset="/images/leftover-chicken/03-chicken-mayo-bowl-640.webp 640w, /images/leftover-chicken/03-chicken-mayo-bowl-1080.webp 1080w, /images/leftover-chicken/03-chicken-mayo-bowl.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="밥 위에 달걀, 간장 양파, 바삭한 치킨과 마요네즈를 올린 치킨마요 덮밥" />
           <figcaption>첫 사진의 밥·달걀·양파·마요네즈와 데운 치킨이 한 그릇으로 이어진 완성 모습입니다.</figcaption>
@@ -202,7 +222,15 @@
         <h2 id="chicken-fried-rice" data-menu-id="chicken-fried-rice" data-tags="밥 든든 고소 짭짤 볶음 간단 10분 혼밥 따뜻 씹는맛 한식">활용 2. 파기름 치킨 볶음밥</h2>
         <ul class="recipe-tags" aria-label="파기름 치킨 볶음밥 태그"><li>#밥</li><li>#볶음</li><li>#짭짤</li><li>#씹는맛</li><li>#10분</li><li>#혼밥</li></ul>
         <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각(150~200g), 찬밥 1공기(210g), 대파 ½대(약 40g), 식용유 1큰술, 간장 ½큰술</div>
-        <p>팬에 식용유 1큰술과 송송 썬 대파 ½대(약 40g)를 넣고 볶아 향을 낸 뒤, 잘게 찢은 치킨 2~3조각과 찬밥 1공기(210g)를 넣습니다. 치킨 자체에 간이 되어 있으니 소금 대신 간장 ½큰술로 향만 보태세요. 대파를 조금 남겨 마지막에 올리면 향과 색이 훨씬 선명해집니다.</p>
+        <h3 class="step-title">만드는 순서</h3>
+        <ol class="recipe-steps">
+          <li><strong>밥과 치킨을 미리 풀어둡니다.</strong>찬밥은 덩어리를 손이나 주걱으로 가볍게 풀고, 뼈를 제거한 치킨은 2cm 크기로 자릅니다. 밥이 뜨겁다면 넓은 접시에 3분 펼쳐 수증기를 빼세요.</li>
+          <li><strong>대파 향을 기름에 충분히 냅니다.</strong>중약불 팬에 식용유 1큰술과 대파의 ⅔를 넣고 1분 30초 볶습니다. 대파 가장자리가 노릇해지고 달큰한 향이 올라오는 상태가 기준입니다.</li>
+          <li><strong>밥알을 눌러가며 볶습니다.</strong>중불로 올리고 밥을 넣어 주걱으로 팬 바닥에 얇게 펼친 뒤 뒤집기를 반복합니다. 2분 정도 볶아 밥알이 서로 떨어지기 시작하면 다음 단계로 넘어갑니다.</li>
+          <li><strong>치킨과 간장은 마지막 1분에 넣습니다.</strong>치킨을 넣고 팬 가장자리에 간장 ½큰술을 둘러 향을 낸 뒤 1분만 섞습니다. 남겨둔 대파를 올리고 바로 담아 튀김옷의 식감을 지킵니다.</li>
+        </ol>
+        <figure class="recipe-figure"><img src="/images/leftover-chicken/09-fried-rice-process-1080.webp" srcset="/images/leftover-chicken/09-fried-rice-process-640.webp 640w, /images/leftover-chicken/09-fried-rice-process-1080.webp 1080w" sizes="(max-width:760px) calc(100vw - 40px), 520px" width="1080" height="720" loading="lazy" decoding="async" alt="파기름을 낸 팬에 찬밥과 치킨 조각을 넣어 볶는 과정" /><figcaption>대파 향이 충분히 난 팬에 풀어둔 밥과 같은 치킨 조각을 넣고, 밥알을 펼치듯 볶습니다.</figcaption></figure>
+        <div class="step-tip"><strong>실패 방지:</strong> 밥과 치킨을 동시에 오래 볶으면 치킨이 마릅니다. 밥을 먼저 고슬고슬하게 만든 뒤 치킨은 마지막에 넣으세요.</div>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/04-scallion-fried-rice.webp" srcset="/images/leftover-chicken/04-scallion-fried-rice-640.webp 640w, /images/leftover-chicken/04-scallion-fried-rice-1080.webp 1080w, /images/leftover-chicken/04-scallion-fried-rice.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="남은 후라이드 치킨 조각과 대파를 넣어 볶은 파기름 치킨 볶음밥" />
           <figcaption>같은 후라이드 치킨을 잘게 잘라 파기름 볶음밥에 넣은 활용 2의 완성 예시입니다.</figcaption>
@@ -211,7 +239,15 @@
         <h2 id="chicken-tortilla" data-menu-id="chicken-tortilla" data-tags="분식 빵 고기 매콤 간단 10분 손으로 가벼운 씹는맛 간식">활용 3. 매콤한 치킨 또띠아</h2>
         <ul class="recipe-tags" aria-label="매콤 치킨 또띠아 태그"><li>#분식</li><li>#빵</li><li>#매콤</li><li>#손으로</li><li>#간식</li><li>#10분</li></ul>
         <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각(150~200g), 또띠아 1장(20cm), 양상추 2장(약 30g), 모차렐라 치즈 40g, 고추장 ½큰술, 케첩 1큰술</div>
-        <p>치킨 2~3조각을 잘게 찢어 고추장 ½큰술, 케첩 1큰술과 섞습니다. 지름 20cm 또띠아 1장 위에 양상추 2장(약 30g), 모차렐라 치즈 40g과 함께 올려 말아주세요. 프라이팬에서 접힌 면부터 구우면 풀리지 않고 바삭하게 완성됩니다.</p>
+        <h3 class="step-title">만드는 순서</h3>
+        <ol class="recipe-steps">
+          <li><strong>치킨에 소스를 얇게 입힙니다.</strong>뼈를 제거한 치킨을 2.5cm로 자르고 고추장 ½큰술과 케첩 1큰술을 섞어 겉면에만 가볍게 묻힙니다. 소스를 많이 바르면 또띠아가 쉽게 눅눅해집니다.</li>
+          <li><strong>또띠아를 10초만 데웁니다.</strong>마른 팬을 약불로 달군 뒤 또띠아 앞뒤를 각각 5초씩 데워 유연하게 만듭니다. 차가운 또띠아를 바로 접으면 가장자리가 갈라질 수 있습니다.</li>
+          <li><strong>가운데에 좁고 길게 담습니다.</strong>양상추, 치킨, 치즈 순서로 올리고 좌우와 아래쪽에 4cm 정도 빈 공간을 남깁니다. 양옆을 먼저 접고 아래에서 위로 단단하게 말아주세요.</li>
+          <li><strong>접힌 면부터 눌러 굽습니다.</strong>중약불 마른 팬에 접힌 면을 아래로 두고 1분, 뒤집어 1분 굽습니다. 치즈가 녹고 표면에 옅은 갈색 점이 생기면 완성입니다.</li>
+        </ol>
+        <figure class="recipe-figure"><img src="/images/leftover-chicken/10-tortilla-assembly-1080.webp" srcset="/images/leftover-chicken/10-tortilla-assembly-640.webp 640w, /images/leftover-chicken/10-tortilla-assembly-1080.webp 1080w" sizes="(max-width:760px) calc(100vw - 40px), 520px" width="1080" height="720" loading="lazy" decoding="async" alt="또띠아 중앙에 양상추와 매콤한 치킨, 치즈를 올리고 양옆을 접는 과정" /><figcaption>재료는 중앙에 좁게 놓고 가장자리를 비워야 터지지 않고 단단하게 말립니다.</figcaption></figure>
+        <div class="step-tip"><strong>실패 방지:</strong> 접힌 면을 먼저 구우면 치즈가 녹으면서 접착제 역할을 해 랩이 풀리지 않습니다.</div>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/05-spicy-tortilla.webp" srcset="/images/leftover-chicken/05-spicy-tortilla-640.webp 640w, /images/leftover-chicken/05-spicy-tortilla-1080.webp 1080w, /images/leftover-chicken/05-spicy-tortilla.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="매콤한 소스와 양상추, 치즈, 남은 치킨을 넣어 구운 또띠아 랩" />
           <figcaption>치킨의 바삭한 튀김옷이 보이도록 잘라 넣고, 본문에 적힌 양상추와 치즈만 더했습니다.</figcaption>
@@ -220,7 +256,15 @@
         <h2 id="chicken-salad" data-menu-id="chicken-salad" data-tags="고기 가벼운 산뜻 순한 차가운 채소 간단 건강 바삭 혼밥">활용 4. 닭가슴살 대신 치킨 샐러드</h2>
         <ul class="recipe-tags" aria-label="치킨 샐러드 태그"><li>#가벼운</li><li>#산뜻</li><li>#채소</li><li>#건강</li><li>#바삭</li><li>#혼밥</li></ul>
         <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각(150~200g), 양상추 80g, 오이 ⅓개(약 70g), 방울토마토 5개(약 75g), 플레인 요거트 2큰술(30g), 레몬즙 1작은술, 소금 한 꼬집</div>
-        <p>튀김옷을 일부 덜어낸 치킨 2~3조각에 양상추 80g, 오이 ⅓개(약 70g), 방울토마토 5개를 곁들입니다. 플레인 요거트 2큰술, 레몬즙 1작은술, 소금 한 꼬집을 섞어 드레싱으로 뿌리세요. 양념 치킨이라면 별도 드레싱 없이 채소만 넉넉하게 더해도 좋습니다.</p>
+        <h3 class="step-title">만드는 순서</h3>
+        <ol class="recipe-steps">
+          <li><strong>채소의 물기를 완전히 제거합니다.</strong>양상추와 오이는 씻은 뒤 키친타월로 눌러 닦습니다. 양상추는 한입 크기로 뜯고, 오이는 3mm 반달 모양, 방울토마토 5개는 반으로 자릅니다.</li>
+          <li><strong>두꺼운 튀김옷만 일부 덜어냅니다.</strong>치킨의 바삭한 면은 남기고 기름이 많이 밴 두꺼운 부분만 손이나 집게로 떼어냅니다. 뼈를 제거한 살은 2.5cm로 자릅니다.</li>
+          <li><strong>요거트 드레싱을 먼저 섞습니다.</strong>플레인 요거트 2큰술, 레몬즙 1작은술, 소금 한 꼬집을 섞습니다. 너무 되직하면 물 1작은술만 더해 흐르는 농도로 맞추세요.</li>
+          <li><strong>채소를 먼저 버무리고 치킨은 마지막에 올립니다.</strong>채소에 드레싱 절반만 가볍게 섞고 치킨을 위에 올립니다. 남은 드레싱은 먹기 직전에 뿌려 바삭함을 유지합니다.</li>
+        </ol>
+        <figure class="recipe-figure"><img src="/images/leftover-chicken/11-salad-prep-1080.webp" srcset="/images/leftover-chicken/11-salad-prep-640.webp 640w, /images/leftover-chicken/11-salad-prep-1080.webp 1080w" sizes="(max-width:760px) calc(100vw - 40px), 520px" width="1080" height="720" loading="lazy" decoding="async" alt="양상추와 오이, 방울토마토 5개를 손질하고 치킨과 요거트 드레싱을 준비한 모습" /><figcaption>채소·치킨·드레싱을 따로 준비한 뒤 먹기 직전에 합치면 물이 생기지 않습니다.</figcaption></figure>
+        <div class="step-tip"><strong>실패 방지:</strong> 채소에 물기가 남아 있거나 드레싱을 일찍 부으면 튀김옷이 빠르게 눅눅해집니다.</div>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/06-chicken-salad.webp" srcset="/images/leftover-chicken/06-chicken-salad-640.webp 640w, /images/leftover-chicken/06-chicken-salad-1080.webp 1080w, /images/leftover-chicken/06-chicken-salad.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="양상추, 오이, 방울토마토와 남은 후라이드 치킨을 담은 샐러드" />
           <figcaption>본문의 양상추·오이·방울토마토와 요거트 드레싱만 사용해 재료와 이미지를 맞췄습니다.</figcaption>
@@ -229,7 +273,15 @@
         <h2 id="chicken-ramen" data-menu-id="chicken-ramen" data-tags="면 국물 매콤 얼큰 따뜻 든든 간단 10분 야식 후루룩 한식">활용 5. 얼큰 치킨 라면</h2>
         <ul class="recipe-tags" aria-label="얼큰 치킨 라면 태그"><li>#면</li><li>#국물</li><li>#매콤</li><li>#얼큰</li><li>#야식</li><li>#10분</li></ul>
         <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각(150~200g), 라면 1봉, 물 제품 표시량, 대파 ¼대(약 20g), 후추 약간</div>
-        <p>라면 1봉을 제품에 표시된 물 양으로 끓이다가 면이 거의 익었을 때 뼈를 제거한 치킨 2~3조각을 넣어 30초만 더 끓입니다. 처음부터 넣으면 튀김옷이 풀어지고 살이 퍽퍽해질 수 있어요. 대파 ¼대(약 20g)와 후추를 2~3번 톡톡 더하면 닭 육수처럼 깊은 맛이 납니다.</p>
+        <h3 class="step-title">만드는 순서</h3>
+        <ol class="recipe-steps">
+          <li><strong>제품 표시량의 물을 정확히 끓입니다.</strong>냄비에 라면 봉지에 적힌 물을 넣고 센 불에서 끓입니다. 물이 완전히 끓으면 수프를 먼저 풀어 국물 농도를 고르게 만듭니다.</li>
+          <li><strong>면은 권장 시간의 70%만 먼저 익힙니다.</strong>면을 넣고 젓가락으로 두세 번만 풀어줍니다. 예를 들어 권장 시간이 4분이면 약 2분 50초까지 익히세요.</li>
+          <li><strong>뼈를 제거한 치킨은 마지막 30초에 넣습니다.</strong>치킨 2~3조각을 면 위에 올리고 국물을 한두 번만 끼얹습니다. 국물 속에서 오래 휘젓지 않아야 튀김옷이 남습니다.</li>
+          <li><strong>불을 끈 뒤 대파와 후추를 더합니다.</strong>30초가 지나면 바로 불을 끄고 대파 ¼대와 후추 2~3번을 넣습니다. 면이 퍼지기 전에 따뜻한 그릇으로 옮깁니다.</li>
+        </ol>
+        <figure class="recipe-figure"><img src="/images/leftover-chicken/12-ramen-add-chicken-1080.webp" srcset="/images/leftover-chicken/12-ramen-add-chicken-640.webp 640w, /images/leftover-chicken/12-ramen-add-chicken-1080.webp 1080w" sizes="(max-width:760px) calc(100vw - 40px), 520px" width="1080" height="720" loading="lazy" decoding="async" alt="거의 익은 얼큰 라면에 집게로 치킨 세 조각을 마지막에 넣는 과정" /><figcaption>면이 거의 익은 뒤 치킨을 올리고 30초만 더 끓여 튀김옷과 속살을 함께 지킵니다.</figcaption></figure>
+        <div class="step-tip"><strong>실패 방지:</strong> 치킨을 처음부터 넣으면 튀김옷이 국물에 풀리고 살이 퍽퍽해집니다. 반드시 마지막 30초만 데우세요.</div>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/07-spicy-ramen.webp" srcset="/images/leftover-chicken/07-spicy-ramen-640.webp 640w, /images/leftover-chicken/07-spicy-ramen-1080.webp 1080w, /images/leftover-chicken/07-spicy-ramen.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="얼큰한 라면 위에 마지막에 올린 바삭한 남은 후라이드 치킨과 대파" />
           <figcaption>치킨은 본문 순서대로 라면이 거의 익은 뒤 올려 튀김옷이 보이도록 표현했습니다.</figcaption>
