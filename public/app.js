@@ -1,4 +1,4 @@
-const recipes = [...document.querySelectorAll('.recipe-card')];
+let recipes = [];
 const toast = document.getElementById('toast');
 
 function showToast(message) {
@@ -61,6 +61,26 @@ const publishedMenus = [
   { id: 'chicken-salad', title: '산뜻한 치킨 샐러드', copy: '부담은 줄이고 신선한 채소와 바삭한 식감은 살린 선택이에요.', image: '/images/leftover-chicken/06-chicken-salad.webp', url: '/articles/leftover-chicken.html#chicken-salad', tags: ['고기','가벼운','산뜻','순한','차가운','채소','간단','건강','바삭','혼밥'] },
   { id: 'chicken-ramen', title: '얼큰 치킨 라면', copy: '후루룩 넘어가는 따뜻하고 얼큰한 국물이 필요한 날이에요.', image: '/images/leftover-chicken/07-spicy-ramen.webp', url: '/articles/leftover-chicken.html#chicken-ramen', tags: ['면','국물','매콤','얼큰','따뜻','든든','간단','10분','야식','후루룩','한식'] }
 ];
+
+function renderPublishedMenus() {
+  const grid = document.getElementById('recipeGrid');
+  grid.innerHTML = publishedMenus.map((menu, index) => {
+    const duration = menu.tags.find((tag) => /^\d+분$/.test(tag)) || '15분';
+    const filterTags = [...menu.tags, ...(menu.tags.includes('간단') ? ['간단요리'] : [])].join(' ');
+    const badge = menu.id === 'chicken-mayo'
+      ? '<span class="badge">BEST</span>'
+      : index === 0 ? `<span class="badge dark">${duration.toUpperCase()}</span>` : '';
+    return `<article class="recipe-card" data-title="${menu.title}" data-tags="${filterTags}">
+      <a href="${menu.url}" aria-label="${menu.title} 레시피 보기">
+        <div class="recipe-image" style="background-image:url('${menu.image}')">${badge}</div>
+        <div class="recipe-info"><p>${menu.copy}</p><h3>${menu.title}</h3><div><span>초급</span><span>${duration}</span></div></div>
+      </a>
+    </article>`;
+  }).join('');
+  recipes = [...grid.querySelectorAll('.recipe-card')];
+}
+
+renderPublishedMenus();
 
 const simpleQuestions = [
   { title: '지금 가장 끌리는 형태는?', subtitle: '첫 느낌대로 골라주세요.', answers: [
