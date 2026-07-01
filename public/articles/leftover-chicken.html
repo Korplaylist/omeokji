@@ -32,6 +32,7 @@
       .article-meta { margin-bottom:45px; color:#8b8f8a; font-size:11px; letter-spacing:.05em; }
       .article-cover { width:min(900px,calc(100% - 40px)); height:clamp(360px,42vw,500px); margin:auto; overflow:hidden; border-radius:2px; }
       .article-cover img { width:100%; height:100%; display:block; object-fit:cover; }
+      .cover-credit { width:min(900px,calc(100% - 40px)); margin:8px auto 0; color:#959995; font-size:9px; text-align:right; }
       .article-body { width:min(720px,calc(100% - 40px)); margin:70px auto 100px; font-size:16px; line-height:2; }
       .article-body h2 { margin:65px 0 18px; font:700 27px/1.45 var(--serif); letter-spacing:-.035em; }
       .article-body h2[id] { scroll-margin-top:100px; }
@@ -53,6 +54,7 @@
       .recipe-figure { width:min(520px,100%); margin:26px auto 48px; }
       .recipe-figure img { width:100%; height:300px; display:block; object-fit:cover; background:#f1ede5; }
       .recipe-figure figcaption { margin-top:12px; color:#7a807a; font-size:11px; line-height:1.7; }
+      .article-page figcaption::after { content:'ⓒ오먹지'; display:block; margin-top:4px; color:#959995; font-size:9px; letter-spacing:.02em; }
       .article-body .note { margin:35px 0; padding:25px 28px; background:var(--cream); border-left:3px solid var(--red); }
       .article-body ol { padding-left:22px; }
       .ingredient-box { margin:24px 0 28px; padding:20px 22px; background:#eef3ec; font-size:14px; line-height:1.75; }
@@ -129,6 +131,7 @@
         <p class="article-meta">2026. 07. 01 · 읽는 시간 12분</p>
       </header>
       <figure class="article-cover"><img src="/images/leftover-chicken/01-ingredients-anchor.webp" srcset="/images/leftover-chicken/01-ingredients-anchor-640.webp 640w, /images/leftover-chicken/01-ingredients-anchor-1080.webp 1080w, /images/leftover-chicken/01-ingredients-anchor.webp 1536w" sizes="(max-width: 1080px) 100vw, 1080px" width="1536" height="1024" fetchpriority="high" decoding="async" alt="남은 후라이드 치킨과 치킨마요 덮밥에 사용할 밥, 달걀, 양파, 마요네즈" /></figure>
+      <p class="cover-credit">ⓒ오먹지</p>
       <article class="article-body" data-tags="남은치킨 간단 10분 혼밥 한식 밥 면 고기 분식 따뜻 가벼운 매콤 고소">
         <p>배달 치킨을 넉넉하게 주문한 다음 날이면 누구나 한 번쯤 고민합니다. 전자레인지에 돌리면 편하지만 튀김옷이 쉽게 눅눅해지고, 너무 오래 가열하면 속살이 퍽퍽해지기 때문이죠. 먹다 남은 치킨을 맛있게 살리는 핵심은 <strong>수분을 날리면서 속까지 천천히 데우는 것</strong>입니다.</p>
 
