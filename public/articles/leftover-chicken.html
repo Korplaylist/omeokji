@@ -21,42 +21,42 @@
       .article-nav { width:min(900px,calc(100% - 40px)); margin:auto; padding:30px 0; display:flex; justify-content:space-between; align-items:center; }
       .article-nav > a:last-child { font-size:12px; font-weight:700; }
       .article-hero { width:min(900px,calc(100% - 40px)); margin:45px auto 0; text-align:center; }
-      .article-hero h1 { margin:16px auto 20px; max-width:760px; font:700 clamp(38px,6vw,64px)/1.3 var(--serif); letter-spacing:-.05em; }
+      .article-hero h1 { margin:16px auto 20px; max-width:760px; font:700 clamp(32px,5vw,52px)/1.3 var(--serif); letter-spacing:-.05em; }
       .article-hero .lead { max-width:620px; margin:0 auto 32px; color:var(--muted); font-size:15px; line-height:1.9; }
       .article-meta { margin-bottom:45px; color:#8b8f8a; font-size:11px; letter-spacing:.05em; }
       .article-cover { width:min(900px,calc(100% - 40px)); height:clamp(360px,42vw,500px); margin:auto; overflow:hidden; border-radius:2px; }
       .article-cover img { width:100%; height:100%; display:block; object-fit:cover; }
       .article-body { width:min(720px,calc(100% - 40px)); margin:70px auto 100px; font-size:16px; line-height:2; }
-      .article-body h2 { margin:70px 0 20px; font:700 32px/1.45 var(--serif); letter-spacing:-.035em; }
-      .article-body h3 { margin:40px 0 10px; font:700 22px/1.5 var(--serif); }
+      .article-body h2 { margin:65px 0 18px; font:700 27px/1.45 var(--serif); letter-spacing:-.035em; }
+      .article-body h3 { margin:36px 0 10px; font:700 19px/1.5 var(--serif); }
       .article-body p { color:#404640; }
-      .ingredient-overview { margin:42px 0 70px; padding-top:18px; border-top:2px solid #9a796b; }
-      .ingredient-overview > h2 { margin:0 0 8px; font-size:30px; }
-      .ingredient-overview > .section-note { margin:0 0 28px; color:#7a807a; font-size:12px; }
-      .ingredient-layout { display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:34px; align-items:start; }
+      .ingredient-overview { width:min(900px,calc(100vw - 40px)); margin:42px 0 70px 50%; transform:translateX(-50%); }
+      .ingredient-overview > h2 { margin:0 0 12px; font-size:25px; }
+      .ingredient-overview > .section-note { margin:0 0 20px; color:#7a807a; font-size:11px; }
+      .ingredient-layout { display:grid; grid-template-columns:minmax(0,44%) minmax(0,56%); gap:30px; align-items:start; padding-top:28px; border-top:2px solid #9a796b; }
       .ingredient-photo { margin:0; }
       .ingredient-photo img { width:100%; aspect-ratio:1/1; display:block; object-fit:cover; }
       .ingredient-photo figcaption { margin-top:9px; color:#858985; font-size:10px; line-height:1.6; }
-      .ingredient-groups { display:grid; gap:25px; }
-      .ingredient-group h3 { display:flex; justify-content:space-between; gap:16px; margin:0 0 12px; padding-bottom:9px; border-bottom:1px solid var(--line); font-size:18px; }
-      .ingredient-group h3 span { color:#777d77; font:500 11px/1.5 var(--sans); white-space:nowrap; }
-      .ingredient-list { display:grid; gap:5px; margin:0; padding:0; list-style:none; }
-      .ingredient-list li { display:flex; justify-content:space-between; gap:18px; line-height:1.65; }
+      .ingredient-groups { display:grid; gap:22px; }
+      .ingredient-group h3 { display:flex; justify-content:space-between; gap:16px; margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid var(--line); font-size:17px; }
+      .ingredient-group h3 span { color:#777d77; font:500 10px/1.5 var(--sans); white-space:nowrap; }
+      .ingredient-list { display:grid; gap:3px; margin:0; padding:0; list-style:none; font-size:14px; }
+      .ingredient-list li { display:flex; justify-content:space-between; gap:18px; line-height:1.55; }
       .ingredient-list li span:last-child { color:#707670; text-align:right; white-space:nowrap; }
       .recipe-figure { width:min(520px,100%); margin:26px auto 48px; }
       .recipe-figure img { width:100%; height:300px; display:block; object-fit:cover; background:#f1ede5; }
       .recipe-figure figcaption { margin-top:12px; color:#7a807a; font-size:11px; line-height:1.7; }
       .article-body .note { margin:35px 0; padding:25px 28px; background:var(--cream); border-left:3px solid var(--red); }
       .article-body ol { padding-left:22px; }
-      .ingredient-box { margin:35px 0; padding:30px; background:#eef3ec; }
-      .ingredient-box strong { display:block; margin-bottom:10px; font-family:var(--serif); font-size:20px; }
+      .ingredient-box { margin:24px 0 28px; padding:20px 22px; background:#eef3ec; font-size:14px; line-height:1.75; }
+      .ingredient-box strong { display:block; margin-bottom:6px; font-family:var(--serif); font-size:17px; }
       .affiliate-box { margin-top:70px; padding:35px; text-align:center; background:var(--green); color:white; }
       .affiliate-box h2 { margin:0 0 12px; color:white; }
       .affiliate-box p { color:#cdd8d0; }
       .affiliate-box .button { margin-top:12px; }
       .share-strip { display:flex; gap:10px; margin-top:45px; }
       .share-strip button,.share-strip a { flex:1; min-height:48px; display:grid; place-items:center; border:1px solid var(--line); background:white; font-size:12px; cursor:pointer; }
-      @media(max-width:600px){.article-body{font-size:15px}.article-cover{width:100%;height:72vw;border-radius:0}.ingredient-layout{grid-template-columns:1fr;gap:24px}.ingredient-photo{width:min(360px,100%);margin:auto}.ingredient-group h3{font-size:17px}.ingredient-list li{font-size:14px}.recipe-figure{width:100%}.recipe-figure img{height:auto;aspect-ratio:3/2}.article-hero{margin-top:25px}.article-body h2{font-size:27px}}
+      @media(max-width:600px){.article-body{font-size:15px}.article-cover{width:100%;height:72vw;border-radius:0}.ingredient-overview{width:100%;margin-left:0;transform:none}.ingredient-layout{grid-template-columns:1fr;gap:22px}.ingredient-photo{width:100%;margin:auto}.ingredient-group h3{font-size:16px}.ingredient-list{font-size:13px}.recipe-figure{width:100%}.recipe-figure img{height:auto;aspect-ratio:3/2}.article-hero{margin-top:25px}.article-body h2{font-size:24px}}
     </style>
     <script type="application/ld+json">
       {
@@ -116,8 +116,8 @@
         <p>배달 치킨을 넉넉하게 주문한 다음 날이면 누구나 한 번쯤 고민합니다. 전자레인지에 돌리면 편하지만 튀김옷이 쉽게 눅눅해지고, 너무 오래 가열하면 속살이 퍽퍽해지기 때문이죠. 먹다 남은 치킨을 맛있게 살리는 핵심은 <strong>수분을 날리면서 속까지 천천히 데우는 것</strong>입니다.</p>
 
         <section class="ingredient-overview" aria-labelledby="ingredient-title">
-          <h2 id="ingredient-title">재료 한눈에 보기</h2>
-          <p class="section-note">아래 레시피 중 하나를 골라 만드는 1인분 기준입니다. 계량은 1큰술=15ml, 1작은술=5ml입니다.</p>
+          <h2 id="ingredient-title">재료</h2>
+          <p class="section-note">치킨마요 덮밥 1인분 기준 · 1큰술=15ml</p>
           <div class="ingredient-layout">
             <figure class="ingredient-photo">
               <img src="/images/leftover-chicken/01-ingredients-anchor.webp" srcset="/images/leftover-chicken/01-ingredients-anchor-640.webp 640w, /images/leftover-chicken/01-ingredients-anchor-1080.webp 1080w" sizes="(max-width:600px) 360px, 260px" width="1536" height="1024" loading="lazy" decoding="async" alt="치킨마요 덮밥에 필요한 남은 치킨, 밥, 달걀, 양파와 마요네즈" />
@@ -125,39 +125,15 @@
             </figure>
             <div class="ingredient-groups">
               <section class="ingredient-group">
-                <h3>모든 메뉴의 기본 재료 <span>1인분</span></h3>
+                <h3>기본 재료 <span>1인분</span></h3>
                 <ul class="ingredient-list">
                   <li><span>남은 후라이드 치킨</span><span>2~3조각(150~200g)</span></li>
                 </ul>
               </section>
               <section class="ingredient-group">
-                <h3>치킨마요 덮밥 <span>약 10분</span></h3>
+                <h3>덮밥 재료 <span>약 10분</span></h3>
                 <ul class="ingredient-list">
                   <li><span>밥</span><span>1공기(210g)</span></li><li><span>달걀</span><span>1개(약 50g)</span></li><li><span>양파</span><span>¼개(약 50g)</span></li><li><span>마요네즈</span><span>2큰술(30g)</span></li><li><span>간장</span><span>1큰술</span></li><li><span>올리고당</span><span>½큰술</span></li><li><span>물</span><span>2큰술</span></li>
-                </ul>
-              </section>
-              <section class="ingredient-group">
-                <h3>파기름 치킨 볶음밥 <span>약 10분</span></h3>
-                <ul class="ingredient-list">
-                  <li><span>찬밥</span><span>1공기(210g)</span></li><li><span>대파</span><span>½대(약 40g)</span></li><li><span>식용유</span><span>1큰술</span></li><li><span>간장</span><span>½큰술</span></li>
-                </ul>
-              </section>
-              <section class="ingredient-group">
-                <h3>매콤 치킨 또띠아 <span>약 10분</span></h3>
-                <ul class="ingredient-list">
-                  <li><span>또띠아</span><span>1장(20cm)</span></li><li><span>양상추</span><span>2장(약 30g)</span></li><li><span>모차렐라 치즈</span><span>40g</span></li><li><span>고추장</span><span>½큰술</span></li><li><span>케첩</span><span>1큰술</span></li>
-                </ul>
-              </section>
-              <section class="ingredient-group">
-                <h3>치킨 샐러드 <span>약 8분</span></h3>
-                <ul class="ingredient-list">
-                  <li><span>양상추</span><span>80g</span></li><li><span>오이</span><span>⅓개(약 70g)</span></li><li><span>방울토마토</span><span>5개(약 75g)</span></li><li><span>플레인 요거트</span><span>2큰술(30g)</span></li><li><span>레몬즙</span><span>1작은술</span></li><li><span>소금</span><span>한 꼬집</span></li>
-                </ul>
-              </section>
-              <section class="ingredient-group">
-                <h3>얼큰 치킨 라면 <span>약 7분</span></h3>
-                <ul class="ingredient-list">
-                  <li><span>라면</span><span>1봉</span></li><li><span>물</span><span>제품 표시량</span></li><li><span>대파</span><span>¼대(약 20g)</span></li><li><span>후추</span><span>2~3번 톡톡</span></li>
                 </ul>
               </section>
             </div>
@@ -190,6 +166,7 @@
         </figure>
 
         <h2>활용 2. 파기름 치킨 볶음밥</h2>
+        <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각(150~200g), 찬밥 1공기(210g), 대파 ½대(약 40g), 식용유 1큰술, 간장 ½큰술</div>
         <p>팬에 식용유 1큰술과 송송 썬 대파 ½대(약 40g)를 넣고 볶아 향을 낸 뒤, 잘게 찢은 치킨 2~3조각과 찬밥 1공기(210g)를 넣습니다. 치킨 자체에 간이 되어 있으니 소금 대신 간장 ½큰술로 향만 보태세요. 대파를 조금 남겨 마지막에 올리면 향과 색이 훨씬 선명해집니다.</p>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/04-scallion-fried-rice.webp" srcset="/images/leftover-chicken/04-scallion-fried-rice-640.webp 640w, /images/leftover-chicken/04-scallion-fried-rice-1080.webp 1080w, /images/leftover-chicken/04-scallion-fried-rice.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="남은 후라이드 치킨 조각과 대파를 넣어 볶은 파기름 치킨 볶음밥" />
@@ -197,6 +174,7 @@
         </figure>
 
         <h2>활용 3. 매콤한 치킨 또띠아</h2>
+        <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각(150~200g), 또띠아 1장(20cm), 양상추 2장(약 30g), 모차렐라 치즈 40g, 고추장 ½큰술, 케첩 1큰술</div>
         <p>치킨 2~3조각을 잘게 찢어 고추장 ½큰술, 케첩 1큰술과 섞습니다. 지름 20cm 또띠아 1장 위에 양상추 2장(약 30g), 모차렐라 치즈 40g과 함께 올려 말아주세요. 프라이팬에서 접힌 면부터 구우면 풀리지 않고 바삭하게 완성됩니다.</p>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/05-spicy-tortilla.webp" srcset="/images/leftover-chicken/05-spicy-tortilla-640.webp 640w, /images/leftover-chicken/05-spicy-tortilla-1080.webp 1080w, /images/leftover-chicken/05-spicy-tortilla.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="매콤한 소스와 양상추, 치즈, 남은 치킨을 넣어 구운 또띠아 랩" />
@@ -204,6 +182,7 @@
         </figure>
 
         <h2>활용 4. 닭가슴살 대신 치킨 샐러드</h2>
+        <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각(150~200g), 양상추 80g, 오이 ⅓개(약 70g), 방울토마토 5개(약 75g), 플레인 요거트 2큰술(30g), 레몬즙 1작은술, 소금 한 꼬집</div>
         <p>튀김옷을 일부 덜어낸 치킨 2~3조각에 양상추 80g, 오이 ⅓개(약 70g), 방울토마토 5개를 곁들입니다. 플레인 요거트 2큰술, 레몬즙 1작은술, 소금 한 꼬집을 섞어 드레싱으로 뿌리세요. 양념 치킨이라면 별도 드레싱 없이 채소만 넉넉하게 더해도 좋습니다.</p>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/06-chicken-salad.webp" srcset="/images/leftover-chicken/06-chicken-salad-640.webp 640w, /images/leftover-chicken/06-chicken-salad-1080.webp 1080w, /images/leftover-chicken/06-chicken-salad.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="양상추, 오이, 방울토마토와 남은 후라이드 치킨을 담은 샐러드" />
@@ -211,6 +190,7 @@
         </figure>
 
         <h2>활용 5. 얼큰 치킨 라면</h2>
+        <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각(150~200g), 라면 1봉, 물 제품 표시량, 대파 ¼대(약 20g), 후추 약간</div>
         <p>라면 1봉을 제품에 표시된 물 양으로 끓이다가 면이 거의 익었을 때 뼈를 제거한 치킨 2~3조각을 넣어 30초만 더 끓입니다. 처음부터 넣으면 튀김옷이 풀어지고 살이 퍽퍽해질 수 있어요. 대파 ¼대(약 20g)와 후추를 2~3번 톡톡 더하면 닭 육수처럼 깊은 맛이 납니다.</p>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/07-spicy-ramen.webp" srcset="/images/leftover-chicken/07-spicy-ramen-640.webp 640w, /images/leftover-chicken/07-spicy-ramen-1080.webp 1080w, /images/leftover-chicken/07-spicy-ramen.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="얼큰한 라면 위에 마지막에 올린 바삭한 남은 후라이드 치킨과 대파" />
