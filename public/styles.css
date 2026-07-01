@@ -108,9 +108,9 @@ img { max-width: 100%; }
 .recipe-image { position: relative; aspect-ratio: .83; overflow: hidden; background-image: url('/images/korean-table-hero.webp'); background-repeat: no-repeat; transition: transform .35s ease, filter .35s ease; }
 .recipe-card:hover .recipe-image { transform: translateY(-4px); filter: saturate(1.08); }
 .crop-chicken { background-image: url('/images/leftover-chicken/03-chicken-mayo-bowl.webp'); background-size: cover; background-position: center; }
-.crop-tteokbokki { background-size: 255% auto; background-position: 78% 95%; }
-.crop-rice { background-size: 235% auto; background-position: 98% 23%; }
-.crop-kimchi { background-size: 290% auto; background-position: 57% 83%; }
+.crop-tteokbokki { background-image:url('/images/tteokbokki/05-finish-640.webp');background-size:cover;background-position:center; }
+.crop-rice { background-image:url('/images/dakgalbi-fried-rice/06-melt-cheese-640.webp');background-size:cover;background-position:center; }
+.crop-kimchi { background-image:url('/images/tofu-kimchi/05-finish-640.webp');background-size:cover;background-position:center; }
 .badge { position: absolute; left: 12px; top: 12px; padding: 7px 10px; color: var(--red); background: #fff7e9; font-size: 9px; font-weight: 700; letter-spacing: .12em; }
 .badge.dark { color: #fff; background: var(--ink); }
 .recipe-info { padding: 18px 1px 0; }
