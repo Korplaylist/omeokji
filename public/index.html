@@ -96,9 +96,13 @@
       <section class="taste-section" id="taste-test" aria-labelledby="test-title">
         <div class="taste-copy">
           <p class="eyebrow light">TASTE TEST</p>
-          <h2 id="test-title">오늘 뭐 먹지?<br /><em>1분이면 답이 나와요.</em></h2>
-          <p>지금 기분과 입맛을 골라주세요.<br />딱 어울리는 메뉴와 장보기 목록을 찾아드릴게요.</p>
-          <button class="button button-cream" id="startQuiz" type="button">테스트 시작하기 <span>→</span></button>
+          <h2 id="test-title">오늘 뭐 먹지?<br /><em>원하는 만큼 고민해요.</em></h2>
+          <p>바로 뽑거나, 5문항으로 가볍게,<br />10문항으로 꼼꼼하게 찾아보세요.</p>
+          <div class="test-mode-list" aria-label="테스트 방식 선택">
+            <button type="button" data-test-mode="random"><span>01</span><strong>무작위 랜덤 테스트</strong><small>질문 없이 바로 추천</small></button>
+            <button type="button" data-test-mode="simple"><span>02</span><strong>간단한 테스트</strong><small>5문항 · 약 30초</small></button>
+            <button type="button" data-test-mode="precise"><span>03</span><strong>정밀 테스트</strong><small>10문항 · 약 1분</small></button>
+          </div>
           <div class="participant-row">
             <div class="faces" aria-hidden="true"><span>🍙</span><span>🥘</span><span>🍜</span></div>
             <p><strong>12,846명</strong>이 오늘의 메뉴를 찾았어요</p>
