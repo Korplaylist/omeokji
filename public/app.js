@@ -100,10 +100,36 @@ const modal = document.getElementById('quizModal');
 const quizContent = document.getElementById('quizContent');
 const quizStep = document.getElementById('quizStep');
 const progressBar = document.getElementById('progressBar');
+const dailyRecommendationCount = document.getElementById('dailyRecommendationCount');
 let currentQuestion = 0;
 let selections = [];
 let activeMode = 'simple';
 let activeQuestions = simpleQuestions;
+
+function getKoreanDateKey() {
+  return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Seoul' }).format(new Date());
+}
+
+function readDailyRecommendationCount() {
+  const today = getKoreanDateKey();
+  try {
+    const saved = JSON.parse(localStorage.getItem('omeokjiDailyRecommendations') || '{}');
+    return saved.date === today ? Number(saved.count) || 0 : 0;
+  } catch (error) {
+    return 0;
+  }
+}
+
+function updateDailyRecommendationCount(increment = false) {
+  const today = getKoreanDateKey();
+  const count = readDailyRecommendationCount() + (increment ? 1 : 0);
+  if (increment) {
+    try { localStorage.setItem('omeokjiDailyRecommendations', JSON.stringify({ date: today, count })); } catch (error) {}
+  }
+  dailyRecommendationCount.textContent = count === 0
+    ? '첫 추천을 시작해보세요'
+    : `오늘 ${count.toLocaleString('ko-KR')}회 추천 완료`;
+}
 
 function renderQuestion() {
   const question = activeQuestions[currentQuestion];
@@ -138,6 +164,7 @@ function pickResult() {
 
 function renderResult() {
   const result = pickResult();
+  updateDailyRecommendationCount(true);
   quizStep.textContent = 'RESULT';
   progressBar.style.width = '100%';
   quizContent.innerHTML = `
@@ -175,6 +202,8 @@ function openQuiz(mode = 'simple') {
 document.querySelectorAll('[data-test-mode]').forEach((button) => button.addEventListener('click', () => openQuiz(button.dataset.testMode)));
 document.getElementById('closeQuiz').addEventListener('click', () => modal.close());
 modal.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
+
+updateDailyRecommendationCount();
 
 const params = new URLSearchParams(window.location.search);
 if (params.get('q')) filterRecipes(params.get('q'));
