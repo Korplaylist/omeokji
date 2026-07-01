@@ -101,7 +101,7 @@ img { max-width: 100%; }
 .recipe-card > a, .recipe-card > button { width: 100%; display: block; padding: 0; color: inherit; text-align: left; border: 0; background: transparent; cursor: pointer; }
 .recipe-image { position: relative; aspect-ratio: .83; overflow: hidden; background-image: url('/images/korean-table-hero.webp'); background-repeat: no-repeat; transition: transform .35s ease, filter .35s ease; }
 .recipe-card:hover .recipe-image { transform: translateY(-4px); filter: saturate(1.08); }
-.crop-chicken { background-size: 240% auto; background-position: 99% 12%; }
+.crop-chicken { background-image: url('/images/leftover-chicken/03-chicken-mayo-bowl.webp'); background-size: cover; background-position: center; }
 .crop-tteokbokki { background-size: 255% auto; background-position: 78% 95%; }
 .crop-rice { background-size: 235% auto; background-position: 98% 23%; }
 .crop-kimchi { background-size: 290% auto; background-position: 57% 83%; }
@@ -118,7 +118,7 @@ img { max-width: 100%; }
 .centered-heading { margin-bottom: 55px; text-align: center; }
 .centered-heading > p:last-child { color: var(--muted); font-size: 13px; }
 .article-feature { min-height: 560px; display: grid; grid-template-columns: 1.2fr 1fr; background: var(--cream); }
-.article-image { position: relative; min-height: 450px; background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.22)), url('/images/korean-table-hero.webp') 82% 55%/230% auto no-repeat; }
+.article-image { position: relative; min-height: 450px; background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.22)), url('/images/leftover-chicken/01-ingredients-anchor.webp') center/cover no-repeat; }
 .article-image span { position: absolute; left: 28px; top: 28px; padding: 8px 10px; color: #fff; border: 1px solid rgba(255,255,255,.75); font-size: 9px; letter-spacing: .15em; }
 .article-copy { align-self: center; padding: 55px clamp(35px, 6vw, 85px); }
 .article-copy h3 { margin: 0 0 25px; font-family: var(--serif); font-size: clamp(32px, 3.4vw, 47px); line-height: 1.35; letter-spacing: -.04em; }
