@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://omeokji.korplaylist-hong.workers.dev/</loc>
     <lastmod>2026-07-01</lastmod>
@@ -11,5 +12,12 @@
     <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/01-ingredients-anchor.webp</image:loc></image:image>
+    <image:image><image:loc>https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/02-pan-reheat.webp</image:loc></image:image>
+    <image:image><image:loc>https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/03-chicken-mayo-bowl.webp</image:loc></image:image>
+    <image:image><image:loc>https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/04-scallion-fried-rice.webp</image:loc></image:image>
+    <image:image><image:loc>https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/05-spicy-tortilla.webp</image:loc></image:image>
+    <image:image><image:loc>https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/06-chicken-salad.webp</image:loc></image:image>
+    <image:image><image:loc>https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/07-spicy-ramen.webp</image:loc></image:image>
   </url>
 </urlset>
