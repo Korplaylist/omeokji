@@ -25,4 +25,9 @@
     <image:image><image:loc>https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/11-salad-prep-1080.webp</image:loc></image:image>
     <image:image><image:loc>https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/12-ramen-add-chicken-1080.webp</image:loc></image:image>
   </url>
+  <url><loc>https://omeokji.korplaylist-hong.workers.dev/about.html</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://omeokji.korplaylist-hong.workers.dev/policies/terms.html</loc><lastmod>2026-07-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://omeokji.korplaylist-hong.workers.dev/policies/privacy.html</loc><lastmod>2026-07-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://omeokji.korplaylist-hong.workers.dev/policies/copyright.html</loc><lastmod>2026-07-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://omeokji.korplaylist-hong.workers.dev/policies/affiliate.html</loc><lastmod>2026-07-01</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
