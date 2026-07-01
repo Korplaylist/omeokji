@@ -30,6 +30,19 @@
       .article-body h2 { margin:70px 0 20px; font:700 32px/1.45 var(--serif); letter-spacing:-.035em; }
       .article-body h3 { margin:40px 0 10px; font:700 22px/1.5 var(--serif); }
       .article-body p { color:#404640; }
+      .ingredient-overview { margin:42px 0 70px; padding-top:18px; border-top:2px solid #9a796b; }
+      .ingredient-overview > h2 { margin:0 0 8px; font-size:30px; }
+      .ingredient-overview > .section-note { margin:0 0 28px; color:#7a807a; font-size:12px; }
+      .ingredient-layout { display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:34px; align-items:start; }
+      .ingredient-photo { margin:0; }
+      .ingredient-photo img { width:100%; aspect-ratio:1/1; display:block; object-fit:cover; }
+      .ingredient-photo figcaption { margin-top:9px; color:#858985; font-size:10px; line-height:1.6; }
+      .ingredient-groups { display:grid; gap:25px; }
+      .ingredient-group h3 { display:flex; justify-content:space-between; gap:16px; margin:0 0 12px; padding-bottom:9px; border-bottom:1px solid var(--line); font-size:18px; }
+      .ingredient-group h3 span { color:#777d77; font:500 11px/1.5 var(--sans); white-space:nowrap; }
+      .ingredient-list { display:grid; gap:5px; margin:0; padding:0; list-style:none; }
+      .ingredient-list li { display:flex; justify-content:space-between; gap:18px; line-height:1.65; }
+      .ingredient-list li span:last-child { color:#707670; text-align:right; white-space:nowrap; }
       .recipe-figure { width:min(520px,100%); margin:26px auto 48px; }
       .recipe-figure img { width:100%; height:300px; display:block; object-fit:cover; background:#f1ede5; }
       .recipe-figure figcaption { margin-top:12px; color:#7a807a; font-size:11px; line-height:1.7; }
@@ -43,7 +56,7 @@
       .affiliate-box .button { margin-top:12px; }
       .share-strip { display:flex; gap:10px; margin-top:45px; }
       .share-strip button,.share-strip a { flex:1; min-height:48px; display:grid; place-items:center; border:1px solid var(--line); background:white; font-size:12px; cursor:pointer; }
-      @media(max-width:600px){.article-body{font-size:15px}.article-cover{width:100%;height:72vw;border-radius:0}.recipe-figure{width:100%}.recipe-figure img{height:auto;aspect-ratio:3/2}.article-hero{margin-top:25px}.article-body h2{font-size:27px}}
+      @media(max-width:600px){.article-body{font-size:15px}.article-cover{width:100%;height:72vw;border-radius:0}.ingredient-layout{grid-template-columns:1fr;gap:24px}.ingredient-photo{width:min(360px,100%);margin:auto}.ingredient-group h3{font-size:17px}.ingredient-list li{font-size:14px}.recipe-figure{width:100%}.recipe-figure img{height:auto;aspect-ratio:3/2}.article-hero{margin-top:25px}.article-body h2{font-size:27px}}
     </style>
     <script type="application/ld+json">
       {
@@ -102,6 +115,55 @@
       <article class="article-body">
         <p>배달 치킨을 넉넉하게 주문한 다음 날이면 누구나 한 번쯤 고민합니다. 전자레인지에 돌리면 편하지만 튀김옷이 쉽게 눅눅해지고, 너무 오래 가열하면 속살이 퍽퍽해지기 때문이죠. 먹다 남은 치킨을 맛있게 살리는 핵심은 <strong>수분을 날리면서 속까지 천천히 데우는 것</strong>입니다.</p>
 
+        <section class="ingredient-overview" aria-labelledby="ingredient-title">
+          <h2 id="ingredient-title">재료 한눈에 보기</h2>
+          <p class="section-note">아래 레시피 중 하나를 골라 만드는 1인분 기준입니다. 계량은 1큰술=15ml, 1작은술=5ml입니다.</p>
+          <div class="ingredient-layout">
+            <figure class="ingredient-photo">
+              <img src="/images/leftover-chicken/01-ingredients-anchor.webp" srcset="/images/leftover-chicken/01-ingredients-anchor-640.webp 640w, /images/leftover-chicken/01-ingredients-anchor-1080.webp 1080w" sizes="(max-width:600px) 360px, 260px" width="1536" height="1024" loading="lazy" decoding="async" alt="치킨마요 덮밥에 필요한 남은 치킨, 밥, 달걀, 양파와 마요네즈" />
+              <figcaption>사진은 활용 1 ‘치킨마요 덮밥’의 재료 구성입니다.</figcaption>
+            </figure>
+            <div class="ingredient-groups">
+              <section class="ingredient-group">
+                <h3>모든 메뉴의 기본 재료 <span>1인분</span></h3>
+                <ul class="ingredient-list">
+                  <li><span>남은 후라이드 치킨</span><span>2~3조각(150~200g)</span></li>
+                </ul>
+              </section>
+              <section class="ingredient-group">
+                <h3>치킨마요 덮밥 <span>약 10분</span></h3>
+                <ul class="ingredient-list">
+                  <li><span>밥</span><span>1공기(210g)</span></li><li><span>달걀</span><span>1개(약 50g)</span></li><li><span>양파</span><span>¼개(약 50g)</span></li><li><span>마요네즈</span><span>2큰술(30g)</span></li><li><span>간장</span><span>1큰술</span></li><li><span>올리고당</span><span>½큰술</span></li><li><span>물</span><span>2큰술</span></li>
+                </ul>
+              </section>
+              <section class="ingredient-group">
+                <h3>파기름 치킨 볶음밥 <span>약 10분</span></h3>
+                <ul class="ingredient-list">
+                  <li><span>찬밥</span><span>1공기(210g)</span></li><li><span>대파</span><span>½대(약 40g)</span></li><li><span>식용유</span><span>1큰술</span></li><li><span>간장</span><span>½큰술</span></li>
+                </ul>
+              </section>
+              <section class="ingredient-group">
+                <h3>매콤 치킨 또띠아 <span>약 10분</span></h3>
+                <ul class="ingredient-list">
+                  <li><span>또띠아</span><span>1장(20cm)</span></li><li><span>양상추</span><span>2장(약 30g)</span></li><li><span>모차렐라 치즈</span><span>40g</span></li><li><span>고추장</span><span>½큰술</span></li><li><span>케첩</span><span>1큰술</span></li>
+                </ul>
+              </section>
+              <section class="ingredient-group">
+                <h3>치킨 샐러드 <span>약 8분</span></h3>
+                <ul class="ingredient-list">
+                  <li><span>양상추</span><span>80g</span></li><li><span>오이</span><span>⅓개(약 70g)</span></li><li><span>방울토마토</span><span>5개(약 75g)</span></li><li><span>플레인 요거트</span><span>2큰술(30g)</span></li><li><span>레몬즙</span><span>1작은술</span></li><li><span>소금</span><span>한 꼬집</span></li>
+                </ul>
+              </section>
+              <section class="ingredient-group">
+                <h3>얼큰 치킨 라면 <span>약 7분</span></h3>
+                <ul class="ingredient-list">
+                  <li><span>라면</span><span>1봉</span></li><li><span>물</span><span>제품 표시량</span></li><li><span>대파</span><span>¼대(약 20g)</span></li><li><span>후추</span><span>2~3번 톡톡</span></li>
+                </ul>
+              </section>
+            </div>
+          </div>
+        </section>
+
         <h2>먼저, 남은 치킨은 언제까지 먹어도 될까요?</h2>
         <p>먹고 남은 치킨은 실온에 오래 두지 말고 가능한 한 빨리 밀폐 용기에 담아 냉장 보관하세요. 냄새나 색, 표면 상태가 평소와 다르면 아깝더라도 먹지 않는 편이 안전합니다.</p>
         <div class="note"><strong>보관 팁</strong><br />양념 치킨과 후라이드 치킨은 따로 담고, 용기 바닥에 키친타월을 한 장 깔면 과도한 수분을 줄이는 데 도움이 됩니다.</div>
@@ -120,7 +182,7 @@
         <p>양념 치킨은 소스가 쉽게 타므로 물 한 큰술을 팬 가장자리에 넣고 아주 약한 불에서 짧게 데우는 편이 좋습니다.</p>
 
         <h2>활용 1. 가장 실패 없는 치킨마요 덮밥</h2>
-        <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각, 밥 1공기, 달걀 1개, 양파 ¼개, 마요네즈, 간장 1큰술, 올리고당 ½큰술</div>
+        <div class="ingredient-box"><strong>1인분 재료</strong>남은 치킨 2~3조각(150~200g), 밥 1공기(210g), 달걀 1개, 양파 ¼개(약 50g), 마요네즈 2큰술, 간장 1큰술, 올리고당 ½큰술, 물 2큰술</div>
         <p>뼈를 제거한 치킨을 먹기 좋은 크기로 자릅니다. 팬에 얇게 썬 양파와 간장, 올리고당, 물 두 큰술을 넣고 2분간 졸이세요. 달걀은 부드럽게 스크램블한 뒤 밥 위에 양파와 치킨, 마요네즈를 차례로 올리면 10분 만에 완성입니다.</p>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/03-chicken-mayo-bowl.webp" srcset="/images/leftover-chicken/03-chicken-mayo-bowl-640.webp 640w, /images/leftover-chicken/03-chicken-mayo-bowl-1080.webp 1080w, /images/leftover-chicken/03-chicken-mayo-bowl.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="밥 위에 달걀, 간장 양파, 바삭한 치킨과 마요네즈를 올린 치킨마요 덮밥" />
@@ -128,28 +190,28 @@
         </figure>
 
         <h2>활용 2. 파기름 치킨 볶음밥</h2>
-        <p>대파를 넉넉히 볶아 향을 낸 뒤 잘게 찢은 치킨과 찬밥을 넣습니다. 치킨 자체에 간이 되어 있으니 소금보다 간장 반 큰술로 향만 보태는 것이 포인트입니다. 대파를 조금 남겨 마지막에 올리면 향과 색이 훨씬 선명해집니다.</p>
+        <p>팬에 식용유 1큰술과 송송 썬 대파 ½대(약 40g)를 넣고 볶아 향을 낸 뒤, 잘게 찢은 치킨 2~3조각과 찬밥 1공기(210g)를 넣습니다. 치킨 자체에 간이 되어 있으니 소금 대신 간장 ½큰술로 향만 보태세요. 대파를 조금 남겨 마지막에 올리면 향과 색이 훨씬 선명해집니다.</p>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/04-scallion-fried-rice.webp" srcset="/images/leftover-chicken/04-scallion-fried-rice-640.webp 640w, /images/leftover-chicken/04-scallion-fried-rice-1080.webp 1080w, /images/leftover-chicken/04-scallion-fried-rice.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="남은 후라이드 치킨 조각과 대파를 넣어 볶은 파기름 치킨 볶음밥" />
           <figcaption>같은 후라이드 치킨을 잘게 잘라 파기름 볶음밥에 넣은 활용 2의 완성 예시입니다.</figcaption>
         </figure>
 
         <h2>활용 3. 매콤한 치킨 또띠아</h2>
-        <p>치킨을 잘게 찢어 고추장 ½큰술, 케첩 1큰술과 섞고 또띠아 위에 양상추, 치즈와 함께 올려 말아주세요. 프라이팬에서 접힌 면부터 구우면 풀리지 않고 바삭하게 완성됩니다.</p>
+        <p>치킨 2~3조각을 잘게 찢어 고추장 ½큰술, 케첩 1큰술과 섞습니다. 지름 20cm 또띠아 1장 위에 양상추 2장(약 30g), 모차렐라 치즈 40g과 함께 올려 말아주세요. 프라이팬에서 접힌 면부터 구우면 풀리지 않고 바삭하게 완성됩니다.</p>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/05-spicy-tortilla.webp" srcset="/images/leftover-chicken/05-spicy-tortilla-640.webp 640w, /images/leftover-chicken/05-spicy-tortilla-1080.webp 1080w, /images/leftover-chicken/05-spicy-tortilla.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="매콤한 소스와 양상추, 치즈, 남은 치킨을 넣어 구운 또띠아 랩" />
           <figcaption>치킨의 바삭한 튀김옷이 보이도록 잘라 넣고, 본문에 적힌 양상추와 치즈만 더했습니다.</figcaption>
         </figure>
 
         <h2>활용 4. 닭가슴살 대신 치킨 샐러드</h2>
-        <p>튀김옷을 일부 덜어낸 치킨 살에 양상추, 오이, 방울토마토를 곁들입니다. 소스는 플레인 요거트 2큰술과 레몬즙, 소금 한 꼬집이면 충분합니다. 양념 치킨이라면 별도 드레싱 없이 채소만 넉넉하게 더해도 좋습니다.</p>
+        <p>튀김옷을 일부 덜어낸 치킨 2~3조각에 양상추 80g, 오이 ⅓개(약 70g), 방울토마토 5개를 곁들입니다. 플레인 요거트 2큰술, 레몬즙 1작은술, 소금 한 꼬집을 섞어 드레싱으로 뿌리세요. 양념 치킨이라면 별도 드레싱 없이 채소만 넉넉하게 더해도 좋습니다.</p>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/06-chicken-salad.webp" srcset="/images/leftover-chicken/06-chicken-salad-640.webp 640w, /images/leftover-chicken/06-chicken-salad-1080.webp 1080w, /images/leftover-chicken/06-chicken-salad.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="양상추, 오이, 방울토마토와 남은 후라이드 치킨을 담은 샐러드" />
           <figcaption>본문의 양상추·오이·방울토마토와 요거트 드레싱만 사용해 재료와 이미지를 맞췄습니다.</figcaption>
         </figure>
 
         <h2>활용 5. 얼큰 치킨 라면</h2>
-        <p>라면이 거의 익었을 때 뼈를 제거한 치킨을 넣어 30초만 끓입니다. 처음부터 넣으면 튀김옷이 풀어지고 살이 퍽퍽해질 수 있어요. 대파와 후추를 더하면 닭 육수처럼 깊은 맛이 납니다.</p>
+        <p>라면 1봉을 제품에 표시된 물 양으로 끓이다가 면이 거의 익었을 때 뼈를 제거한 치킨 2~3조각을 넣어 30초만 더 끓입니다. 처음부터 넣으면 튀김옷이 풀어지고 살이 퍽퍽해질 수 있어요. 대파 ¼대(약 20g)와 후추를 2~3번 톡톡 더하면 닭 육수처럼 깊은 맛이 납니다.</p>
         <figure class="recipe-figure">
           <img src="/images/leftover-chicken/07-spicy-ramen.webp" srcset="/images/leftover-chicken/07-spicy-ramen-640.webp 640w, /images/leftover-chicken/07-spicy-ramen-1080.webp 1080w, /images/leftover-chicken/07-spicy-ramen.webp 1536w" sizes="(max-width:760px) calc(100vw - 40px), 720px" width="1536" height="1024" loading="lazy" decoding="async" alt="얼큰한 라면 위에 마지막에 올린 바삭한 남은 후라이드 치킨과 대파" />
           <figcaption>치킨은 본문 순서대로 라면이 거의 익은 뒤 올려 튀김옷이 보이도록 표현했습니다.</figcaption>
