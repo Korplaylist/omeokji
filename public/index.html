@@ -55,18 +55,26 @@
     </header>
 
     <main id="main">
-      <section class="hero">
-        <div class="hero-image" role="img" aria-label="떡볶이와 닭고기 볶음밥이 차려진 따뜻한 한식 식탁"></div>
-        <div class="hero-content">
-          <p class="eyebrow">TODAY'S DELICIOUS ANSWER</p>
-          <h1>매일 하는 고민,<br /><em>맛있게 끝내드릴게요.</em></h1>
-          <p class="hero-copy">냉장고 속 남은 재료도 근사한 한 끼가 됩니다.<br />지금 끌리는 메뉴부터 가볍게 찾아보세요.</p>
-          <div class="hero-actions">
-            <a class="button button-dark" href="#taste-test">1분 메뉴 테스트</a>
-            <a class="text-link" href="#recipes">레시피 둘러보기 <span aria-hidden="true">→</span></a>
+      <section class="taste-section" id="taste-test" aria-labelledby="test-title">
+        <div class="taste-copy">
+          <p class="eyebrow light">TASTE TEST</p>
+          <h1 id="test-title">오늘 뭐 먹지?<br /><em>원하는 만큼 고민해요.</em></h1>
+          <p>바로 뽑거나, 5문항으로 가볍게,<br />10문항으로 꼼꼼하게 찾아보세요.</p>
+          <div class="test-mode-list" aria-label="테스트 방식 선택">
+            <button type="button" data-test-mode="random"><span>01</span><strong>무작위 랜덤 테스트</strong><small>질문 없이 바로 추천</small></button>
+            <button type="button" data-test-mode="simple"><span>02</span><strong>간단한 테스트</strong><small>5문항 · 약 30초</small></button>
+            <button type="button" data-test-mode="precise"><span>03</span><strong>정밀 테스트</strong><small>10문항 · 약 1분</small></button>
+          </div>
+          <div class="participant-row">
+            <div class="faces" aria-hidden="true"><span>🍙</span><span>🥘</span><span>🍜</span></div>
+            <p><strong>12,846명</strong>이 오늘의 메뉴를 찾았어요</p>
           </div>
         </div>
-        <div class="hero-note"><span>01</span><strong>오늘의 식탁</strong></div>
+        <div class="taste-visual" aria-hidden="true">
+          <div class="plate plate-one"><span>?</span></div>
+          <div class="plate plate-two">🍳</div>
+          <div class="floating-label">오늘의<br /><strong>한 끼</strong></div>
+        </div>
       </section>
 
       <section class="quick-picks" aria-labelledby="quick-title">
@@ -90,28 +98,6 @@
           <button class="pick-card" type="button" data-filter="야식">
             <span class="pick-icon">☾</span><strong>오늘 밤 야식</strong><small>참지 말고 더 맛있게</small><span class="arrow">↗</span>
           </button>
-        </div>
-      </section>
-
-      <section class="taste-section" id="taste-test" aria-labelledby="test-title">
-        <div class="taste-copy">
-          <p class="eyebrow light">TASTE TEST</p>
-          <h2 id="test-title">오늘 뭐 먹지?<br /><em>원하는 만큼 고민해요.</em></h2>
-          <p>바로 뽑거나, 5문항으로 가볍게,<br />10문항으로 꼼꼼하게 찾아보세요.</p>
-          <div class="test-mode-list" aria-label="테스트 방식 선택">
-            <button type="button" data-test-mode="random"><span>01</span><strong>무작위 랜덤 테스트</strong><small>질문 없이 바로 추천</small></button>
-            <button type="button" data-test-mode="simple"><span>02</span><strong>간단한 테스트</strong><small>5문항 · 약 30초</small></button>
-            <button type="button" data-test-mode="precise"><span>03</span><strong>정밀 테스트</strong><small>10문항 · 약 1분</small></button>
-          </div>
-          <div class="participant-row">
-            <div class="faces" aria-hidden="true"><span>🍙</span><span>🥘</span><span>🍜</span></div>
-            <p><strong>12,846명</strong>이 오늘의 메뉴를 찾았어요</p>
-          </div>
-        </div>
-        <div class="taste-visual" aria-hidden="true">
-          <div class="plate plate-one"><span>?</span></div>
-          <div class="plate plate-two">🍳</div>
-          <div class="floating-label">오늘의<br /><strong>한 끼</strong></div>
         </div>
       </section>
 
