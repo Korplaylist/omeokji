@@ -2,6 +2,8 @@
 
 SEO 콘텐츠, 바이럴 메뉴 테스트, 커머스 전환을 한 흐름으로 연결한 요리 콘텐츠 MVP입니다.
 
+라이브 사이트: <https://omeokji.korplaylist-hong.workers.dev>
+
 ## 로컬 실행
 
 ```powershell
