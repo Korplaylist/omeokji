@@ -10,10 +10,9 @@
     <meta property="og:title" content="오먹지 | 오늘 뭐 먹지?" />
     <meta property="og:description" content="1분 취향 테스트로 오늘의 메뉴를 찾아보세요." />
     <meta property="og:url" content="https://omeokji.korplaylist-hong.workers.dev/" />
-    <meta property="og:image" content="https://omeokji.korplaylist-hong.workers.dev/images/korean-table-hero.webp" />
+    <meta property="og:image" content="https://omeokji.korplaylist-hong.workers.dev/images/korean-table-hero-1440.webp" />
     <link rel="canonical" href="https://omeokji.korplaylist-hong.workers.dev/" />
-    <link rel="preload" href="/images/korean-table-hero.webp" as="image" type="image/webp" />
-    <link rel="stylesheet" href="/styles.css?v=20260702-cards" />
+    <link rel="stylesheet" href="/styles.css?v=20260702-performance" />
     <script type="application/ld+json">
       {
         "@context":"https://schema.org",
@@ -84,9 +83,9 @@
           <h1 id="test-title">오늘 뭐 먹지?<br /><em>원하는 만큼 고민해요.</em></h1>
           <p>바로 뽑거나, 5문항으로 가볍게,<br />10문항으로 꼼꼼하게 찾아보세요.</p>
           <div class="test-mode-list" aria-label="테스트 방식 선택">
-            <button type="button" data-test-mode="random"><span>01</span><strong>무작위 랜덤 테스트</strong><small>질문 없이 바로 추천</small></button>
-            <button type="button" data-test-mode="simple"><span>02</span><strong>간단한 테스트</strong><small>5문항 · 약 30초</small></button>
-            <button type="button" data-test-mode="precise"><span>03</span><strong>정밀 테스트</strong><small>10문항 · 약 1분</small></button>
+            <button type="button" data-test-mode="random"><span aria-hidden="true">01</span><strong>무작위 랜덤 테스트</strong><small>질문 없이 바로 추천</small></button>
+            <button type="button" data-test-mode="simple"><span aria-hidden="true">02</span><strong>간단한 테스트</strong><small>5문항 · 약 30초</small></button>
+            <button type="button" data-test-mode="precise"><span aria-hidden="true">03</span><strong>정밀 테스트</strong><small>10문항 · 약 1분</small></button>
           </div>
           <div class="participant-row">
             <div class="faces" aria-hidden="true"><span>🍙</span><span>🥘</span><span>🍜</span></div>
@@ -132,14 +131,14 @@
           </div>
           <a class="text-link" href="#articles">활용 레시피 모두 보기 <span>→</span></a>
         </div>
-        <div class="category-tabs" role="tablist" aria-label="레시피 카테고리">
-          <button class="is-active" type="button" data-category="all">모두</button>
-          <button type="button" data-category="간단요리">간단요리</button>
-          <button type="button" data-category="한식">한식</button>
-          <button type="button" data-category="혼밥">혼밥</button>
-          <button type="button" data-category="야식">야식</button>
+        <div class="category-tabs" role="group" aria-label="레시피 카테고리 필터">
+          <button class="is-active" type="button" data-category="all" aria-pressed="true">모두</button>
+          <button type="button" data-category="간단요리" aria-pressed="false">간단요리</button>
+          <button type="button" data-category="한식" aria-pressed="false">한식</button>
+          <button type="button" data-category="혼밥" aria-pressed="false">혼밥</button>
+          <button type="button" data-category="야식" aria-pressed="false">야식</button>
         </div>
-        <div class="recipe-grid" id="recipeGrid" aria-live="polite"></div>
+        <div class="recipe-grid" id="recipeGrid" role="list" aria-live="polite" aria-label="레시피 목록"></div>
         <div class="carousel-controls" aria-label="많이 찾는 한 끼 이동">
           <button id="recipePrev" type="button" aria-label="이전 레시피 보기">←</button>
           <span>좌우로 넘겨 더 보기</span>
@@ -154,21 +153,19 @@
           <h2 id="articles-title">오늘의 활용백서</h2>
           <p>애매하게 남은 재료, 가장 맛있는 타이밍을 놓치지 마세요.</p>
         </div>
-        <div class="article-carousel" id="articleCarousel">
-        <div class="article-feature">
-          <a class="article-image" href="/articles/leftover-chicken.html" aria-label="남은 치킨 활용 레시피 글 읽기"><span>EDITOR'S PICK</span></a>
+        <div class="article-carousel" id="articleCarousel" role="list" aria-label="활용백서 목록">
+        <article class="article-feature" role="listitem">
+          <a class="article-image" href="/articles/leftover-chicken.html" aria-label="남은 치킨 활용 레시피 글 읽기"><img src="/images/leftover-chicken/01-ingredients-anchor-640.webp" width="640" height="427" loading="lazy" decoding="async" alt="남은 치킨과 활용 재료" /><span>EDITOR'S PICK</span></a>
           <div class="article-copy">
             <p class="eyebrow">LEFTOVER GUIDE · 12 MIN READ</p>
             <h3>남은 치킨,<br />에어프라이어 없이도<br /><em>다시 바삭하게</em></h3>
             <p>눅눅한 치킨을 살리는 프라이팬 데우기부터 덮밥, 볶음밥, 샐러드까지. 다음 날 더 맛있어지는 활용법을 모았습니다.</p>
             <a class="button button-outline" href="/articles/leftover-chicken.html">활용법 읽어보기 <span>→</span></a>
           </div>
-        </div>
-        <div class="article-list">
-          <div class="article-feature compact-feature"><a class="article-image" style="background-image:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.22)),url('/images/leftover-gimbap/00-cover-1080.webp')" href="/articles/leftover-gimbap.html" aria-label="남은 김밥 활용백서 읽기"><span>LEFTOVER GIMBAP</span></a><div class="article-copy"><p class="eyebrow">3 RECIPES · 10 MIN READ</p><h3>남은 김밥,<br><em>전·볶음밥·전골로</em></h3><p>딱딱해진 냉장 김밥을 터지지 않게 되살리는 세 가지 활용법입니다.</p><a class="button button-outline" href="/articles/leftover-gimbap.html">활용법 읽어보기 <span>→</span></a></div></div>
-          <div class="article-feature compact-feature"><a class="article-image" style="background-image:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.22)),url('/images/leftover-bread/00-cover-1080.webp')" href="/articles/leftover-bread.html" aria-label="남은 식빵 활용백서 읽기"><span>LEFTOVER BREAD</span></a><div class="article-copy"><p class="eyebrow">3 RECIPES · 10 MIN READ</p><h3>남은 식빵,<br><em>촉촉하거나 바삭하게</em></h3><p>프렌치토스트부터 러스크와 식빵피자까지 정확한 비율로 알려드립니다.</p><a class="button button-outline" href="/articles/leftover-bread.html">활용법 읽어보기 <span>→</span></a></div></div>
-          <div class="article-feature compact-feature"><a class="article-image" style="background-image:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.22)),url('/images/leftover-jokbal/00-cover-1080.webp')" href="/articles/leftover-jokbal.html" aria-label="남은 족발 활용백서 읽기"><span>LEFTOVER JOKBAL</span></a><div class="article-copy"><p class="eyebrow">3 RECIPES · 12 MIN READ</p><h3>남은 족발,<br><em>질기지 않게 다시</em></h3><p>덮밥·볶음밥·냉채로 따뜻하게 또는 산뜻하게 활용합니다.</p><a class="button button-outline" href="/articles/leftover-jokbal.html">활용법 읽어보기 <span>→</span></a></div></div>
-        </div>
+        </article>
+          <article class="article-feature compact-feature" role="listitem"><a class="article-image" href="/articles/leftover-gimbap.html" aria-label="남은 김밥 활용백서 읽기"><img src="/images/leftover-gimbap/00-cover-640.webp" width="640" height="427" loading="lazy" decoding="async" alt="남은 김밥 활용 요리" /><span>LEFTOVER GIMBAP</span></a><div class="article-copy"><p class="eyebrow">3 RECIPES · 10 MIN READ</p><h3>남은 김밥,<br><em>전·볶음밥·전골로</em></h3><p>딱딱해진 냉장 김밥을 터지지 않게 되살리는 세 가지 활용법입니다.</p><a class="button button-outline" href="/articles/leftover-gimbap.html">활용법 읽어보기 <span>→</span></a></div></article>
+          <article class="article-feature compact-feature" role="listitem"><a class="article-image" href="/articles/leftover-bread.html" aria-label="남은 식빵 활용백서 읽기"><img src="/images/leftover-bread/00-cover-640.webp" width="640" height="427" loading="lazy" decoding="async" alt="남은 식빵 활용 요리" /><span>LEFTOVER BREAD</span></a><div class="article-copy"><p class="eyebrow">3 RECIPES · 10 MIN READ</p><h3>남은 식빵,<br><em>촉촉하거나 바삭하게</em></h3><p>프렌치토스트부터 러스크와 식빵피자까지 정확한 비율로 알려드립니다.</p><a class="button button-outline" href="/articles/leftover-bread.html">활용법 읽어보기 <span>→</span></a></div></article>
+          <article class="article-feature compact-feature" role="listitem"><a class="article-image" href="/articles/leftover-jokbal.html" aria-label="남은 족발 활용백서 읽기"><img src="/images/leftover-jokbal/00-cover-640.webp" width="640" height="427" loading="lazy" decoding="async" alt="남은 족발 활용 요리" /><span>LEFTOVER JOKBAL</span></a><div class="article-copy"><p class="eyebrow">3 RECIPES · 12 MIN READ</p><h3>남은 족발,<br><em>질기지 않게 다시</em></h3><p>덮밥·볶음밥·냉채로 따뜻하게 또는 산뜻하게 활용합니다.</p><a class="button button-outline" href="/articles/leftover-jokbal.html">활용법 읽어보기 <span>→</span></a></div></article>
         </div>
         <div class="carousel-controls" aria-label="활용백서 이동">
           <button id="articlePrev" type="button" aria-label="이전 활용백서 보기">←</button>
@@ -190,6 +187,6 @@
     </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="/app.js?v=20260702-carousel" defer></script>
+    <script src="/app.js?v=20260702-performance" defer></script>
   </body>
 </html>

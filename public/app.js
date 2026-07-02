@@ -39,8 +39,12 @@ document.querySelectorAll('[data-filter]').forEach((button) => {
 
 document.querySelectorAll('[data-category]').forEach((button) => {
   button.addEventListener('click', () => {
-    document.querySelectorAll('[data-category]').forEach((tab) => tab.classList.remove('is-active'));
+    document.querySelectorAll('[data-category]').forEach((tab) => {
+      tab.classList.remove('is-active');
+      tab.setAttribute('aria-pressed', 'false');
+    });
     button.classList.add('is-active');
+    button.setAttribute('aria-pressed', 'true');
     const category = button.dataset.category;
     recipes.forEach((card) => { card.hidden = category !== 'all' && !card.dataset.tags.includes(category); });
     document.getElementById('emptyState').hidden = recipes.some((card) => !card.hidden);
@@ -55,11 +59,11 @@ const publishedMenus = [
   { id: 'tteokbokki', title: '꾸덕한 국물 떡볶이', copy: '매콤달콤하고 쫀득한 분식이 당기는 날에 잘 맞아요.', image: '/images/tteokbokki/05-finish-640.webp', url: '/articles/tteokbokki.html', tags: ['분식','매콤','쫀득','따뜻','간단','15분','야식','한식'] },
   { id: 'dakgalbi-fried-rice', title: '치즈 닭갈비 볶음밥', copy: '매콤한 닭고기와 치즈를 더한 든든한 한 팬 요리예요.', image: '/images/dakgalbi-fried-rice/06-melt-cheese-640.webp', url: '/articles/dakgalbi-fried-rice.html', tags: ['밥','고기','매콤','든든','볶음','따뜻','씹는맛','한식','20분'] },
   { id: 'tofu-kimchi', title: '들기름 두부김치', copy: '고소한 두부와 새콤한 볶음김치로 편안한 한 끼를 채워요.', image: '/images/tofu-kimchi/05-finish-640.webp', url: '/articles/tofu-kimchi.html', tags: ['한식','고소','순한','따뜻','간단','채소','건강','혼밥','15분'] },
-  { id: 'chicken-mayo', title: '바삭 치킨마요 덮밥', copy: '고소하고 든든한 한 그릇이 당기는 오늘에 잘 맞아요.', image: '/images/leftover-chicken/03-chicken-mayo-bowl.webp', url: '/articles/leftover-chicken.html#chicken-mayo', tags: ['밥','든든','고소','순한','간단','10분','혼밥','따뜻','부드러운','한식'] },
-  { id: 'chicken-fried-rice', title: '파기름 치킨 볶음밥', copy: '파기름 향과 씹는 맛을 살린 든든한 한 끼를 추천해요.', image: '/images/leftover-chicken/04-scallion-fried-rice.webp', url: '/articles/leftover-chicken.html#chicken-fried-rice', tags: ['밥','든든','고소','짭짤','볶음','간단','10분','혼밥','따뜻','씹는맛','한식'] },
-  { id: 'chicken-tortilla', title: '매콤 치킨 또띠아', copy: '손으로 가볍게 집어 먹는 매콤하고 바삭한 메뉴가 어울려요.', image: '/images/leftover-chicken/05-spicy-tortilla.webp', url: '/articles/leftover-chicken.html#chicken-tortilla', tags: ['분식','빵','고기','매콤','간단','10분','손으로','가벼운','씹는맛','간식'] },
-  { id: 'chicken-salad', title: '산뜻한 치킨 샐러드', copy: '부담은 줄이고 신선한 채소와 바삭한 식감은 살린 선택이에요.', image: '/images/leftover-chicken/06-chicken-salad.webp', url: '/articles/leftover-chicken.html#chicken-salad', tags: ['고기','가벼운','산뜻','순한','차가운','채소','간단','건강','바삭','혼밥','8분'] },
-  { id: 'chicken-ramen', title: '얼큰 치킨 라면', copy: '후루룩 넘어가는 따뜻하고 얼큰한 국물이 필요한 날이에요.', image: '/images/leftover-chicken/07-spicy-ramen.webp', url: '/articles/leftover-chicken.html#chicken-ramen', tags: ['면','국물','매콤','얼큰','따뜻','든든','간단','10분','야식','후루룩','한식'] },
+  { id: 'chicken-mayo', title: '바삭 치킨마요 덮밥', copy: '고소하고 든든한 한 그릇이 당기는 오늘에 잘 맞아요.', image: '/images/leftover-chicken/03-chicken-mayo-bowl-640.webp', url: '/articles/leftover-chicken.html#chicken-mayo', tags: ['밥','든든','고소','순한','간단','10분','혼밥','따뜻','부드러운','한식'] },
+  { id: 'chicken-fried-rice', title: '파기름 치킨 볶음밥', copy: '파기름 향과 씹는 맛을 살린 든든한 한 끼를 추천해요.', image: '/images/leftover-chicken/04-scallion-fried-rice-640.webp', url: '/articles/leftover-chicken.html#chicken-fried-rice', tags: ['밥','든든','고소','짭짤','볶음','간단','10분','혼밥','따뜻','씹는맛','한식'] },
+  { id: 'chicken-tortilla', title: '매콤 치킨 또띠아', copy: '손으로 가볍게 집어 먹는 매콤하고 바삭한 메뉴가 어울려요.', image: '/images/leftover-chicken/05-spicy-tortilla-640.webp', url: '/articles/leftover-chicken.html#chicken-tortilla', tags: ['분식','빵','고기','매콤','간단','10분','손으로','가벼운','씹는맛','간식'] },
+  { id: 'chicken-salad', title: '산뜻한 치킨 샐러드', copy: '부담은 줄이고 신선한 채소와 바삭한 식감은 살린 선택이에요.', image: '/images/leftover-chicken/06-chicken-salad-640.webp', url: '/articles/leftover-chicken.html#chicken-salad', tags: ['고기','가벼운','산뜻','순한','차가운','채소','간단','건강','바삭','혼밥','8분'] },
+  { id: 'chicken-ramen', title: '얼큰 치킨 라면', copy: '후루룩 넘어가는 따뜻하고 얼큰한 국물이 필요한 날이에요.', image: '/images/leftover-chicken/07-spicy-ramen-640.webp', url: '/articles/leftover-chicken.html#chicken-ramen', tags: ['면','국물','매콤','얼큰','따뜻','든든','간단','10분','야식','후루룩','한식'] },
   { id: 'egg-fried-rice', title: '파기름 계란볶음밥', copy: '찬밥과 달걀 두 개로 빠르게 만드는 고소한 한 끼예요.', image: '/images/egg-fried-rice/04-finish-640.webp', url: '/articles/egg-fried-rice.html', tags: ['밥','달걀','고소','순한','볶음','간단','10분','혼밥','따뜻','한식'] },
   { id: 'kimchi-fried-rice', title: '신김치 계란볶음밥', copy: '신김치의 감칠맛을 고슬고슬한 찬밥에 살렸어요.', image: '/images/kimchi-fried-rice/04-finish-640.webp', url: '/articles/kimchi-fried-rice.html', tags: ['밥','김치','매콤','볶음','간단','12분','혼밥','따뜻','한식'] },
   { id: 'tuna-mayo-rice', title: '양파조림 참치마요 덮밥', copy: '부드러운 참치마요와 짭짤한 양파조림을 한 그릇에 담았어요.', image: '/images/tuna-mayo-rice/04-finish-640.webp', url: '/articles/tuna-mayo-rice.html', tags: ['밥','참치','고소','부드러운','간단','10분','혼밥','따뜻','한식'] },
@@ -87,9 +91,9 @@ function renderPublishedMenus() {
     const badge = menu.id === 'chicken-mayo'
       ? '<span class="badge">BEST</span>'
       : '';
-    return `<article class="recipe-card" data-title="${menu.title}" data-tags="${filterTags}">
+    return `<article class="recipe-card" role="listitem" data-title="${menu.title}" data-tags="${filterTags}">
       <a href="${menu.url}" aria-label="${menu.title} 레시피 보기">
-        <div class="recipe-image" style="background-image:url('${menu.image}')">${badge}</div>
+        <div class="recipe-image"><img src="${menu.image}" width="640" height="427" loading="lazy" decoding="async" alt="" />${badge}</div>
         <div class="recipe-info"><p>${menu.copy}</p><h3>${menu.title}</h3><div><span>초급</span><span>${duration}</span></div></div>
       </a>
     </article>`;
@@ -104,16 +108,21 @@ function bindHorizontalCarousel(trackId, previousId, nextId) {
   const previous = document.getElementById(previousId);
   const next = document.getElementById(nextId);
   if (!track || !previous || !next) return;
+  let updateFrame = 0;
   const updateButtons = () => {
-    previous.disabled = track.scrollLeft <= 4;
-    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    cancelAnimationFrame(updateFrame);
+    updateFrame = requestAnimationFrame(() => {
+      const { scrollLeft, clientWidth, scrollWidth } = track;
+      previous.disabled = scrollLeft <= 4;
+      next.disabled = scrollLeft + clientWidth >= scrollWidth - 4;
+    });
   };
   const move = (direction) => track.scrollBy({ left: direction * track.clientWidth * .9, behavior: 'smooth' });
   previous.addEventListener('click', () => move(-1));
   next.addEventListener('click', () => move(1));
   track.addEventListener('scroll', updateButtons, { passive: true });
-  window.addEventListener('resize', updateButtons);
-  updateButtons();
+  previous.disabled = true;
+  next.disabled = false;
 }
 
 document.querySelectorAll('#articleCarousel .article-feature').forEach((card, index) => {
