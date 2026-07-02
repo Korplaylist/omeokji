@@ -84,6 +84,7 @@
       {
         "@context":"https://schema.org",
         "@graph":[
+          {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://omeokji.korplaylist-hong.workers.dev/"},{"@type":"ListItem","position":2,"name":"활용백서","item":"https://omeokji.korplaylist-hong.workers.dev/#articles"},{"@type":"ListItem","position":3,"name":"남은 치킨 활용 레시피 5가지"}]},
           {
             "@type":"Article",
             "@id":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#article",
@@ -92,9 +93,9 @@
             "description":"먹다 남은 치킨을 프라이팬으로 바삭하게 데우고 다섯 가지 한 끼로 활용하는 방법",
             "image":{"@type":"ImageObject","url":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/01-ingredients-anchor.webp","width":1536,"height":1024},
             "datePublished":"2026-07-01",
-            "dateModified":"2026-07-01",
-            "author":{"@type":"Organization","name":"오먹지"},
-            "publisher":{"@type":"Organization","name":"오먹지"},
+            "dateModified":"2026-07-02",
+            "author":{"@type":"Person","@id":"https://omeokji.korplaylist-hong.workers.dev/about.html#author","name":"임채홍","url":"https://omeokji.korplaylist-hong.workers.dev/about.html#author"},
+            "publisher":{"@id":"https://omeokji.korplaylist-hong.workers.dev/#organization"},
             "keywords":["남은 치킨 활용 레시피","먹다 남은 치킨 요리","치킨 데우기","치킨마요 덮밥","치밥"]
           },
           {
@@ -103,8 +104,10 @@
             "name":"10분 치킨마요 덮밥",
             "description":"먹다 남은 후라이드 치킨과 달걀, 양파로 만드는 간단한 치킨마요 덮밥",
             "image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/03-chicken-mayo-bowl.webp",
-            "author":{"@type":"Organization","name":"오먹지"},
+            "author":{"@type":"Person","@id":"https://omeokji.korplaylist-hong.workers.dev/about.html#author","name":"임채홍","url":"https://omeokji.korplaylist-hong.workers.dev/about.html#author"},
+            "publisher":{"@id":"https://omeokji.korplaylist-hong.workers.dev/#organization"},
             "datePublished":"2026-07-01",
+            "dateModified":"2026-07-02",
             "prepTime":"PT5M",
             "cookTime":"PT5M",
             "totalTime":"PT10M",
@@ -114,13 +117,17 @@
             "keywords":"남은 치킨 요리, 치킨마요 덮밥, 10분 요리, 치밥",
             "recipeIngredient":["남은 치킨 2~3조각","밥 1공기","달걀 1개","양파 1/4개","마요네즈 적당량","간장 1큰술","올리고당 1/2큰술","물 2큰술"],
             "recipeInstructions":[
-              {"@type":"HowToStep","name":"치킨 뼈 제거","text":"치킨의 관절을 살짝 비틀어 드러난 뼈를 천천히 당겨 제거하고, 작은 뼈가 남지 않았는지 확인합니다."},
-              {"@type":"HowToStep","name":"치킨 자르기","text":"뼈를 제거한 치킨을 튀김옷이 떨어지지 않게 2.5cm 크기로 자릅니다."},
-              {"@type":"HowToStep","name":"양파 소스 만들기","text":"3mm로 썬 양파, 간장, 올리고당, 물을 중약불에서 2분간 졸입니다."},
-              {"@type":"HowToStep","name":"달걀 익히기","text":"약불에서 달걀을 저어 70% 정도 익었을 때 불을 끕니다."},
-              {"@type":"HowToStep","name":"완성하기","text":"밥 위에 달걀, 양파 소스, 데운 치킨을 올리고 마요네즈를 뿌립니다."}
+              {"@type":"HowToStep","name":"치킨 뼈 제거","text":"치킨의 관절을 살짝 비틀어 드러난 뼈를 천천히 당겨 제거하고, 작은 뼈가 남지 않았는지 확인합니다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/13-mayo-bone-1080.webp"},
+              {"@type":"HowToStep","name":"치킨 자르기","text":"뼈를 제거한 치킨을 튀김옷이 떨어지지 않게 2.5cm 크기로 자릅니다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/08-chicken-debone-1080.webp"},
+              {"@type":"HowToStep","name":"양파 소스 만들기","text":"3mm로 썬 양파, 간장, 올리고당, 물을 중약불에서 2분간 졸입니다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/14-mayo-onion-sauce-1080.webp"},
+              {"@type":"HowToStep","name":"달걀 익히기","text":"약불에서 달걀을 저어 70% 정도 익었을 때 불을 끕니다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/15-mayo-scramble-1080.webp"},
+              {"@type":"HowToStep","name":"완성하기","text":"밥 위에 달걀, 양파 소스, 데운 치킨을 올리고 마요네즈를 뿌립니다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/03-chicken-mayo-bowl-1080.webp"}
             ]
-          }
+          },
+          {"@type":"Recipe","@id":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-fried-rice","url":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-fried-rice","name":"파기름 치킨 볶음밥","description":"남은 치킨과 찬밥을 파기름에 볶아 만드는 10분 볶음밥","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/04-scallion-fried-rice-1080.webp","author":{"@id":"https://omeokji.korplaylist-hong.workers.dev/about.html#author"},"publisher":{"@id":"https://omeokji.korplaylist-hong.workers.dev/#organization"},"datePublished":"2026-07-01","dateModified":"2026-07-02","totalTime":"PT10M","recipeYield":["1인분"],"recipeCategory":"볶음밥","recipeCuisine":"한식","recipeIngredient":["남은 치킨 150~200g","찬밥 210g","대파 40g","식용유 1큰술","간장 1/2큰술"],"recipeInstructions":[{"@type":"HowToStep","name":"재료 준비","text":"찬밥을 풀고 치킨을 2cm로 자른다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/19-fried-rice-prep-1080.webp"},{"@type":"HowToStep","name":"파기름 내기","text":"대파를 식용유에 1분 30초 볶는다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/20-scallion-oil-1080.webp"},{"@type":"HowToStep","name":"밥 볶기","text":"밥을 넣어 2분 볶는다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/09-fried-rice-process-1080.webp"},{"@type":"HowToStep","name":"치킨 넣어 완성","text":"치킨과 간장을 넣어 1분 볶는다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/04-scallion-fried-rice-1080.webp"}]},
+          {"@type":"Recipe","@id":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-tortilla","url":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-tortilla","name":"매콤 치킨 또띠아","description":"남은 치킨과 양상추, 치즈로 만드는 매콤한 10분 또띠아","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/05-spicy-tortilla-1080.webp","author":{"@id":"https://omeokji.korplaylist-hong.workers.dev/about.html#author"},"publisher":{"@id":"https://omeokji.korplaylist-hong.workers.dev/#organization"},"datePublished":"2026-07-01","dateModified":"2026-07-02","totalTime":"PT10M","recipeYield":["1인분"],"recipeCategory":"간식","recipeCuisine":"퓨전","recipeIngredient":["남은 치킨 150~200g","또띠아 1장","양상추 30g","모차렐라 치즈 40g","고추장 1/2큰술","케첩 1큰술"],"recipeInstructions":[{"@type":"HowToStep","name":"치킨 양념","text":"치킨을 2.5cm로 잘라 매콤한 소스를 얇게 묻힌다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/21-tortilla-sauce-1080.webp"},{"@type":"HowToStep","name":"또띠아 데우기","text":"마른 팬에서 또띠아 앞뒤를 5초씩 데운다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/22-tortilla-warm-1080.webp"},{"@type":"HowToStep","name":"재료 말기","text":"양상추, 치킨, 치즈를 올려 단단히 만다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/10-tortilla-assembly-1080.webp"},{"@type":"HowToStep","name":"또띠아 굽기","text":"접힌 면부터 앞뒤로 1분씩 굽는다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/05-spicy-tortilla-1080.webp"}]},
+          {"@type":"Recipe","@id":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-salad","url":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-salad","name":"산뜻한 치킨 샐러드","description":"남은 치킨과 신선한 채소, 요거트 드레싱으로 만드는 8분 샐러드","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/06-chicken-salad-1080.webp","author":{"@id":"https://omeokji.korplaylist-hong.workers.dev/about.html#author"},"publisher":{"@id":"https://omeokji.korplaylist-hong.workers.dev/#organization"},"datePublished":"2026-07-01","dateModified":"2026-07-02","totalTime":"PT8M","recipeYield":["1인분"],"recipeCategory":"샐러드","recipeCuisine":"퓨전","recipeIngredient":["남은 치킨 150~200g","양상추 80g","오이 70g","방울토마토 5개","플레인 요거트 30g","레몬즙 1작은술"],"recipeInstructions":[{"@type":"HowToStep","name":"채소 물기 제거","text":"채소를 씻어 물기를 완전히 닦는다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/23-salad-dry-1080.webp"},{"@type":"HowToStep","name":"치킨 손질","text":"두꺼운 튀김옷 일부를 덜고 치킨을 자른다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/27-salad-trim-1080.webp"},{"@type":"HowToStep","name":"드레싱 만들기","text":"요거트와 레몬즙, 소금을 섞는다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/24-salad-dressing-1080.webp"},{"@type":"HowToStep","name":"샐러드 완성","text":"채소를 버무리고 치킨을 마지막에 올린다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/06-chicken-salad-1080.webp"}]},
+          {"@type":"Recipe","@id":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-ramen","url":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-ramen","name":"얼큰 치킨 라면","description":"남은 치킨을 마지막 30초에 올려 바삭함을 살린 10분 라면","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/07-spicy-ramen-1080.webp","author":{"@id":"https://omeokji.korplaylist-hong.workers.dev/about.html#author"},"publisher":{"@id":"https://omeokji.korplaylist-hong.workers.dev/#organization"},"datePublished":"2026-07-01","dateModified":"2026-07-02","totalTime":"PT10M","recipeYield":["1인분"],"recipeCategory":"면","recipeCuisine":"한식","recipeIngredient":["남은 치킨 150~200g","라면 1봉","물 제품 표시량","대파 20g","후추 약간"],"recipeInstructions":[{"@type":"HowToStep","name":"국물 끓이기","text":"제품 표시량의 물을 끓여 수프를 푼다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/25-ramen-soup-1080.webp"},{"@type":"HowToStep","name":"면 익히기","text":"면을 권장 시간의 70%까지 익힌다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/26-ramen-noodles-1080.webp"},{"@type":"HowToStep","name":"치킨 올리기","text":"마지막 30초에 치킨을 올리고 국물을 끼얹는다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/12-ramen-add-chicken-1080.webp"},{"@type":"HowToStep","name":"대파와 후추 넣기","text":"불을 끈 뒤 대파와 후추를 더해 완성한다.","image":"https://omeokji.korplaylist-hong.workers.dev/images/leftover-chicken/07-spicy-ramen-1080.webp"}]}
         ]
       }
     </script>
@@ -132,7 +139,7 @@
         <p class="eyebrow">LEFTOVER GUIDE</p>
         <h1>남은 치킨 활용 레시피 5가지<br />에어프라이어 없이 바삭하게 데우는 법</h1>
         <p class="lead">먹다 남은 치킨도 프라이팬 하나면 다시 바삭하게. 치킨마요부터 치밥, 또띠아, 샐러드, 라면까지 맛있는 한 끼로 바꿔보세요.</p>
-        <p class="article-meta">2026. 07. 01 · 읽는 시간 12분</p>
+        <p class="article-meta">작성·검수 임채홍 · 2026. 07. 01 · 최종 수정 2026. 07. 02 · 읽는 시간 12분</p>
       </header>
       <figure class="article-cover"><img src="/images/leftover-chicken/01-ingredients-anchor.webp" srcset="/images/leftover-chicken/01-ingredients-anchor-640.webp 640w, /images/leftover-chicken/01-ingredients-anchor-1080.webp 1080w, /images/leftover-chicken/01-ingredients-anchor.webp 1536w" sizes="(max-width: 1080px) 100vw, 1080px" width="1536" height="1024" fetchpriority="high" decoding="async" alt="남은 후라이드 치킨과 치킨마요 덮밥에 사용할 밥, 달걀, 양파, 마요네즈" /></figure>
       <p class="cover-credit">ⓒ오먹지</p>
@@ -272,7 +279,7 @@
         <div class="share-strip"><a href="/">다른 레시피 보기</a><button id="shareArticle" type="button">이 글 공유하기</button></div>
       </article>
     </main>
-    <footer class="site-footer"><div class="footer-top"><a class="brand inverse" href="/"><span class="brand-mark">오</span><span>오먹지</span></a><div class="footer-info"><p>오늘 뭐 먹지? 맛있는 답을 찾는 곳.</p><nav class="legal-links" aria-label="정책 및 사이트 정보"><a href="/about.html">사이트 소개</a><a href="/policies/terms.html">이용약관</a><a href="/policies/privacy.html">개인정보처리방침</a><a href="/policies/copyright.html">저작권 보호정책</a><a href="/policies/affiliate.html">제휴·면책 고지</a></nav></div></div><div class="footer-bottom"><p>© 2026 오먹지</p><p>콘텐츠와 이미지의 무단 복제·배포를 금합니다.</p></div></footer>
+    <footer class="site-footer"><div class="footer-top"><a class="brand inverse" href="/"><span class="brand-mark">오</span><span>오먹지</span></a><div class="footer-info"><p>오늘 뭐 먹지? 맛있는 답을 찾는 곳.</p><nav class="legal-links" aria-label="정책 및 사이트 정보"><a href="/about.html">사이트 소개</a><a href="/policies/terms.html">이용약관</a><a href="/policies/privacy.html">개인정보처리방침</a><a href="/policies/copyright.html">저작권 보호정책</a><a href="/policies/affiliate.html">제휴·면책 고지</a><a href="mailto:timmy759@naver.com">문의</a></nav></div></div><div class="footer-bottom"><p>© 2026 오먹지</p><p>콘텐츠와 이미지의 무단 복제·배포를 금합니다.</p></div></footer>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script>
       const shareButton = document.getElementById('shareArticle');

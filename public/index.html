@@ -16,15 +16,21 @@
     <link rel="stylesheet" href="/styles.css?v=20260702-cards" />
     <script type="application/ld+json">
       {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "오먹지",
-        "url": "https://omeokji.korplaylist-hong.workers.dev/",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://omeokji.korplaylist-hong.workers.dev/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "@context":"https://schema.org",
+        "@graph":[
+          {"@type":"Organization","@id":"https://omeokji.korplaylist-hong.workers.dev/#organization","name":"오먹지","url":"https://omeokji.korplaylist-hong.workers.dev/","email":"mailto:timmy759@naver.com","founder":{"@type":"Person","@id":"https://omeokji.korplaylist-hong.workers.dev/about.html#author","name":"임채홍"}},
+          {"@type":"WebSite","@id":"https://omeokji.korplaylist-hong.workers.dev/#website","name":"오먹지","url":"https://omeokji.korplaylist-hong.workers.dev/","publisher":{"@id":"https://omeokji.korplaylist-hong.workers.dev/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://omeokji.korplaylist-hong.workers.dev/?q={search_term_string}","query-input":"required name=search_term_string"}},
+          {"@type":"ItemList","@id":"https://omeokji.korplaylist-hong.workers.dev/#recipe-list","name":"오먹지 많이 찾는 한 끼","numberOfItems":8,"itemListElement":[
+            {"@type":"ListItem","position":1,"url":"https://omeokji.korplaylist-hong.workers.dev/articles/tteokbokki.html"},
+            {"@type":"ListItem","position":2,"url":"https://omeokji.korplaylist-hong.workers.dev/articles/dakgalbi-fried-rice.html"},
+            {"@type":"ListItem","position":3,"url":"https://omeokji.korplaylist-hong.workers.dev/articles/tofu-kimchi.html"},
+            {"@type":"ListItem","position":4,"url":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-mayo"},
+            {"@type":"ListItem","position":5,"url":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-fried-rice"},
+            {"@type":"ListItem","position":6,"url":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-tortilla"},
+            {"@type":"ListItem","position":7,"url":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-salad"},
+            {"@type":"ListItem","position":8,"url":"https://omeokji.korplaylist-hong.workers.dev/articles/leftover-chicken.html#chicken-ramen"}
+          ]}
+        ]
       }
     </script>
   </head>
@@ -139,7 +145,7 @@
     </main>
 
     <footer class="site-footer">
-      <div class="footer-top"><a class="brand inverse" href="/"><span class="brand-mark">오</span><span>오먹지</span></a><div class="footer-info"><p>오늘 뭐 먹지? 맛있는 답을 찾는 곳.</p><nav class="legal-links" aria-label="정책 및 사이트 정보"><a href="/about.html">사이트 소개</a><a href="/policies/terms.html">이용약관</a><a href="/policies/privacy.html">개인정보처리방침</a><a href="/policies/copyright.html">저작권 보호정책</a><a href="/policies/affiliate.html">제휴·면책 고지</a></nav></div></div>
+      <div class="footer-top"><a class="brand inverse" href="/"><span class="brand-mark">오</span><span>오먹지</span></a><div class="footer-info"><p>오늘 뭐 먹지? 맛있는 답을 찾는 곳.</p><nav class="legal-links" aria-label="정책 및 사이트 정보"><a href="/about.html">사이트 소개</a><a href="/policies/terms.html">이용약관</a><a href="/policies/privacy.html">개인정보처리방침</a><a href="/policies/copyright.html">저작권 보호정책</a><a href="/policies/affiliate.html">제휴·면책 고지</a><a href="mailto:timmy759@naver.com">문의</a></nav></div></div>
       <div class="footer-bottom"><p>쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있습니다.</p><p>© 2026 오먹지. All rights reserved.</p></div>
     </footer>
 
