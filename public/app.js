@@ -99,6 +99,29 @@ function renderPublishedMenus() {
 
 renderPublishedMenus();
 
+function bindHorizontalCarousel(trackId, previousId, nextId) {
+  const track = document.getElementById(trackId);
+  const previous = document.getElementById(previousId);
+  const next = document.getElementById(nextId);
+  if (!track || !previous || !next) return;
+  const updateButtons = () => {
+    previous.disabled = track.scrollLeft <= 4;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+  };
+  const move = (direction) => track.scrollBy({ left: direction * track.clientWidth * .9, behavior: 'smooth' });
+  previous.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
+  track.addEventListener('scroll', updateButtons, { passive: true });
+  window.addEventListener('resize', updateButtons);
+  updateButtons();
+}
+
+document.querySelectorAll('#articleCarousel .article-feature').forEach((card, index) => {
+  if (index >= 8) card.remove();
+});
+bindHorizontalCarousel('recipeGrid', 'recipePrev', 'recipeNext');
+bindHorizontalCarousel('articleCarousel', 'articlePrev', 'articleNext');
+
 const simpleQuestions = [
   { title: '지금 가장 끌리는 형태는?', subtitle: '첫 느낌대로 골라주세요.', answers: [
     ['🍜','후루룩 넘어가는 면',['면','국물','후루룩']], ['🍚','든든한 밥·국밥',['밥','든든']], ['🍗','씹는 맛이 있는 고기',['고기','씹는맛']], ['🥙','가볍게 집어먹는 분식·빵',['분식','빵','손으로']]
