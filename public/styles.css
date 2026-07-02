@@ -105,7 +105,7 @@ img { max-width: 100%; }
 .recipe-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .recipe-card { min-width: 0; }
 .recipe-card > a, .recipe-card > button { width: 100%; display: block; padding: 0; color: inherit; text-align: left; border: 0; background: transparent; cursor: pointer; }
-.recipe-image { position: relative; aspect-ratio: .83; overflow: hidden; background-image: url('/images/korean-table-hero.webp'); background-repeat: no-repeat; transition: transform .35s ease, filter .35s ease; }
+.recipe-image { position:relative; aspect-ratio:3/2; overflow:hidden; background-image:url('/images/korean-table-hero.webp'); background-size:cover; background-position:center; background-repeat:no-repeat; transition:transform .35s ease,filter .35s ease; }
 .recipe-card:hover .recipe-image { transform: translateY(-4px); filter: saturate(1.08); }
 .crop-chicken { background-image: url('/images/leftover-chicken/03-chicken-mayo-bowl.webp'); background-size: cover; background-position: center; }
 .crop-tteokbokki { background-image:url('/images/tteokbokki/05-finish-640.webp');background-size:cover;background-position:center; }
@@ -229,7 +229,7 @@ img { max-width: 100%; }
   .taste-copy { width: calc(100% - 40px); padding: 78px 0; justify-self: center; }
   .taste-visual { display: none; }
   .recipe-grid { gap: 28px 12px; }
-  .recipe-image { aspect-ratio: .8; }
+  .recipe-image { aspect-ratio:3/2; }
   .recipe-info h3 { font-size: 16px; }
   .recipe-info p { display: none; }
   .article-feature { grid-template-columns: 1fr; }

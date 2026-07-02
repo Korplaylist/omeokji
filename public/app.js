@@ -53,12 +53,12 @@ document.querySelectorAll('[data-recipe]').forEach((button) => {
 
 const publishedMenus = [
   { id: 'tteokbokki', title: '꾸덕한 국물 떡볶이', copy: '매콤달콤하고 쫀득한 분식이 당기는 날에 잘 맞아요.', image: '/images/tteokbokki/05-finish-640.webp', url: '/articles/tteokbokki.html', tags: ['분식','매콤','쫀득','따뜻','간단','15분','야식','한식'] },
-  { id: 'dakgalbi-fried-rice', title: '치즈 닭갈비 볶음밥', copy: '매콤한 닭고기와 치즈를 더한 든든한 한 팬 요리예요.', image: '/images/dakgalbi-fried-rice/06-melt-cheese-640.webp', url: '/articles/dakgalbi-fried-rice.html', tags: ['밥','고기','매콤','든든','볶음','따뜻','씹는맛','한식'] },
-  { id: 'tofu-kimchi', title: '들기름 두부김치', copy: '고소한 두부와 새콤한 볶음김치로 편안한 한 끼를 채워요.', image: '/images/tofu-kimchi/05-finish-640.webp', url: '/articles/tofu-kimchi.html', tags: ['한식','고소','순한','따뜻','간단','채소','건강','혼밥'] },
+  { id: 'dakgalbi-fried-rice', title: '치즈 닭갈비 볶음밥', copy: '매콤한 닭고기와 치즈를 더한 든든한 한 팬 요리예요.', image: '/images/dakgalbi-fried-rice/06-melt-cheese-640.webp', url: '/articles/dakgalbi-fried-rice.html', tags: ['밥','고기','매콤','든든','볶음','따뜻','씹는맛','한식','20분'] },
+  { id: 'tofu-kimchi', title: '들기름 두부김치', copy: '고소한 두부와 새콤한 볶음김치로 편안한 한 끼를 채워요.', image: '/images/tofu-kimchi/05-finish-640.webp', url: '/articles/tofu-kimchi.html', tags: ['한식','고소','순한','따뜻','간단','채소','건강','혼밥','15분'] },
   { id: 'chicken-mayo', title: '바삭 치킨마요 덮밥', copy: '고소하고 든든한 한 그릇이 당기는 오늘에 잘 맞아요.', image: '/images/leftover-chicken/03-chicken-mayo-bowl.webp', url: '/articles/leftover-chicken.html#chicken-mayo', tags: ['밥','든든','고소','순한','간단','10분','혼밥','따뜻','부드러운','한식'] },
   { id: 'chicken-fried-rice', title: '파기름 치킨 볶음밥', copy: '파기름 향과 씹는 맛을 살린 든든한 한 끼를 추천해요.', image: '/images/leftover-chicken/04-scallion-fried-rice.webp', url: '/articles/leftover-chicken.html#chicken-fried-rice', tags: ['밥','든든','고소','짭짤','볶음','간단','10분','혼밥','따뜻','씹는맛','한식'] },
   { id: 'chicken-tortilla', title: '매콤 치킨 또띠아', copy: '손으로 가볍게 집어 먹는 매콤하고 바삭한 메뉴가 어울려요.', image: '/images/leftover-chicken/05-spicy-tortilla.webp', url: '/articles/leftover-chicken.html#chicken-tortilla', tags: ['분식','빵','고기','매콤','간단','10분','손으로','가벼운','씹는맛','간식'] },
-  { id: 'chicken-salad', title: '산뜻한 치킨 샐러드', copy: '부담은 줄이고 신선한 채소와 바삭한 식감은 살린 선택이에요.', image: '/images/leftover-chicken/06-chicken-salad.webp', url: '/articles/leftover-chicken.html#chicken-salad', tags: ['고기','가벼운','산뜻','순한','차가운','채소','간단','건강','바삭','혼밥'] },
+  { id: 'chicken-salad', title: '산뜻한 치킨 샐러드', copy: '부담은 줄이고 신선한 채소와 바삭한 식감은 살린 선택이에요.', image: '/images/leftover-chicken/06-chicken-salad.webp', url: '/articles/leftover-chicken.html#chicken-salad', tags: ['고기','가벼운','산뜻','순한','차가운','채소','간단','건강','바삭','혼밥','8분'] },
   { id: 'chicken-ramen', title: '얼큰 치킨 라면', copy: '후루룩 넘어가는 따뜻하고 얼큰한 국물이 필요한 날이에요.', image: '/images/leftover-chicken/07-spicy-ramen.webp', url: '/articles/leftover-chicken.html#chicken-ramen', tags: ['면','국물','매콤','얼큰','따뜻','든든','간단','10분','야식','후루룩','한식'] }
 ];
 
