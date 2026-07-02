@@ -39,6 +39,7 @@
 .affiliate-box h2{margin:0;color:white}
 .affiliate-box p{color:#d8e0da}
 .affiliate-box a{margin-top:10px}
+.affiliate-box .eyebrow{margin:0 0 10px;color:#c8d7cd}.affiliate-box .affiliate-disclosure{margin:18px 0 0;color:#c8d7cd;font-size:9px;line-height:1.6}
 @media(max-width:600px){.article-hero{margin-top:25px}
 .article-body{font-size:15px}
 .article-body h2{font-size:24px}
