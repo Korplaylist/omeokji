@@ -86,7 +86,7 @@ function renderPublishedMenus() {
     const filterTags = [...menu.tags, ...(menu.tags.includes('간단') ? ['간단요리'] : [])].join(' ');
     const badge = menu.id === 'chicken-mayo'
       ? '<span class="badge">BEST</span>'
-      : index === 0 ? `<span class="badge dark">${duration.toUpperCase()}</span>` : '';
+      : '';
     return `<article class="recipe-card" data-title="${menu.title}" data-tags="${filterTags}">
       <a href="${menu.url}" aria-label="${menu.title} 레시피 보기">
         <div class="recipe-image" style="background-image:url('${menu.image}')">${badge}</div>
