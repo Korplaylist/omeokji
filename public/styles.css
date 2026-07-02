@@ -100,7 +100,7 @@ img { max-width: 100%; }
 .category-tabs { display: flex; gap: 8px; margin-bottom: 35px; overflow-x: auto; scrollbar-width: none; }
 .category-tabs button { flex: 0 0 auto; padding: 10px 19px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; background: transparent; cursor: pointer; font-size: 13px; }
 .category-tabs button.is-active { color: #fff; border-color: var(--ink); background: var(--ink); }
-.recipe-grid { display:grid;grid-template-rows:repeat(2,auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 96px)/5);column-gap:24px;row-gap:30px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:4px 0 10px; }
+.recipe-grid { display:grid;grid-template-rows:repeat(2,auto);grid-auto-flow:column;grid-auto-columns:calc((100% - 96px)/5);column-gap:24px;row-gap:30px;margin:0;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;list-style:none;padding:4px 0 10px; }
 .recipe-grid::-webkit-scrollbar,.article-carousel::-webkit-scrollbar{display:none}
 .recipe-card { min-width:0;scroll-snap-align:start; }
 .recipe-card > a, .recipe-card > button { width: 100%; display: block; padding: 0; color: inherit; text-align: left; border: 0; background: transparent; cursor: pointer; }

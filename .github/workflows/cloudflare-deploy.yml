@@ -15,6 +15,10 @@ jobs:
     permissions:
       contents: read
     steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Run content and performance quality audit
+        run: node scripts/quality-audit.mjs
       - name: Trigger Cloudflare production build
         env:
           DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}

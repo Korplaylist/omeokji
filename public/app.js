@@ -91,12 +91,13 @@ function renderPublishedMenus() {
     const badge = menu.id === 'chicken-mayo'
       ? '<span class="badge">BEST</span>'
       : '';
-    return `<article class="recipe-card" role="listitem" data-title="${menu.title}" data-tags="${filterTags}">
+    const smallImage = menu.image.replace('-640.webp', '-320.webp');
+    return `<li class="recipe-card" data-title="${menu.title}" data-tags="${filterTags}">
       <a href="${menu.url}" aria-label="${menu.title} 레시피 보기">
-        <div class="recipe-image"><img src="${menu.image}" width="640" height="427" loading="lazy" decoding="async" alt="" />${badge}</div>
+        <div class="recipe-image"><img src="${smallImage}" srcset="${smallImage} 320w, ${menu.image} 640w" sizes="(max-width:680px) calc((100vw - 44px)/2), (max-width:1200px) calc((100vw - 144px)/5), 217px" width="320" height="214" loading="lazy" decoding="async" alt="" />${badge}</div>
         <div class="recipe-info"><p>${menu.copy}</p><h3>${menu.title}</h3><div><span>초급</span><span>${duration}</span></div></div>
       </a>
-    </article>`;
+    </li>`;
   }).join('');
   recipes = [...grid.querySelectorAll('.recipe-card')];
 }
