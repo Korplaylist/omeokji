@@ -1,1 +1,45 @@
-.article-page{background:#fffdf9}.article-nav{width:min(900px,calc(100% - 40px));margin:auto;padding:30px 0;display:flex;justify-content:space-between;align-items:center}.article-nav>a:last-child{font-size:12px;font-weight:700}.article-hero{width:min(900px,calc(100% - 40px));margin:45px auto 0;text-align:center}.article-hero h1{margin:16px auto 20px;max-width:760px;font:700 clamp(32px,5vw,52px)/1.3 var(--serif);letter-spacing:-.05em}.article-hero .lead{max-width:650px;margin:0 auto 30px;color:var(--muted);font-size:15px;line-height:1.9}.article-meta{margin-bottom:36px;color:#8b8f8a;font-size:11px}.article-cover{width:min(760px,calc(100% - 40px));margin:auto}.article-cover img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}.article-body{width:min(720px,calc(100% - 40px));margin:65px auto 100px;font-size:16px;line-height:2}.article-body h2{margin:60px 0 18px;font:700 27px/1.45 var(--serif);letter-spacing:-.035em}.article-body p{color:#404640}.recipe-tags{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 24px;padding:0;list-style:none}.recipe-tags li{padding:6px 10px;color:var(--green);border:1px solid #cfdbcf;border-radius:999px;background:#f4f8f2;font-size:10px;line-height:1}.ingredient-panel{display:grid;grid-template-columns:240px 1fr;gap:28px;margin:35px 0 50px;padding-top:25px;border-top:2px solid #9a796b}.ingredient-panel figure{margin:0}.ingredient-panel img{display:block;width:240px;height:160px;object-fit:cover}.ingredient-list{display:grid;grid-template-columns:1fr auto;gap:6px 20px;margin:0;padding:0;list-style:none;font-size:14px;line-height:1.55}.ingredient-list span:nth-child(even){color:#707670;text-align:right}.step-title{font-size:21px!important}.recipe-steps{margin:0;padding:0;list-style:none;counter-reset:step}.recipe-steps li{position:relative;margin-bottom:18px;padding:0 0 22px 52px;border-bottom:1px solid #ebe8e0;color:#404640;line-height:1.8;counter-increment:step}.recipe-steps li::before{content:counter(step);position:absolute;left:0;top:1px;width:34px;height:34px;display:grid;place-items:center;color:white;background:var(--green);border-radius:50%;font:700 12px/1 var(--sans)}.recipe-steps strong{display:block;color:var(--ink);font-family:var(--serif);font-size:16px}.step-figure{width:min(520px,100%);margin:16px 0 2px}.step-figure img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}.step-figure figcaption,.ingredient-panel figcaption{margin-top:7px;color:#747a74;font-size:11px;line-height:1.65}.article-page figcaption::after{content:'ⓒ오먹지';display:block;margin-top:4px;color:#959995;font-size:9px}.step-tip{margin:28px 0;padding:18px 20px;background:#fff5e9;border-left:3px solid #e5a27e;color:#4f584f;font-size:13px;line-height:1.75}.step-tip strong{color:var(--red)}.share-strip{display:flex;gap:10px;margin-top:50px}.share-strip a,.share-strip button{flex:1;min-height:48px;display:grid;place-items:center;border:1px solid var(--line);background:white;font-size:12px}.affiliate-box{margin-top:60px;padding:30px;text-align:center;background:var(--green);color:white}.affiliate-box h2{margin:0;color:white}.affiliate-box p{color:#d8e0da}.affiliate-box a{margin-top:10px}@media(max-width:600px){.article-hero{margin-top:25px}.article-body{font-size:15px}.article-body h2{font-size:24px}.ingredient-panel{grid-template-columns:1fr}.ingredient-panel img{width:180px;height:120px}.step-figure{width:100%}}
+.article-page{background:#fffdf9}
+.article-nav{width:min(900px,calc(100% - 40px));margin:auto;padding:30px 0;display:flex;justify-content:space-between;align-items:center}
+.article-nav>a:last-child{font-size:12px;font-weight:700}
+.article-hero{width:min(900px,calc(100% - 40px));margin:45px auto 0;text-align:center}
+.article-hero h1{margin:16px auto 20px;max-width:760px;font:700 clamp(32px,5vw,52px)/1.3 var(--serif);letter-spacing:-.05em}
+.article-hero .lead{max-width:650px;margin:0 auto 30px;color:var(--muted);font-size:15px;line-height:1.9}
+.article-meta{margin-bottom:36px;color:#8b8f8a;font-size:11px}
+.article-cover{width:min(760px,calc(100% - 40px));margin:auto}
+.article-cover::after{content:'ⓒ오먹지';display:block;margin-top:5px;color:#959995;font-size:9px;line-height:1.5;text-align:right}
+.article-cover img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.article-body{width:min(720px,calc(100% - 40px));margin:65px auto 100px;font-size:16px;line-height:2}
+.article-body h2{margin:60px 0 18px;font:700 27px/1.45 var(--serif);letter-spacing:-.035em}
+.article-body p{color:#404640}
+.recipe-tags{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 24px;padding:0;list-style:none}
+.recipe-tags li{padding:6px 10px;color:var(--green);border:1px solid #cfdbcf;border-radius:999px;background:#f4f8f2;font-size:10px;line-height:1}
+.ingredient-panel{display:grid;grid-template-columns:240px 1fr;gap:28px;margin:35px 0 50px;padding-top:25px;border-top:2px solid #9a796b}
+.ingredient-panel figure{margin:0}
+.ingredient-panel img{display:block;width:240px;height:160px;object-fit:cover}
+.ingredient-list{display:grid;grid-template-columns:1fr auto;gap:6px 20px;margin:0;padding:0;list-style:none;font-size:14px;line-height:1.55}
+.ingredient-list span:nth-child(even){color:#707670;text-align:right}
+.step-title{font-size:21px!important}
+.recipe-steps{margin:0;padding:0;list-style:none;counter-reset:step}
+.recipe-steps li{position:relative;margin-bottom:18px;padding:0 0 22px 52px;border-bottom:1px solid #ebe8e0;color:#404640;line-height:1.8;counter-increment:step}
+.recipe-steps li::before{content:counter(step);position:absolute;left:0;top:1px;width:34px;height:34px;display:grid;place-items:center;color:white;background:var(--green);border-radius:50%;font:700 12px/1 var(--sans)}
+.recipe-steps strong{display:block;color:var(--ink);font-family:var(--serif);font-size:16px}
+.step-figure{width:min(520px,100%);margin:16px 0 2px}
+.step-figure img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.step-figure figcaption,.ingredient-panel figcaption{margin-top:7px;color:#747a74;font-size:11px;line-height:1.65}
+.article-page figcaption{min-height:15px;margin-top:7px;color:transparent;font-size:0;line-height:0;text-align:right}
+.article-page figcaption::after{content:'ⓒ오먹지';display:block;margin-top:4px;color:#959995;font-size:9px;line-height:1.5;text-align:right}
+.step-tip{margin:28px 0;padding:18px 20px;background:#fff5e9;border-left:3px solid #e5a27e;color:#4f584f;font-size:13px;line-height:1.75}
+.step-tip strong{color:var(--red)}
+.share-strip{display:flex;gap:10px;margin-top:50px}
+.share-strip a,.share-strip button{flex:1;min-height:48px;display:grid;place-items:center;border:1px solid var(--line);background:white;font-size:12px}
+.affiliate-box{margin-top:60px;padding:30px;text-align:center;background:var(--green);color:white}
+.affiliate-box h2{margin:0;color:white}
+.affiliate-box p{color:#d8e0da}
+.affiliate-box a{margin-top:10px}
+@media(max-width:600px){.article-hero{margin-top:25px}
+.article-body{font-size:15px}
+.article-body h2{font-size:24px}
+.ingredient-panel{grid-template-columns:1fr}
+.ingredient-panel img{width:180px;height:120px}
+.step-figure{width:100%}
+}
