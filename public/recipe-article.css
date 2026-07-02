@@ -30,6 +30,7 @@
 .article-page figcaption::after{content:'ⓒ오먹지';display:block;margin-top:4px;color:#959995;font-size:9px;line-height:1.5;text-align:right}
 .step-tip{margin:28px 0;padding:18px 20px;background:#fff5e9;border-left:3px solid #e5a27e;color:#4f584f;font-size:13px;line-height:1.75}
 .step-tip strong{color:var(--red)}
+.article-faq{margin-top:64px;padding-top:8px;border-top:2px solid #9a796b}.article-faq h2{margin:28px 0 14px}.article-faq details{border-bottom:1px solid #e5e2da}.article-faq summary{position:relative;padding:17px 34px 17px 0;cursor:pointer;color:var(--ink);font-size:14px;font-weight:700;list-style:none}.article-faq summary::-webkit-details-marker{display:none}.article-faq summary::after{content:'+';position:absolute;right:4px;top:14px;color:var(--green);font:400 22px/1 var(--serif)}.article-faq details[open] summary::after{content:'−'}.article-faq details p{margin:0;padding:0 30px 18px 0;color:#596159;font-size:13px;line-height:1.8}
 .share-strip{display:flex;gap:10px;margin-top:50px}
 .share-strip a,.share-strip button{flex:1;min-height:48px;display:grid;place-items:center;border:1px solid var(--line);background:white;font-size:12px}
 .affiliate-box{margin-top:60px;padding:30px;text-align:center;background:var(--green);color:white}

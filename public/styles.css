@@ -129,6 +129,7 @@ img { max-width: 100%; }
 .article-copy { align-self: center; padding: 55px clamp(35px, 6vw, 85px); }
 .article-copy h3 { margin: 0 0 25px; font-family: var(--serif); font-size: clamp(32px, 3.4vw, 47px); line-height: 1.35; letter-spacing: -.04em; }
 .article-copy > p:not(.eyebrow) { margin: 0 0 35px; color: var(--muted); font-size: 13px; line-height: 1.9; }
+.article-faq{margin-top:64px;padding-top:8px;border-top:2px solid #9a796b}.article-faq h2{margin:28px 0 14px}.article-faq details{border-bottom:1px solid #e5e2da}.article-faq summary{position:relative;padding:17px 34px 17px 0;cursor:pointer;color:var(--ink);font-size:14px;font-weight:700;list-style:none}.article-faq summary::-webkit-details-marker{display:none}.article-faq summary::after{content:'+';position:absolute;right:4px;top:14px;color:var(--green);font:400 22px/1 var(--serif)}.article-faq details[open] summary::after{content:'−'}.article-faq details p{margin:0;padding:0 30px 18px 0;color:#596159;font-size:13px;line-height:1.8}
 .article-list{display:grid;gap:28px;margin-top:28px}.compact-feature{min-height:420px}.compact-feature .article-image{min-height:360px}.compact-feature .article-copy h3{font-size:clamp(28px,3vw,40px)}
 
 .site-footer { padding: 58px max(24px, calc((100% - 1180px)/2)); color: #dce3dd; background: #18241d; }
