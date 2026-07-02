@@ -59,7 +59,15 @@ const publishedMenus = [
   { id: 'chicken-fried-rice', title: '파기름 치킨 볶음밥', copy: '파기름 향과 씹는 맛을 살린 든든한 한 끼를 추천해요.', image: '/images/leftover-chicken/04-scallion-fried-rice.webp', url: '/articles/leftover-chicken.html#chicken-fried-rice', tags: ['밥','든든','고소','짭짤','볶음','간단','10분','혼밥','따뜻','씹는맛','한식'] },
   { id: 'chicken-tortilla', title: '매콤 치킨 또띠아', copy: '손으로 가볍게 집어 먹는 매콤하고 바삭한 메뉴가 어울려요.', image: '/images/leftover-chicken/05-spicy-tortilla.webp', url: '/articles/leftover-chicken.html#chicken-tortilla', tags: ['분식','빵','고기','매콤','간단','10분','손으로','가벼운','씹는맛','간식'] },
   { id: 'chicken-salad', title: '산뜻한 치킨 샐러드', copy: '부담은 줄이고 신선한 채소와 바삭한 식감은 살린 선택이에요.', image: '/images/leftover-chicken/06-chicken-salad.webp', url: '/articles/leftover-chicken.html#chicken-salad', tags: ['고기','가벼운','산뜻','순한','차가운','채소','간단','건강','바삭','혼밥','8분'] },
-  { id: 'chicken-ramen', title: '얼큰 치킨 라면', copy: '후루룩 넘어가는 따뜻하고 얼큰한 국물이 필요한 날이에요.', image: '/images/leftover-chicken/07-spicy-ramen.webp', url: '/articles/leftover-chicken.html#chicken-ramen', tags: ['면','국물','매콤','얼큰','따뜻','든든','간단','10분','야식','후루룩','한식'] }
+  { id: 'chicken-ramen', title: '얼큰 치킨 라면', copy: '후루룩 넘어가는 따뜻하고 얼큰한 국물이 필요한 날이에요.', image: '/images/leftover-chicken/07-spicy-ramen.webp', url: '/articles/leftover-chicken.html#chicken-ramen', tags: ['면','국물','매콤','얼큰','따뜻','든든','간단','10분','야식','후루룩','한식'] },
+  { id: 'egg-fried-rice', title: '파기름 계란볶음밥', copy: '찬밥과 달걀 두 개로 빠르게 만드는 고소한 한 끼예요.', image: '/images/egg-fried-rice/04-finish-640.webp', url: '/articles/egg-fried-rice.html', tags: ['밥','달걀','고소','순한','볶음','간단','10분','혼밥','따뜻','한식'] },
+  { id: 'kimchi-fried-rice', title: '신김치 계란볶음밥', copy: '신김치의 감칠맛을 고슬고슬한 찬밥에 살렸어요.', image: '/images/kimchi-fried-rice/04-finish-640.webp', url: '/articles/kimchi-fried-rice.html', tags: ['밥','김치','매콤','볶음','간단','12분','혼밥','따뜻','한식'] },
+  { id: 'tuna-mayo-rice', title: '양파조림 참치마요 덮밥', copy: '부드러운 참치마요와 짭짤한 양파조림을 한 그릇에 담았어요.', image: '/images/tuna-mayo-rice/04-finish-640.webp', url: '/articles/tuna-mayo-rice.html', tags: ['밥','참치','고소','부드러운','간단','10분','혼밥','따뜻','한식'] },
+  { id: 'potato-jjageuli', title: '스팸 감자짜글이', copy: '포슬한 감자와 얼큰한 국물이 밥을 부르는 메뉴예요.', image: '/images/potato-jjageuli/04-finish-640.webp', url: '/articles/potato-jjageuli.html', tags: ['국물','고기','매콤','얼큰','든든','따뜻','20분','한식'] },
+  { id: 'frozen-dumpling-hotpot', title: '얼큰 냉동만두 전골', copy: '냉동만두와 채소로 국물까지 든든하게 채워요.', image: '/images/frozen-dumpling-hotpot/04-finish-640.webp', url: '/articles/frozen-dumpling-hotpot.html', tags: ['국물','만두','매콤','얼큰','든든','따뜻','20분','한식'] },
+  { id: 'tofu-egg-pancake', title: '촉촉한 두부계란전', copy: '두부 한 모와 달걀로 부드럽고 고소하게 부쳤어요.', image: '/images/tofu-egg-pancake/04-finish-640.webp', url: '/articles/tofu-egg-pancake.html', tags: ['두부','달걀','고소','순한','부드러운','건강','15분','한식'] },
+  { id: 'vegetable-curry', title: '자투리 채소 카레', copy: '냉장고 채소 다섯 가지를 든든한 한 그릇으로 바꿔요.', image: '/images/vegetable-curry/04-finish-640.webp', url: '/articles/vegetable-curry.html', tags: ['밥','채소','순한','든든','건강','따뜻','25분','한그릇'] },
+  { id: 'leftover-pork-belly-rice', title: '양파간장 삼겹살 덮밥', copy: '남은 삼겹살을 촉촉한 양파간장 소스로 되살렸어요.', image: '/images/leftover-pork-belly-rice/04-finish-640.webp', url: '/articles/leftover-pork-belly-rice.html', tags: ['밥','고기','짭짤','든든','간단','10분','혼밥','따뜻','한식'] }
 ];
 
 function renderPublishedMenus() {
