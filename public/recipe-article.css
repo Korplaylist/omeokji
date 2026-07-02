@@ -17,6 +17,8 @@
 .ingredient-panel figure{margin:0}
 .ingredient-panel img{display:block;width:240px;height:160px;object-fit:cover}
 .ingredient-list{display:grid;grid-template-columns:1fr auto;gap:6px 20px;margin:0;padding:0;list-style:none;font-size:14px;line-height:1.55}
+.guide-recipe>.ingredient-list{margin:14px 0 38px;padding:22px 20px;border:1px solid #d9e1d7;border-radius:3px;background:#f3f7f1;box-shadow:0 8px 24px rgba(30,55,39,.04)}
+.guide-recipe>.recipe-steps{margin-top:4px}
 .ingredient-list span:nth-child(even){color:#707670;text-align:right}
 .step-title{font-size:21px!important}
 .recipe-steps{margin:0;padding:0;list-style:none;counter-reset:step}
@@ -42,5 +44,6 @@
 .article-body h2{font-size:24px}
 .ingredient-panel{grid-template-columns:1fr}
 .ingredient-panel img{width:180px;height:120px}
+.guide-recipe>.ingredient-list{margin-bottom:34px;padding:20px 18px;gap:8px 18px}
 .step-figure{width:100%}
 }
