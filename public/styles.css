@@ -129,6 +129,7 @@ img { max-width: 100%; }
 .article-copy { align-self: center; padding: 55px clamp(35px, 6vw, 85px); }
 .article-copy h3 { margin: 0 0 25px; font-family: var(--serif); font-size: clamp(32px, 3.4vw, 47px); line-height: 1.35; letter-spacing: -.04em; }
 .article-copy > p:not(.eyebrow) { margin: 0 0 35px; color: var(--muted); font-size: 13px; line-height: 1.9; }
+.article-list{display:grid;gap:28px;margin-top:28px}.compact-feature{min-height:420px}.compact-feature .article-image{min-height:360px}.compact-feature .article-copy h3{font-size:clamp(28px,3vw,40px)}
 
 .site-footer { padding: 58px max(24px, calc((100% - 1180px)/2)); color: #dce3dd; background: #18241d; }
 .footer-top { display: flex; justify-content: space-between; padding-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,.13); }
