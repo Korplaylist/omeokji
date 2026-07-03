@@ -24,7 +24,11 @@ assert(!/clientWidth|scrollWidth|offsetWidth|offsetHeight|getBoundingClientRect/
 assert(app.includes('alt="${menu.title} 완성 모습"'), '레시피 카드 이미지에 설명형 대체텍스트가 필요합니다.');
 assert(app.includes("'#recipes': document.getElementById('recipes')") && app.includes("'#articles': document.getElementById('articles')"), '홈 메뉴의 섹션 단독 보기 기능이 없습니다.');
 const recommendations = read('public/recommendations.js');
-assert(recommendations.includes('class="article-nav-links"') && recommendations.includes('href="/#articles"'), '상세 글 공통 메뉴가 없습니다.');
+assert(recommendations.includes('class="article-nav-links"') && recommendations.includes('href="/guides.html"'), '상세 글 공통 메뉴가 없습니다.');
+const recipesDirectory = read('public/recipes.html');
+const guidesDirectory = read('public/guides.html');
+assert((recipesDirectory.match(/class="recipe-card"/g) || []).length === 30, '레시피 전용 페이지에 전체 메뉴 30개가 없습니다.');
+assert((guidesDirectory.match(/class="guide-card"/g) || []).length === 4, '활용백서 전용 페이지의 글 수가 맞지 않습니다.');
 
 const menuImages = [...app.matchAll(/image:\s*'([^']+-640\.webp)'/g)].map((match) => match[1]);
 assert(menuImages.length >= 30, `메뉴 이미지가 부족합니다: ${menuImages.length}`);

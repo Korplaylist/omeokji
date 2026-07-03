@@ -34,7 +34,7 @@ const shareStrip = document.querySelector('.share-strip');
 const articleNav = document.querySelector('.article-nav');
 if (articleNav) {
   articleNav.setAttribute('aria-label', '주요 메뉴');
-  articleNav.innerHTML = `<a class="brand" href="/" aria-label="오먹지 홈"><span class="brand-mark">오</span><span>오먹지</span></a><div class="article-nav-links"><a href="/#recipes">레시피</a><a href="/#articles">활용백서</a><a class="nav-test" href="/#taste-test">오늘 뭐 먹지?</a></div>`;
+  articleNav.innerHTML = `<a class="brand" href="/" aria-label="오먹지 홈"><span class="brand-mark">오</span><span>오먹지</span></a><div class="article-nav-links"><a href="/recipes.html">레시피</a><a href="/guides.html">활용백서</a><a class="nav-test" href="/#taste-test">오늘 뭐 먹지?</a></div>`;
 }
 if (shareStrip) {
   const currentPath = location.pathname;
