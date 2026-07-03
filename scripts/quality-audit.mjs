@@ -12,10 +12,12 @@ const index = read('public/index.html');
 const app = read('public/app.js');
 const styles = read('public/styles.css').trim();
 const worker = read('src/index.js');
+const wrangler = read('wrangler.toml');
 assert(index.includes('https://omeokji.com/'), '홈 canonical 주소는 omeokji.com이어야 합니다.');
 assert(!index.includes('omeokji.korplaylist-hong.workers.dev'), '홈에 이전 workers.dev 대표 주소가 남아 있습니다.');
 assert(worker.includes("url.hostname === 'www.omeokji.com'") && worker.includes("url.hostname = 'omeokji.com'"), 'www 주소의 대표 도메인 이동이 없습니다.');
 assert(worker.includes('LEGACY_TO_SEO') && worker.includes('SEO_TO_LEGACY'), '기존 글 주소의 SEO 주소 전환 규칙이 없습니다.');
+assert(wrangler.includes('run_worker_first = true'), 'SEO 주소 이동 규칙보다 정적 자산 처리가 먼저 실행되고 있습니다.');
 
 for (const asset of ['public/images/brand-mark.svg','public/images/logo.svg','public/favicon.svg','public/site.webmanifest']) {
   assert(fs.existsSync(path.join(root, asset)), `브랜드 자산 누락: ${asset}`);
