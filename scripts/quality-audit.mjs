@@ -33,9 +33,10 @@ const collectHtml = (directory) => fs.readdirSync(directory,{withFileTypes:true}
   else if(entry.name.endsWith('.html')) htmlFiles.push(target);
 });
 collectHtml(path.join(root,'public'));
-for (const file of htmlFiles) assert(fs.readFileSync(file,'utf8').includes('href="/favicon.svg"'), `파비콘 연결 누락: ${path.relative(root,file)}`);
-for (const file of htmlFiles) assert(fs.readFileSync(file,'utf8').includes('type="application/rss+xml"'), `RSS 자동 발견 링크 누락: ${path.relative(root,file)}`);
-for (const file of htmlFiles) assert(!fs.readFileSync(file,'utf8').includes('/articles/'), `이전 글 주소가 남아 있습니다: ${path.relative(root,file)}`);
+const siteHtmlFiles = htmlFiles.filter((file) => !path.basename(file).startsWith('naver'));
+for (const file of siteHtmlFiles) assert(fs.readFileSync(file,'utf8').includes('href="/favicon.svg"'), `파비콘 연결 누락: ${path.relative(root,file)}`);
+for (const file of siteHtmlFiles) assert(fs.readFileSync(file,'utf8').includes('type="application/rss+xml"'), `RSS 자동 발견 링크 누락: ${path.relative(root,file)}`);
+for (const file of siteHtmlFiles) assert(!fs.readFileSync(file,'utf8').includes('/articles/'), `이전 글 주소가 남아 있습니다: ${path.relative(root,file)}`);
 assert(styles.includes("url('/images/brand-mark.svg')"), '공통 헤더에 새 로고 심볼이 연결되지 않았습니다.');
 
 assert(index.includes(`<style data-home-inline>\n${styles}\n    </style>`), '홈 인라인 CSS가 styles.css와 동기화되지 않았습니다. npm run sync:home-css를 실행하세요.');

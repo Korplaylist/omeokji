@@ -102,6 +102,11 @@ async function searchCoupang(request, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === '/naver662ff303ae0a24904033905293be4ba9.html') {
+      return new Response('naver-site-verification: naver662ff303ae0a24904033905293be4ba9.html', {
+        headers: { 'content-type': 'text/plain; charset=utf-8' }
+      });
+    }
     if (url.hostname === 'www.omeokji.com') {
       url.hostname = 'omeokji.com';
       return Response.redirect(url.toString(), 301);
