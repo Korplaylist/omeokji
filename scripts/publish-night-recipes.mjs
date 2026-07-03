@@ -50,10 +50,17 @@ const recipes = [
 ];
 
 const base='https://omeokji.com';
+const seoSlugs={
+  'night-bibim-guksu':'spicy-bibim-guksu',
+  'microwave-corn-cheese':'microwave-corn-cheese',
+  'sundubu-egg-soup':'sundubu-egg-soup',
+  'crispy-kimchi-jeon':'crispy-kimchi-pancake',
+  'simple-fishcake-soup':'korean-fish-cake-soup'
+};
 const esc=(value)=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 
 function render(recipe){
-  const url=`${base}/articles/${recipe.slug}.html`;
+  const url=`${base}/recipes/${seoSlugs[recipe.slug]}`;
   const image=`${base}/images/${recipe.slug}/04-finish-1080.webp`;
   const recipeIngredient=recipe.ingredients.map(([name,amount])=>`${name} ${amount}`);
   const instructions=recipe.steps.map(([name,text],index)=>({ '@type':'HowToStep', name, text, url:`${url}#step-${index+1}`, image:`${base}/images/${recipe.slug}/${String(index+1).padStart(2,'0')}-${index===3?'finish':'step'}-1080.webp` }));

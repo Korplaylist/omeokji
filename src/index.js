@@ -1,6 +1,32 @@
 const COUPANG_HOST = 'api-gateway.coupang.com';
 const COUPANG_SEARCH_PATH = '/v2/providers/affiliate_open_api/apis/openapi/v1/products/search';
 
+const RECIPE_PATHS = {
+  'crispy-kimchi-jeon': 'crispy-kimchi-pancake',
+  'dakgalbi-fried-rice': 'cheese-dakgalbi-fried-rice',
+  'egg-fried-rice': 'easy-egg-fried-rice',
+  'frozen-dumpling-hotpot': 'spicy-frozen-dumpling-hotpot',
+  'kimchi-fried-rice': 'kimchi-fried-rice-recipe',
+  'leftover-bread': 'leftover-bread-recipes',
+  'leftover-chicken': 'leftover-chicken-recipes',
+  'leftover-gimbap': 'leftover-gimbap-recipes',
+  'leftover-jokbal': 'leftover-jokbal-recipes',
+  'leftover-pork-belly-rice': 'leftover-pork-belly-rice-bowl',
+  'microwave-corn-cheese': 'microwave-corn-cheese',
+  'night-bibim-guksu': 'spicy-bibim-guksu',
+  'potato-jjageuli': 'spam-potato-jjageuli',
+  'simple-fishcake-soup': 'korean-fish-cake-soup',
+  'sundubu-egg-soup': 'sundubu-egg-soup',
+  'tofu-egg-pancake': 'tofu-egg-pancake',
+  'tofu-kimchi': 'tofu-kimchi-recipe',
+  'tteokbokki': 'korean-tteokbokki',
+  'tuna-mayo-rice': 'tuna-mayo-rice-bowl',
+  'vegetable-curry': 'leftover-vegetable-curry'
+};
+
+const LEGACY_TO_SEO = new Map(Object.entries(RECIPE_PATHS));
+const SEO_TO_LEGACY = new Map(Object.entries(RECIPE_PATHS).map(([legacy, seo]) => [seo, legacy]));
+
 function json(data, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(data), {
     status,
@@ -83,6 +109,19 @@ export default {
     }
     if (url.pathname === '/api/coupang/search' && request.method === 'GET') {
       return searchCoupang(request, env);
+    }
+
+    const legacyMatch = url.pathname.match(/^\/articles\/([^/]+?)(?:\.html)?\/?$/);
+    if (legacyMatch && LEGACY_TO_SEO.has(legacyMatch[1])) {
+      url.pathname = `/recipes/${LEGACY_TO_SEO.get(legacyMatch[1])}`;
+      return Response.redirect(url.toString(), 301);
+    }
+
+    const recipeMatch = url.pathname.match(/^\/recipes\/([^/]+)\/?$/);
+    if (recipeMatch && SEO_TO_LEGACY.has(recipeMatch[1])) {
+      const assetUrl = new URL(request.url);
+      assetUrl.pathname = `/articles/${SEO_TO_LEGACY.get(recipeMatch[1])}.html`;
+      return env.ASSETS.fetch(new Request(assetUrl.toString(), request));
     }
     return env.ASSETS.fetch(request);
   }

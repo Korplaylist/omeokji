@@ -8,10 +8,10 @@ const arrayStart = app.indexOf('const publishedMenus = [') + 'const publishedMen
 const arrayEnd = app.indexOf('\n];', arrayStart) + 2;
 const menus = vm.runInNewContext(`(${app.slice(arrayStart,arrayEnd)})`);
 const guides = [
-  {title:'남은 치킨 활용 레시피 5가지',copy:'프라이팬 데우기부터 덮밥·볶음밥·또띠아·샐러드·라면까지 정리했습니다.',image:'/images/leftover-chicken/01-ingredients-anchor-640.webp',url:'/articles/leftover-chicken.html',meta:'5 RECIPES · 12 MIN READ'},
-  {title:'남은 김밥 활용 레시피 3가지',copy:'딱딱해진 냉장 김밥을 전·볶음밥·전골로 되살리는 방법입니다.',image:'/images/leftover-gimbap/00-cover-640.webp',url:'/articles/leftover-gimbap.html',meta:'3 RECIPES · 10 MIN READ'},
-  {title:'남은 식빵 활용 레시피 3가지',copy:'촉촉한 프렌치토스트부터 바삭한 러스크와 식빵피자까지 알려드립니다.',image:'/images/leftover-bread/00-cover-640.webp',url:'/articles/leftover-bread.html',meta:'3 RECIPES · 10 MIN READ'},
-  {title:'남은 족발 활용 레시피 3가지',copy:'질기지 않게 다시 데워 덮밥·볶음밥·냉채로 활용합니다.',image:'/images/leftover-jokbal/00-cover-640.webp',url:'/articles/leftover-jokbal.html',meta:'3 RECIPES · 12 MIN READ'}
+  {title:'남은 치킨 활용 레시피 5가지',copy:'프라이팬 데우기부터 덮밥·볶음밥·또띠아·샐러드·라면까지 정리했습니다.',image:'/images/leftover-chicken/01-ingredients-anchor-640.webp',url:'/recipes/leftover-chicken-recipes',meta:'5 RECIPES · 12 MIN READ'},
+  {title:'남은 김밥 활용 레시피 3가지',copy:'딱딱해진 냉장 김밥을 전·볶음밥·전골로 되살리는 방법입니다.',image:'/images/leftover-gimbap/00-cover-640.webp',url:'/recipes/leftover-gimbap-recipes',meta:'3 RECIPES · 10 MIN READ'},
+  {title:'남은 식빵 활용 레시피 3가지',copy:'촉촉한 프렌치토스트부터 바삭한 러스크와 식빵피자까지 알려드립니다.',image:'/images/leftover-bread/00-cover-640.webp',url:'/recipes/leftover-bread-recipes',meta:'3 RECIPES · 10 MIN READ'},
+  {title:'남은 족발 활용 레시피 3가지',copy:'질기지 않게 다시 데워 덮밥·볶음밥·냉채로 활용합니다.',image:'/images/leftover-jokbal/00-cover-640.webp',url:'/recipes/leftover-jokbal-recipes',meta:'3 RECIPES · 12 MIN READ'}
 ];
 const esc=(v)=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const header=(active)=>`<header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="오먹지 홈"><span class="brand-mark">오</span><span>오먹지</span></a><nav class="desktop-nav" aria-label="주요 메뉴"><a ${active==='recipes'?'aria-current="page" ':''}href="/recipes.html">레시피</a><a ${active==='guides'?'aria-current="page" ':''}href="/guides.html">활용백서</a><a class="nav-test" href="/#taste-test">오늘 뭐 먹지?</a></nav><span class="directory-spacer" aria-hidden="true"></span></div></header>`;

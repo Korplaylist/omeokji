@@ -15,6 +15,7 @@ const worker = read('src/index.js');
 assert(index.includes('https://omeokji.com/'), '홈 canonical 주소는 omeokji.com이어야 합니다.');
 assert(!index.includes('omeokji.korplaylist-hong.workers.dev'), '홈에 이전 workers.dev 대표 주소가 남아 있습니다.');
 assert(worker.includes("url.hostname === 'www.omeokji.com'") && worker.includes("url.hostname = 'omeokji.com'"), 'www 주소의 대표 도메인 이동이 없습니다.');
+assert(worker.includes('LEGACY_TO_SEO') && worker.includes('SEO_TO_LEGACY'), '기존 글 주소의 SEO 주소 전환 규칙이 없습니다.');
 
 for (const asset of ['public/images/brand-mark.svg','public/images/logo.svg','public/favicon.svg','public/site.webmanifest']) {
   assert(fs.existsSync(path.join(root, asset)), `브랜드 자산 누락: ${asset}`);
@@ -27,6 +28,7 @@ const collectHtml = (directory) => fs.readdirSync(directory,{withFileTypes:true}
 });
 collectHtml(path.join(root,'public'));
 for (const file of htmlFiles) assert(fs.readFileSync(file,'utf8').includes('href="/favicon.svg"'), `파비콘 연결 누락: ${path.relative(root,file)}`);
+for (const file of htmlFiles) assert(!fs.readFileSync(file,'utf8').includes('/articles/'), `이전 글 주소가 남아 있습니다: ${path.relative(root,file)}`);
 assert(styles.includes("url('/images/brand-mark.svg')"), '공통 헤더에 새 로고 심볼이 연결되지 않았습니다.');
 
 assert(index.includes(`<style data-home-inline>\n${styles}\n    </style>`), '홈 인라인 CSS가 styles.css와 동기화되지 않았습니다. npm run sync:home-css를 실행하세요.');
