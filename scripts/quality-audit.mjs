@@ -13,11 +13,14 @@ const app = read('public/app.js');
 const styles = read('public/styles.css').trim();
 const worker = read('src/index.js');
 const wrangler = read('wrangler.toml');
+const rss = read('public/rss.xml');
 assert(index.includes('https://omeokji.com/'), '홈 canonical 주소는 omeokji.com이어야 합니다.');
 assert(!index.includes('omeokji.korplaylist-hong.workers.dev'), '홈에 이전 workers.dev 대표 주소가 남아 있습니다.');
 assert(worker.includes("url.hostname === 'www.omeokji.com'") && worker.includes("url.hostname = 'omeokji.com'"), 'www 주소의 대표 도메인 이동이 없습니다.');
 assert(worker.includes('LEGACY_TO_SEO'), '기존 글 주소의 SEO 주소 전환 규칙이 없습니다.');
 assert(wrangler.includes('run_worker_first = true'), 'SEO 주소 이동 규칙보다 정적 자산 처리가 먼저 실행되고 있습니다.');
+assert(rss.includes('<rss version="2.0"') && rss.includes('https://omeokji.com/rss.xml'), 'RSS 2.0 피드 설정이 올바르지 않습니다.');
+assert((rss.match(/<item>/g) || []).length === 20, 'RSS에는 레시피 20개가 포함되어야 합니다.');
 
 for (const asset of ['public/images/brand-mark.svg','public/images/logo.svg','public/favicon.svg','public/site.webmanifest']) {
   assert(fs.existsSync(path.join(root, asset)), `브랜드 자산 누락: ${asset}`);
@@ -30,6 +33,7 @@ const collectHtml = (directory) => fs.readdirSync(directory,{withFileTypes:true}
 });
 collectHtml(path.join(root,'public'));
 for (const file of htmlFiles) assert(fs.readFileSync(file,'utf8').includes('href="/favicon.svg"'), `파비콘 연결 누락: ${path.relative(root,file)}`);
+for (const file of htmlFiles) assert(fs.readFileSync(file,'utf8').includes('type="application/rss+xml"'), `RSS 자동 발견 링크 누락: ${path.relative(root,file)}`);
 for (const file of htmlFiles) assert(!fs.readFileSync(file,'utf8').includes('/articles/'), `이전 글 주소가 남아 있습니다: ${path.relative(root,file)}`);
 assert(styles.includes("url('/images/brand-mark.svg')"), '공통 헤더에 새 로고 심볼이 연결되지 않았습니다.');
 
