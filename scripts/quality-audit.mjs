@@ -24,7 +24,18 @@ assert(!/clientWidth|scrollWidth|offsetWidth|offsetHeight|getBoundingClientRect/
 assert(app.includes('alt="${menu.title} 완성 모습"'), '레시피 카드 이미지에 설명형 대체텍스트가 필요합니다.');
 
 const menuImages = [...app.matchAll(/image:\s*'([^']+-640\.webp)'/g)].map((match) => match[1]);
-assert(menuImages.length >= 25, `메뉴 이미지가 부족합니다: ${menuImages.length}`);
+assert(menuImages.length >= 30, `메뉴 이미지가 부족합니다: ${menuImages.length}`);
+
+const nightMenus = [...app.matchAll(/tags:\s*\[[^\]]*'야식'[^\]]*\]/g)];
+assert(nightMenus.length === 7, `야식 카테고리는 정확히 7개여야 합니다: ${nightMenus.length}`);
+for (const slug of ['night-bibim-guksu','microwave-corn-cheese','sundubu-egg-soup','crispy-kimchi-jeon','simple-fishcake-soup']) {
+  const article = read(`public/articles/${slug}.html`);
+  assert(article.includes('class="ingredient-panel"'), `${slug}: 정확한 재료량 영역이 없습니다.`);
+  assert((article.match(/class="step-figure"/g) || []).length === 4, `${slug}: 단계별 이미지가 4개여야 합니다.`);
+  assert((article.match(/<details>/g) || []).length === 3, `${slug}: Q&A가 3개여야 합니다.`);
+  assert(article.includes('관련 재료 보기 →'), `${slug}: 관련 재료 영역이 없습니다.`);
+  assert(article.includes('FAQPage') && article.includes('"@type":"Recipe"'), `${slug}: 구조화 데이터가 없습니다.`);
+}
 
 for (const image of menuImages) {
   const large = path.join(root, 'public', image.replace(/^\//, ''));

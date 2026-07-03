@@ -80,7 +80,12 @@ const publishedMenus = [
   { id: 'bread-pizza', title: '채소 치즈 식빵피자', copy: '토마토소스와 치즈로 식빵을 든든하게 구웠어요.', image: '/images/leftover-bread/09-pizza-finish-640.webp', url: '/articles/leftover-bread.html#bread-pizza', tags: ['빵','치즈','채소','고소','간단','12분','간식','남은'] },
   { id: 'spicy-jokbal-bowl', title: '매콤 족발덮밥', copy: '남은 족발을 매콤 양파소스에 짧게 데워 촉촉해요.', image: '/images/leftover-jokbal/03-bowl-finish-640.webp', url: '/articles/leftover-jokbal.html#spicy-jokbal-bowl', tags: ['밥','고기','매콤','든든','간단','12분','혼밥','따뜻','한식','남은'] },
   { id: 'jokbal-fried-rice', title: '파기름 족발볶음밥', copy: '족발의 고소한 지방을 살린 12분 찬밥 요리예요.', image: '/images/leftover-jokbal/06-friedrice-finish-640.webp', url: '/articles/leftover-jokbal.html#jokbal-fried-rice', tags: ['밥','고기','볶음','고소','짭짤','간단','12분','혼밥','한식','남은'] },
-  { id: 'mustard-jokbal-salad', title: '겨자 족발냉채', copy: '오이와 양파를 더해 산뜻하고 가볍게 즐겨요.', image: '/images/leftover-jokbal/09-salad-finish-640.webp', url: '/articles/leftover-jokbal.html#mustard-jokbal-salad', tags: ['고기','차가운','산뜻','채소','간단','10분','건강','한식','남은'] }
+  { id: 'mustard-jokbal-salad', title: '겨자 족발냉채', copy: '오이와 양파를 더해 산뜻하고 가볍게 즐겨요.', image: '/images/leftover-jokbal/09-salad-finish-640.webp', url: '/articles/leftover-jokbal.html#mustard-jokbal-salad', tags: ['고기','차가운','산뜻','채소','간단','10분','건강','한식','남은'] },
+  { id: 'night-bibim-guksu', title: '10분 비빔국수', copy: '새콤매콤한 양념장이 야식으로 당기는 날 잘 어울려요.', image: '/images/night-bibim-guksu/04-finish-640.webp', url: '/articles/night-bibim-guksu.html', tags: ['면','매콤','새콤','간단','10분','야식','후루룩','한식'] },
+  { id: 'microwave-corn-cheese', title: '5분 전자레인지 콘치즈', copy: '톡톡 터지는 옥수수와 고소한 치즈를 5분 만에 즐겨요.', image: '/images/microwave-corn-cheese/04-finish-640.webp', url: '/articles/microwave-corn-cheese.html', tags: ['치즈','고소','간단','5분','야식','간식','전자레인지'] },
+  { id: 'sundubu-egg-soup', title: '속 편한 순두부 계란탕', copy: '부드러운 순두부와 달걀로 늦은 밤을 가볍게 채워요.', image: '/images/sundubu-egg-soup/04-finish-640.webp', url: '/articles/sundubu-egg-soup.html', tags: ['국물','순한','따뜻','가벼운','건강','간단','10분','야식','한식'] },
+  { id: 'crispy-kimchi-jeon', title: '바삭 김치전', copy: '신김치 반죽을 얇게 부쳐 바삭한 가장자리를 살렸어요.', image: '/images/crispy-kimchi-jeon/04-finish-640.webp', url: '/articles/crispy-kimchi-jeon.html', tags: ['분식','김치','매콤','바삭','간단','15분','야식','한식'] },
+  { id: 'simple-fishcake-soup', title: '15분 포장마차 어묵탕', copy: '멸치육수와 부드러운 어묵으로 따뜻한 밤을 만들어요.', image: '/images/simple-fishcake-soup/04-finish-640.webp', url: '/articles/simple-fishcake-soup.html', tags: ['국물','어묵','따뜻','든든','간단','15분','야식','한식'] }
 ];
 
 function renderPublishedMenus() {

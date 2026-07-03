@@ -22,7 +22,12 @@ const recommendationMenus = [
   { title:'채소 치즈 식빵피자', image:'/images/leftover-bread/09-pizza-finish-640.webp', url:'/articles/leftover-bread.html#bread-pizza', time:'12분' },
   { title:'매콤 족발덮밥', image:'/images/leftover-jokbal/03-bowl-finish-640.webp', url:'/articles/leftover-jokbal.html#spicy-jokbal-bowl', time:'12분' },
   { title:'파기름 족발볶음밥', image:'/images/leftover-jokbal/06-friedrice-finish-640.webp', url:'/articles/leftover-jokbal.html#jokbal-fried-rice', time:'12분' },
-  { title:'겨자 족발냉채', image:'/images/leftover-jokbal/09-salad-finish-640.webp', url:'/articles/leftover-jokbal.html#mustard-jokbal-salad', time:'10분' }
+  { title:'겨자 족발냉채', image:'/images/leftover-jokbal/09-salad-finish-640.webp', url:'/articles/leftover-jokbal.html#mustard-jokbal-salad', time:'10분' },
+  { title:'10분 비빔국수', image:'/images/night-bibim-guksu/04-finish-640.webp', url:'/articles/night-bibim-guksu.html', time:'10분' },
+  { title:'5분 전자레인지 콘치즈', image:'/images/microwave-corn-cheese/04-finish-640.webp', url:'/articles/microwave-corn-cheese.html', time:'5분' },
+  { title:'속 편한 순두부 계란탕', image:'/images/sundubu-egg-soup/04-finish-640.webp', url:'/articles/sundubu-egg-soup.html', time:'10분' },
+  { title:'바삭 김치전', image:'/images/crispy-kimchi-jeon/04-finish-640.webp', url:'/articles/crispy-kimchi-jeon.html', time:'15분' },
+  { title:'15분 포장마차 어묵탕', image:'/images/simple-fishcake-soup/04-finish-640.webp', url:'/articles/simple-fishcake-soup.html', time:'15분' }
 ];
 
 const shareStrip = document.querySelector('.share-strip');
