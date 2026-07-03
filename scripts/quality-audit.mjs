@@ -14,6 +14,7 @@ const styles = read('public/styles.css').trim();
 const worker = read('src/index.js');
 const wrangler = read('wrangler.toml');
 const rss = read('public/rss.xml');
+const robots = read('public/robots.txt');
 assert(index.includes('https://omeokji.com/'), '홈 canonical 주소는 omeokji.com이어야 합니다.');
 assert(!index.includes('omeokji.korplaylist-hong.workers.dev'), '홈에 이전 workers.dev 대표 주소가 남아 있습니다.');
 assert(worker.includes("url.hostname === 'www.omeokji.com'") && worker.includes("url.hostname = 'omeokji.com'"), 'www 주소의 대표 도메인 이동이 없습니다.');
@@ -21,6 +22,7 @@ assert(worker.includes('LEGACY_TO_SEO'), '기존 글 주소의 SEO 주소 전환
 assert(wrangler.includes('run_worker_first = true'), 'SEO 주소 이동 규칙보다 정적 자산 처리가 먼저 실행되고 있습니다.');
 assert(rss.includes('<rss version="2.0"') && rss.includes('https://omeokji.com/rss.xml'), 'RSS 2.0 피드 설정이 올바르지 않습니다.');
 assert((rss.match(/<item>/g) || []).length === 20, 'RSS에는 레시피 20개가 포함되어야 합니다.');
+assert(robots.includes('#DaumWebMasterTool:36ee997a824da771bd7f485cd80f7de269d19d1d784c674e0ae9308cfe70a29d:iZNCv451Url3LwoFuBYNGQ=='), 'Daum 웹마스터도구 PIN 코드가 없습니다.');
 
 for (const asset of ['public/images/brand-mark.svg','public/images/logo.svg','public/favicon.svg','public/site.webmanifest']) {
   assert(fs.existsSync(path.join(root, asset)), `브랜드 자산 누락: ${asset}`);

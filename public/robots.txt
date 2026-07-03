@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://omeokji.com/sitemap.xml
+#DaumWebMasterTool:36ee997a824da771bd7f485cd80f7de269d19d1d784c674e0ae9308cfe70a29d:iZNCv451Url3LwoFuBYNGQ==
