@@ -94,7 +94,7 @@ function renderPublishedMenus() {
     const smallImage = menu.image.replace('-640.webp', '-320.webp');
     return `<li class="recipe-card" data-title="${menu.title}" data-tags="${filterTags}">
       <a href="${menu.url}" aria-label="${menu.title} 레시피 보기">
-        <div class="recipe-image"><img src="${smallImage}" srcset="${smallImage} 320w, ${menu.image} 640w" sizes="(max-width:680px) calc((100vw - 44px)/2), (max-width:1200px) calc((100vw - 144px)/5), 217px" width="320" height="214" loading="lazy" decoding="async" alt="" />${badge}</div>
+        <div class="recipe-image"><img src="${smallImage}" width="320" height="214" loading="lazy" decoding="async" alt="${menu.title} 완성 모습" />${badge}</div>
         <div class="recipe-info"><p>${menu.copy}</p><h3>${menu.title}</h3><div><span>초급</span><span>${duration}</span></div></div>
       </a>
     </li>`;
@@ -104,32 +104,33 @@ function renderPublishedMenus() {
 
 renderPublishedMenus();
 
-function bindHorizontalCarousel(trackId, previousId, nextId) {
+function bindHorizontalCarousel(trackId, previousId, nextId, desktopStep = 1, mobileStep = 1) {
   const track = document.getElementById(trackId);
   const previous = document.getElementById(previousId);
   const next = document.getElementById(nextId);
   if (!track || !previous || !next) return;
-  let updateFrame = 0;
+  const cards = [...track.children];
+  let currentIndex = 0;
+  const step = () => window.matchMedia('(max-width: 680px)').matches ? mobileStep : desktopStep;
   const updateButtons = () => {
-    cancelAnimationFrame(updateFrame);
-    updateFrame = requestAnimationFrame(() => {
-      const { scrollLeft, clientWidth, scrollWidth } = track;
-      previous.disabled = scrollLeft <= 4;
-      next.disabled = scrollLeft + clientWidth >= scrollWidth - 4;
-    });
+    previous.disabled = currentIndex === 0;
+    next.disabled = currentIndex >= Math.max(0, cards.length - step());
   };
-  const move = (direction) => track.scrollBy({ left: direction * track.clientWidth * .9, behavior: 'smooth' });
+  const move = (direction) => {
+    currentIndex = Math.min(Math.max(0, currentIndex + direction * step()), Math.max(0, cards.length - step()));
+    cards[currentIndex]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    updateButtons();
+  };
   previous.addEventListener('click', () => move(-1));
   next.addEventListener('click', () => move(1));
-  track.addEventListener('scroll', updateButtons, { passive: true });
-  previous.disabled = true;
-  next.disabled = false;
+  window.addEventListener('resize', updateButtons, { passive: true });
+  updateButtons();
 }
 
 document.querySelectorAll('#articleCarousel .article-feature').forEach((card, index) => {
   if (index >= 8) card.remove();
 });
-bindHorizontalCarousel('recipeGrid', 'recipePrev', 'recipeNext');
+bindHorizontalCarousel('recipeGrid', 'recipePrev', 'recipeNext', 5, 4);
 bindHorizontalCarousel('articleCarousel', 'articlePrev', 'articleNext');
 
 const simpleQuestions = [

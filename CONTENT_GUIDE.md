@@ -75,3 +75,10 @@
 5. 홈의 전체 CSS는 렌더링 차단 없이 불러오고, 첫 화면에 필요한 최소 스타일만 문서 안에 유지한다.
 6. 새 메뉴와 이미지를 추가한 뒤 반드시 `npm run qa`를 통과시킨 뒤 배포한다.
 7. GitHub 배포 작업에서도 동일한 품질 검사를 실행하며 실패한 상태로 Cloudflare 배포를 진행하지 않는다.
+
+### 홈 성능 재발 방지 규칙
+
+1. 약 320px로 표시하는 레시피 카드는 `-320.webp`만 전송하며 640px `srcset` 후보를 추가하지 않는다.
+2. 캐러셀 JavaScript에서 `offsetWidth`, `clientWidth`, `scrollWidth`, `getBoundingClientRect()`를 사용하지 않는다. 카드 인덱스와 `scrollIntoView()`로 이동한다.
+3. 모든 레시피 카드 이미지는 음식명을 포함한 비어 있지 않은 `alt`를 작성한다.
+4. 위 규칙은 `npm run qa`에서 검사하며 실패하면 Cloudflare 배포를 중단한다.
