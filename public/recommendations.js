@@ -40,7 +40,7 @@ if (shareStrip) {
   const currentPath = location.pathname;
   const available = recommendationMenus.filter((menu) => new URL(menu.url, location.origin).pathname !== currentPath);
   const seed = [...currentPath].reduce((total, character) => total + character.charCodeAt(0), 0) % available.length;
-  const selected = Array.from({ length: 5 }, (_, index) => available[(seed + index * 3) % available.length]);
+  const selected = Array.from({ length: 10 }, (_, index) => available[(seed + index * 3) % available.length]);
   const section = document.createElement('section');
   section.className = 'related-recipes';
   section.setAttribute('aria-labelledby', 'related-recipes-title');

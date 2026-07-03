@@ -37,6 +37,8 @@ assert(app.includes('alt="${menu.title} 완성 모습"'), '레시피 카드 이�
 assert(app.includes("'#recipes': document.getElementById('recipes')") && app.includes("'#articles': document.getElementById('articles')"), '홈 메뉴의 섹션 단독 보기 기능이 없습니다.');
 const recommendations = read('public/recommendations.js');
 assert(recommendations.includes('class="article-nav-links"') && recommendations.includes('href="/guides.html"'), '상세 글 공통 메뉴가 없습니다.');
+assert(recommendations.includes('Array.from({ length: 10 }'), '상세 글 추천 레시피는 10개여야 합니다.');
+assert(styles.includes('grid-template-columns:repeat(5,minmax(0,1fr))'), 'PC 추천 레시피는 5열이어야 합니다.');
 const recipesDirectory = read('public/recipes.html');
 const guidesDirectory = read('public/guides.html');
 assert((recipesDirectory.match(/class="recipe-card"/g) || []).length === 30, '레시피 전용 페이지에 전체 메뉴 30개가 없습니다.');
