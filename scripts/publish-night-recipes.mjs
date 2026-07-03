@@ -49,7 +49,7 @@ const recipes = [
   }
 ];
 
-const base='https://omeokji.korplaylist-hong.workers.dev';
+const base='https://omeokji.com';
 const esc=(value)=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 
 function render(recipe){

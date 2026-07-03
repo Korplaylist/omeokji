@@ -11,6 +11,8 @@ const assert = (condition, message) => {
 const index = read('public/index.html');
 const app = read('public/app.js');
 const styles = read('public/styles.css').trim();
+assert(index.includes('https://omeokji.com/'), '홈 canonical 주소는 omeokji.com이어야 합니다.');
+assert(!index.includes('omeokji.korplaylist-hong.workers.dev'), '홈에 이전 workers.dev 대표 주소가 남아 있습니다.');
 
 for (const asset of ['public/images/brand-mark.svg','public/images/logo.svg','public/favicon.svg','public/site.webmanifest']) {
   assert(fs.existsSync(path.join(root, asset)), `브랜드 자산 누락: ${asset}`);
