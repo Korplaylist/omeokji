@@ -1,6 +1,27 @@
 let recipes = [];
 const toast = document.getElementById('toast');
 
+function showHomeSection() {
+  const hash = location.hash;
+  const sections = {
+    '#taste-test': document.getElementById('taste-test'),
+    '#recipes': document.getElementById('recipes'),
+    '#articles': document.getElementById('articles')
+  };
+  const focused = sections[hash];
+  const quickPicks = document.querySelector('.quick-picks');
+  if (!focused) {
+    Object.values(sections).forEach((section) => { if (section) section.hidden = false; });
+    if (quickPicks) quickPicks.hidden = false;
+    return;
+  }
+  Object.values(sections).forEach((section) => { if (section) section.hidden = section !== focused; });
+  if (quickPicks) quickPicks.hidden = true;
+}
+
+showHomeSection();
+window.addEventListener('hashchange', showHomeSection);
+
 function showToast(message) {
   toast.textContent = message;
   toast.classList.add('show');

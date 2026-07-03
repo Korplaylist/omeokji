@@ -67,7 +67,9 @@ function render(recipe){
 }
 
 for(const recipe of recipes){
-  const html = render(recipe).replace('/recommendations.js?v=20260702','/recommendations.js?v=20260703-night5');
+  const html = render(recipe)
+    .replace('/recipe-article.css?v=20260702','/recipe-article.css?v=20260703-section-nav')
+    .replace('/recommendations.js?v=20260702','/recommendations.js?v=20260703-section-nav');
   fs.writeFileSync(path.join(process.cwd(),'public','articles',`${recipe.slug}.html`),html,'utf8');
 }
 console.log(`야식 레시피 ${recipes.length}개를 생성했습니다.`);
