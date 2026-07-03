@@ -11,12 +11,13 @@ const assert = (condition, message) => {
 const index = read('public/index.html');
 const app = read('public/app.js');
 
-assert(index.includes('rel="preload" href="/styles.css?v=20260703-responsive" as="style"'), '홈 CSS preload가 없습니다.');
+assert(index.includes('rel="preload" href="/styles.css?v=20260703-pc220" as="style"'), '홈 CSS preload가 없습니다.');
 assert(index.includes('media="print" onload="this.media=\'all\'"'), '홈 CSS가 비차단 방식이 아닙니다.');
 assert(index.includes('<ul class="recipe-grid"'), '레시피 목록은 ul 요소여야 합니다.');
 assert(!index.includes('role="listitem"'), '허용되지 않은 명시적 listitem 역할이 남아 있습니다.');
 assert(app.includes('return `<li class="recipe-card"'), '레시피 카드는 li 요소여야 합니다.');
-assert(app.includes('src="${smallImage}" width="320" height="214"'), '레시피 카드는 320px 이미지를 직접 전송해야 합니다.');
+assert(app.includes('<picture><source media="(min-width:681px)" srcset="${compactImage}"'), 'PC 레시피 카드는 220px 전용 picture 소스를 제공해야 합니다.');
+assert(app.includes('<img src="${smallImage}" width="320" height="214"'), '모바일 레시피 카드는 320px 이미지를 제공해야 합니다.');
 assert(!app.includes('srcset="${smallImage} 320w, ${menu.image} 640w"'), '레시피 카드에 과도한 640px 후보가 남아 있습니다.');
 assert(!/clientWidth|scrollWidth|offsetWidth|offsetHeight|getBoundingClientRect/.test(app), '캐러셀 코드에 강제 리플로우를 유발하는 기하 측정이 있습니다.');
 assert(app.includes('alt="${menu.title} 완성 모습"'), '레시피 카드 이미지에 설명형 대체텍스트가 필요합니다.');
@@ -27,10 +28,15 @@ assert(menuImages.length >= 25, `메뉴 이미지가 부족합니다: ${menuImag
 for (const image of menuImages) {
   const large = path.join(root, 'public', image.replace(/^\//, ''));
   const small = large.replace('-640.webp', '-320.webp');
+  const compact = large.replace('-640.webp', '-220.webp');
   assert(fs.existsSync(large), `640px 이미지 누락: ${image}`);
   assert(fs.existsSync(small), `320px 이미지 누락: ${image.replace('-640.webp', '-320.webp')}`);
+  assert(fs.existsSync(compact), `220px 이미지 누락: ${image.replace('-640.webp', '-220.webp')}`);
   if (fs.existsSync(small)) {
     assert(fs.statSync(small).size <= 20 * 1024, `320px 이미지가 20KiB를 초과합니다: ${small}`);
+  }
+  if (fs.existsSync(compact)) {
+    assert(fs.statSync(compact).size <= 10 * 1024, `220px 이미지가 10KiB를 초과합니다: ${compact}`);
   }
 }
 

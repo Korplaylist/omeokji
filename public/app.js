@@ -92,9 +92,10 @@ function renderPublishedMenus() {
       ? '<span class="badge">BEST</span>'
       : '';
     const smallImage = menu.image.replace('-640.webp', '-320.webp');
+    const compactImage = menu.image.replace('-640.webp', '-220.webp');
     return `<li class="recipe-card" data-title="${menu.title}" data-tags="${filterTags}">
       <a href="${menu.url}" aria-label="${menu.title} 레시피 보기">
-        <div class="recipe-image"><img src="${smallImage}" width="320" height="214" loading="lazy" decoding="async" alt="${menu.title} 완성 모습" />${badge}</div>
+        <div class="recipe-image"><picture><source media="(min-width:681px)" srcset="${compactImage}" width="220" height="147" /><img src="${smallImage}" width="320" height="214" loading="lazy" decoding="async" alt="${menu.title} 완성 모습" /></picture>${badge}</div>
         <div class="recipe-info"><p>${menu.copy}</p><h3>${menu.title}</h3><div><span>초급</span><span>${duration}</span></div></div>
       </a>
     </li>`;

@@ -105,7 +105,8 @@ img { max-width: 100%; }
 .recipe-card { min-width:0;scroll-snap-align:start; }
 .recipe-card > a, .recipe-card > button { width: 100%; display: block; padding: 0; color: inherit; text-align: left; border: 0; background: transparent; cursor: pointer; }
 .recipe-image { position:relative; aspect-ratio:3/2; overflow:hidden; background:#eee8dc; transition:transform .35s ease,filter .35s ease; }
-.recipe-image img { display:block; width:100%; height:100%; object-fit:cover; }
+.recipe-image picture, .recipe-image img { display:block; width:100%; height:100%; }
+.recipe-image img { object-fit:cover; }
 .recipe-card:hover .recipe-image { transform: translateY(-4px); filter: saturate(1.08); }
 .crop-chicken { background-image: url('/images/leftover-chicken/03-chicken-mayo-bowl.webp'); background-size: cover; background-position: center; }
 .crop-tteokbokki { background-image:url('/images/tteokbokki/05-finish-640.webp');background-size:cover;background-position:center; }
