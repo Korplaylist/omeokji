@@ -16,7 +16,7 @@ const wrangler = read('wrangler.toml');
 assert(index.includes('https://omeokji.com/'), '홈 canonical 주소는 omeokji.com이어야 합니다.');
 assert(!index.includes('omeokji.korplaylist-hong.workers.dev'), '홈에 이전 workers.dev 대표 주소가 남아 있습니다.');
 assert(worker.includes("url.hostname === 'www.omeokji.com'") && worker.includes("url.hostname = 'omeokji.com'"), 'www 주소의 대표 도메인 이동이 없습니다.');
-assert(worker.includes('LEGACY_TO_SEO') && worker.includes('SEO_TO_LEGACY'), '기존 글 주소의 SEO 주소 전환 규칙이 없습니다.');
+assert(worker.includes('LEGACY_TO_SEO'), '기존 글 주소의 SEO 주소 전환 규칙이 없습니다.');
 assert(wrangler.includes('run_worker_first = true'), 'SEO 주소 이동 규칙보다 정적 자산 처리가 먼저 실행되고 있습니다.');
 
 for (const asset of ['public/images/brand-mark.svg','public/images/logo.svg','public/favicon.svg','public/site.webmanifest']) {
@@ -70,6 +70,19 @@ for (const slug of ['night-bibim-guksu','microwave-corn-cheese','sundubu-egg-sou
   assert((article.match(/<details>/g) || []).length === 3, `${slug}: Q&A가 3개여야 합니다.`);
   assert(article.includes('관련 재료 보기 →'), `${slug}: 관련 재료 영역이 없습니다.`);
   assert(article.includes('FAQPage') && article.includes('"@type":"Recipe"'), `${slug}: 구조화 데이터가 없습니다.`);
+}
+
+const seoRecipeFiles = fs.readdirSync(path.join(root,'public','recipes')).filter((file) => file.endsWith('.html'));
+assert(seoRecipeFiles.length === 20, `영문 SEO 레시피 파일은 20개여야 합니다: ${seoRecipeFiles.length}`);
+for (const sourceFile of fs.readdirSync(path.join(root,'public','articles')).filter((file) => file.endsWith('.html'))) {
+  const sourceHtml = read(`public/articles/${sourceFile}`);
+  const seoSlug = sourceHtml.match(/<link rel="canonical" href="https:\/\/omeokji\.com\/recipes\/([^"/]+)"/)?.[1];
+  assert(Boolean(seoSlug), `${sourceFile}: 영문 SEO canonical 주소가 없습니다.`);
+  if (seoSlug) {
+    const seoPath = path.join(root,'public','recipes',`${seoSlug}.html`);
+    assert(fs.existsSync(seoPath), `${sourceFile}: SEO 주소 파일이 없습니다.`);
+    if (fs.existsSync(seoPath)) assert(fs.readFileSync(seoPath,'utf8') === sourceHtml, `${sourceFile}: SEO 주소 파일이 최신 본문과 다릅니다.`);
+  }
 }
 
 for (const image of menuImages) {

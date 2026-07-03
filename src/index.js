@@ -25,7 +25,6 @@ const RECIPE_PATHS = {
 };
 
 const LEGACY_TO_SEO = new Map(Object.entries(RECIPE_PATHS));
-const SEO_TO_LEGACY = new Map(Object.entries(RECIPE_PATHS).map(([legacy, seo]) => [seo, legacy]));
 
 function json(data, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(data), {
@@ -117,12 +116,6 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    const recipeMatch = url.pathname.match(/^\/recipes\/([^/]+)\/?$/);
-    if (recipeMatch && SEO_TO_LEGACY.has(recipeMatch[1])) {
-      const assetUrl = new URL(request.url);
-      assetUrl.pathname = `/articles/${SEO_TO_LEGACY.get(recipeMatch[1])}.html`;
-      return env.ASSETS.fetch(new Request(assetUrl.toString(), request));
-    }
     return env.ASSETS.fetch(request);
   }
 };

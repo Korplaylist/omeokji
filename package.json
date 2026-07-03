@@ -7,6 +7,7 @@
     "deploy": "wrangler deploy",
     "qa": "node scripts/quality-audit.mjs",
     "sync:home-css": "node scripts/inline-home-css.mjs",
+    "sync:seo-recipes": "node scripts/sync-seo-recipes.mjs",
     "build:directories": "node scripts/build-directory-pages.mjs",
     "sync:brand": "node scripts/sync-brand-head.mjs"
   },
