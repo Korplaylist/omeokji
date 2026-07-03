@@ -12,6 +12,19 @@ const index = read('public/index.html');
 const app = read('public/app.js');
 const styles = read('public/styles.css').trim();
 
+for (const asset of ['public/images/brand-mark.svg','public/images/logo.svg','public/favicon.svg','public/site.webmanifest']) {
+  assert(fs.existsSync(path.join(root, asset)), `브랜드 자산 누락: ${asset}`);
+}
+const htmlFiles = [];
+const collectHtml = (directory) => fs.readdirSync(directory,{withFileTypes:true}).forEach((entry) => {
+  const target = path.join(directory,entry.name);
+  if(entry.isDirectory()) collectHtml(target);
+  else if(entry.name.endsWith('.html')) htmlFiles.push(target);
+});
+collectHtml(path.join(root,'public'));
+for (const file of htmlFiles) assert(fs.readFileSync(file,'utf8').includes('href="/favicon.svg"'), `파비콘 연결 누락: ${path.relative(root,file)}`);
+assert(styles.includes("url('/images/brand-mark.svg')"), '공통 헤더에 새 로고 심볼이 연결되지 않았습니다.');
+
 assert(index.includes(`<style data-home-inline>\n${styles}\n    </style>`), '홈 인라인 CSS가 styles.css와 동기화되지 않았습니다. npm run sync:home-css를 실행하세요.');
 assert(!index.includes('href="/styles.css'), '홈에서 외부 CSS를 후적용하면 레이아웃 재계산이 발생할 수 있습니다.');
 assert(index.includes('<ul class="recipe-grid"'), '레시피 목록은 ul 요소여야 합니다.');
