@@ -82,3 +82,4 @@
 2. 캐러셀 JavaScript에서 `offsetWidth`, `clientWidth`, `scrollWidth`, `getBoundingClientRect()`를 사용하지 않는다. 카드 인덱스와 `scrollIntoView()`로 이동한다.
 3. 모든 레시피 카드 이미지는 음식명을 포함한 비어 있지 않은 `alt`를 작성한다.
 4. 위 규칙은 `npm run qa`에서 검사하며 실패하면 Cloudflare 배포를 중단한다.
+5. 홈은 전체 CSS를 인라인하여 외부 스타일의 후적용에 따른 강제 리플로우를 방지한다. `styles.css`를 수정한 뒤 반드시 `npm run sync:home-css`를 실행하며, 동기화되지 않으면 QA와 배포가 실패한다.

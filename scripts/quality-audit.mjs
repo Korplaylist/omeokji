@@ -10,9 +10,10 @@ const assert = (condition, message) => {
 
 const index = read('public/index.html');
 const app = read('public/app.js');
+const styles = read('public/styles.css').trim();
 
-assert(index.includes('rel="preload" href="/styles.css?v=20260703-pc220" as="style"'), '홈 CSS preload가 없습니다.');
-assert(index.includes('media="print" onload="this.media=\'all\'"'), '홈 CSS가 비차단 방식이 아닙니다.');
+assert(index.includes(`<style data-home-inline>\n${styles}\n    </style>`), '홈 인라인 CSS가 styles.css와 동기화되지 않았습니다. npm run sync:home-css를 실행하세요.');
+assert(!index.includes('href="/styles.css'), '홈에서 외부 CSS를 후적용하면 레이아웃 재계산이 발생할 수 있습니다.');
 assert(index.includes('<ul class="recipe-grid"'), '레시피 목록은 ul 요소여야 합니다.');
 assert(!index.includes('role="listitem"'), '허용되지 않은 명시적 listitem 역할이 남아 있습니다.');
 assert(app.includes('return `<li class="recipe-card"'), '레시피 카드는 li 요소여야 합니다.');

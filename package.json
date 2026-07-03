@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "qa": "node scripts/quality-audit.mjs"
+    "qa": "node scripts/quality-audit.mjs",
+    "sync:home-css": "node scripts/inline-home-css.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.105.0"
