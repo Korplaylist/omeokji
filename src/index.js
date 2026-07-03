@@ -77,6 +77,10 @@ async function searchCoupang(request, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.hostname === 'www.omeokji.com') {
+      url.hostname = 'omeokji.com';
+      return Response.redirect(url.toString(), 301);
+    }
     if (url.pathname === '/api/coupang/search' && request.method === 'GET') {
       return searchCoupang(request, env);
     }
