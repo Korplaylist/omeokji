@@ -25,6 +25,7 @@ assert((rss.match(/<item>/g) || []).length === 20, 'RSS에는 레시피 20개가
 for (const asset of ['public/images/brand-mark.svg','public/images/logo.svg','public/favicon.svg','public/site.webmanifest']) {
   assert(fs.existsSync(path.join(root, asset)), `브랜드 자산 누락: ${asset}`);
 }
+assert(read('public/naver662ff303ae0a24904033905293be4ba9.html').trim() === 'naver-site-verification: naver662ff303ae0a24904033905293be4ba9.html', '네이버 사이트 확인 파일이 올바르지 않습니다.');
 const htmlFiles = [];
 const collectHtml = (directory) => fs.readdirSync(directory,{withFileTypes:true}).forEach((entry) => {
   const target = path.join(directory,entry.name);
