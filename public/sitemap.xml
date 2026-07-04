@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://omeokji.com/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -54,12 +54,13 @@
   <url><loc>https://omeokji.com/recipes/leftover-gimbap-recipes</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://omeokji.com/recipes/leftover-bread-recipes</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://omeokji.com/recipes/leftover-jokbal-recipes</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://omeokji.com/recipes/seaweed-cucumber-cold-soup</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://omeokji.com/images/miyeok-oi-naengguk/04-finish-1080.webp</image:loc></image:image></url>
   <url><loc>https://omeokji.com/recipes/spicy-bibim-guksu</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://omeokji.com/images/night-bibim-guksu/04-finish-1080.webp</image:loc></image:image></url>
   <url><loc>https://omeokji.com/recipes/microwave-corn-cheese</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://omeokji.com/images/microwave-corn-cheese/04-finish-1080.webp</image:loc></image:image></url>
   <url><loc>https://omeokji.com/recipes/sundubu-egg-soup</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://omeokji.com/images/sundubu-egg-soup/04-finish-1080.webp</image:loc></image:image></url>
   <url><loc>https://omeokji.com/recipes/crispy-kimchi-pancake</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://omeokji.com/images/crispy-kimchi-jeon/04-finish-1080.webp</image:loc></image:image></url>
   <url><loc>https://omeokji.com/recipes/korean-fish-cake-soup</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://omeokji.com/images/simple-fishcake-soup/04-finish-1080.webp</image:loc></image:image></url>
-  <url><loc>https://omeokji.com/recipes.html</loc><lastmod>2026-07-03</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://omeokji.com/recipes.html</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://omeokji.com/guides.html</loc><lastmod>2026-07-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://omeokji.com/about.html</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://omeokji.com/policies/terms.html</loc><lastmod>2026-07-02</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>

@@ -22,7 +22,7 @@ assert(worker.includes("url.hostname === 'www.omeokji.com'") && worker.includes(
 assert(worker.includes('LEGACY_TO_SEO'), '기존 글 주소의 SEO 주소 전환 규칙이 없습니다.');
 assert(wrangler.includes('run_worker_first = true'), 'SEO 주소 이동 규칙보다 정적 자산 처리가 먼저 실행되고 있습니다.');
 assert(rss.includes('<rss version="2.0"') && rss.includes('https://omeokji.com/rss.xml'), 'RSS 2.0 피드 설정이 올바르지 않습니다.');
-assert((rss.match(/<item>/g) || []).length === 20, 'RSS에는 레시피 20개가 포함되어야 합니다.');
+assert((rss.match(/<item>/g) || []).length === 21, 'RSS에는 레시피 21개가 포함되어야 합니다.');
 assert(robots.includes('#DaumWebMasterTool:36ee997a824da771bd7f485cd80f7de269d19d1d784c674e0ae9308cfe70a29d:iZNCv451Url3LwoFuBYNGQ=='), 'Daum 웹마스터도구 PIN 코드가 없습니다.');
 assert(ads.trim() === 'google.com, pub-7928755678118840, DIRECT, f08c47fec0942fa0', '애드센스 ads.txt 게시자 정보가 올바르지 않습니다.');
 
@@ -60,7 +60,7 @@ assert(styles.includes('grid-template-columns:repeat(2,minmax(0,1fr))'), 'PC 추
 assert(styles.includes('.related-card:nth-child(n+6){display:none}'), '모바일 추천 레시피는 5개만 표시해야 합니다.');
 const recipesDirectory = read('public/recipes.html');
 const guidesDirectory = read('public/guides.html');
-assert((recipesDirectory.match(/class="recipe-card"/g) || []).length === 30, '레시피 전용 페이지에 전체 메뉴 30개가 없습니다.');
+assert((recipesDirectory.match(/class="recipe-card"/g) || []).length === 31, '레시피 전용 페이지에 전체 메뉴 31개가 없습니다.');
 assert((guidesDirectory.match(/class="guide-card"/g) || []).length === 4, '활용백서 전용 페이지의 글 수가 맞지 않습니다.');
 assert(recipesDirectory.includes('640w" sizes='), '레시피 전용 페이지에 고화질 640px 반응형 이미지가 없습니다.');
 assert(!guidesDirectory.includes('-home-640.webp'), '활용백서 전용 페이지에서 저압축 홈 전용 표지를 사용하면 안 됩니다.');
@@ -83,7 +83,7 @@ for (const slug of ['night-bibim-guksu','microwave-corn-cheese','sundubu-egg-sou
 }
 
 const seoRecipeFiles = fs.readdirSync(path.join(root,'public','recipes')).filter((file) => file.endsWith('.html'));
-assert(seoRecipeFiles.length === 20, `영문 SEO 레시피 파일은 20개여야 합니다: ${seoRecipeFiles.length}`);
+assert(seoRecipeFiles.length === 21, `영문 SEO 레시피 파일은 21개여야 합니다: ${seoRecipeFiles.length}`);
 for (const sourceFile of fs.readdirSync(path.join(root,'public','articles')).filter((file) => file.endsWith('.html'))) {
   const sourceHtml = read(`public/articles/${sourceFile}`);
   const seoSlug = sourceHtml.match(/<link rel="canonical" href="https:\/\/omeokji\.com\/recipes\/([^"/]+)"/)?.[1];

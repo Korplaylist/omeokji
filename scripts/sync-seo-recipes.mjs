@@ -12,6 +12,7 @@ const recipePaths = {
   'leftover-gimbap': 'leftover-gimbap-recipes',
   'leftover-jokbal': 'leftover-jokbal-recipes',
   'leftover-pork-belly-rice': 'leftover-pork-belly-rice-bowl',
+  'miyeok-oi-naengguk': 'seaweed-cucumber-cold-soup',
   'microwave-corn-cheese': 'microwave-corn-cheese',
   'night-bibim-guksu': 'spicy-bibim-guksu',
   'potato-jjageuli': 'spam-potato-jjageuli',
