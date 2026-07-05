@@ -5,6 +5,7 @@ const recipePaths = {
   'crispy-kimchi-jeon': 'crispy-kimchi-pancake',
   'dakgalbi-fried-rice': 'cheese-dakgalbi-fried-rice',
   'eggplant-rice-bowl': 'eggplant-rice-bowl',
+  'zucchini-stir-fry': 'zucchini-stir-fry',
   'egg-fried-rice': 'easy-egg-fried-rice',
   'frozen-dumpling-hotpot': 'spicy-frozen-dumpling-hotpot',
   'kimchi-fried-rice': 'kimchi-fried-rice-recipe',
