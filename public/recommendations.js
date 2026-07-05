@@ -26,6 +26,7 @@ const recommendationMenus = [
   { title:'미역오이냉국', image:'/images/miyeok-oi-naengguk/04-finish-640.webp', url:'/recipes/seaweed-cucumber-cold-soup', time:'10분' },
   { title:'간장 가지덮밥', image:'/images/eggplant-rice-bowl/04-finish-640.webp', url:'/recipes/eggplant-rice-bowl', time:'15분' },
   { title:'새우젓 없는 애호박볶음', image:'/images/zucchini-stir-fry/04-finish-640.webp', url:'/recipes/zucchini-stir-fry', time:'10분' },
+  { title:'10분 두부 콩국수', image:'/images/tofu-kongguksu/04-finish-640.webp', url:'/recipes/quick-tofu-kongguksu', time:'10분' },
   { title:'10분 비빔국수', image:'/images/night-bibim-guksu/04-finish-640.webp', url:'/recipes/spicy-bibim-guksu', time:'10분' },
   { title:'5분 전자레인지 콘치즈', image:'/images/microwave-corn-cheese/04-finish-640.webp', url:'/recipes/microwave-corn-cheese', time:'5분' },
   { title:'속 편한 순두부 계란탕', image:'/images/sundubu-egg-soup/04-finish-640.webp', url:'/recipes/sundubu-egg-soup', time:'10분' },
