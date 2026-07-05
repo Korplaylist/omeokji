@@ -16,13 +16,18 @@ const wrangler = read('wrangler.toml');
 const rss = read('public/rss.xml');
 const robots = read('public/robots.txt');
 const ads = read('public/ads.txt');
+const syncSeoScript = read('scripts/sync-seo-recipes.mjs');
+const publishedArticleFiles = [...syncSeoScript.matchAll(/'([^']+)':\s*'[^']+'/g)]
+  .map((match) => `${match[1]}.html`)
+  .filter((file) => fs.existsSync(path.join(root, 'public', 'articles', file)));
 assert(index.includes('https://omeokji.com/'), '홈 canonical 주소는 omeokji.com이어야 합니다.');
 assert(!index.includes('omeokji.korplaylist-hong.workers.dev'), '홈에 이전 workers.dev 대표 주소가 남아 있습니다.');
 assert(worker.includes("url.hostname === 'www.omeokji.com'") && worker.includes("url.hostname = 'omeokji.com'"), 'www 주소의 대표 도메인 이동이 없습니다.');
 assert(worker.includes('LEGACY_TO_SEO'), '기존 글 주소의 SEO 주소 전환 규칙이 없습니다.');
 assert(wrangler.includes('run_worker_first = true'), 'SEO 주소 이동 규칙보다 정적 자산 처리가 먼저 실행되고 있습니다.');
 assert(rss.includes('<rss version="2.0"') && rss.includes('https://omeokji.com/rss.xml'), 'RSS 2.0 피드 설정이 올바르지 않습니다.');
-assert((rss.match(/<item>/g) || []).length === 21, 'RSS에는 레시피 21개가 포함되어야 합니다.');
+const rssItems = (rss.match(/<item>/g) || []).length;
+assert(rssItems === publishedArticleFiles.length, `RSS 항목 수가 기사 수와 다릅니다: rss=${rssItems}, articles=${publishedArticleFiles.length}`);
 assert(robots.includes('#DaumWebMasterTool:36ee997a824da771bd7f485cd80f7de269d19d1d784c674e0ae9308cfe70a29d:iZNCv451Url3LwoFuBYNGQ=='), 'Daum 웹마스터도구 PIN 코드가 없습니다.');
 assert(ads.trim() === 'google.com, pub-7928755678118840, DIRECT, f08c47fec0942fa0', '애드센스 ads.txt 게시자 정보가 올바르지 않습니다.');
 
@@ -56,20 +61,22 @@ assert(app.includes("'#recipes': document.getElementById('recipes')") && app.inc
 const recommendations = read('public/recommendations.js');
 assert(recommendations.includes('class="article-nav-links"') && recommendations.includes('href="/guides.html"'), '상세 글 공통 메뉴가 없습니다.');
 assert(recommendations.includes('Array.from({ length: 10 }'), '상세 글 추천 레시피는 10개여야 합니다.');
+assert(!/[�]/.test(app) && !/[�]/.test(recommendations), '공용 스크립트에 깨진 한글이 남아 있습니다.');
 assert(styles.includes('grid-template-columns:repeat(2,minmax(0,1fr))'), 'PC 추천 레시피는 2열이어야 합니다.');
 assert(styles.includes('.related-card:nth-child(n+6){display:none}'), '모바일 추천 레시피는 5개만 표시해야 합니다.');
 const recipesDirectory = read('public/recipes.html');
 const guidesDirectory = read('public/guides.html');
-assert((recipesDirectory.match(/class="recipe-card"/g) || []).length === 31, '레시피 전용 페이지에 전체 메뉴 31개가 없습니다.');
+const menuImages = [...app.matchAll(/image:\s*'([^']+-640\.webp)'/g)].map((match) => match[1]);
+assert((recipesDirectory.match(/class="recipe-card"/g) || []).length === menuImages.length, `레시피 전용 페이지 카드 수가 메뉴 수와 다릅니다: cards=${(recipesDirectory.match(/class="recipe-card"/g) || []).length}, menus=${menuImages.length}`);
 assert((guidesDirectory.match(/class="guide-card"/g) || []).length === 4, '활용백서 전용 페이지의 글 수가 맞지 않습니다.');
 assert(recipesDirectory.includes('640w" sizes='), '레시피 전용 페이지에 고화질 640px 반응형 이미지가 없습니다.');
 assert(!guidesDirectory.includes('-home-640.webp'), '활용백서 전용 페이지에서 저압축 홈 전용 표지를 사용하면 안 됩니다.');
+assert(!/[�]/.test(recipesDirectory) && !/[�]/.test(guidesDirectory), '전용 목록 페이지에 깨진 한글이 남아 있습니다.');
 assert((recipesDirectory.match(/class="quick-symbol"/g) || []).length === 4, '레시피 전용 페이지에 빠른 선택 4개가 없습니다.');
 assert((recipesDirectory.match(/class="is-active" type="button" data-directory-filter="all"/g) || []).length === 1, '레시피 카테고리 기본 필터가 없습니다.');
 for (const category of ['간단요리','한식','혼밥','야식']) assert(recipesDirectory.includes(`data-directory-filter="${category}"`), `레시피 카테고리 누락: ${category}`);
 
-const menuImages = [...app.matchAll(/image:\s*'([^']+-640\.webp)'/g)].map((match) => match[1]);
-assert(menuImages.length >= 30, `메뉴 이미지가 부족합니다: ${menuImages.length}`);
+assert(menuImages.length >= 32, `메뉴 이미지가 부족합니다: ${menuImages.length}`);
 
 const nightMenus = [...app.matchAll(/tags:\s*\[[^\]]*'야식'[^\]]*\]/g)];
 assert(nightMenus.length === 7, `야식 카테고리는 정확히 7개여야 합니다: ${nightMenus.length}`);
@@ -83,9 +90,10 @@ for (const slug of ['night-bibim-guksu','microwave-corn-cheese','sundubu-egg-sou
 }
 
 const seoRecipeFiles = fs.readdirSync(path.join(root,'public','recipes')).filter((file) => file.endsWith('.html'));
-assert(seoRecipeFiles.length === 21, `영문 SEO 레시피 파일은 21개여야 합니다: ${seoRecipeFiles.length}`);
-for (const sourceFile of fs.readdirSync(path.join(root,'public','articles')).filter((file) => file.endsWith('.html'))) {
+assert(seoRecipeFiles.length >= publishedArticleFiles.length, `영문 SEO 레시피 파일 수가 기사 수보다 적습니다: seo=${seoRecipeFiles.length}, articles=${publishedArticleFiles.length}`);
+for (const sourceFile of publishedArticleFiles) {
   const sourceHtml = read(`public/articles/${sourceFile}`);
+  assert(!/[�]/.test(sourceHtml), `${sourceFile}: 깨진 한글이 남아 있습니다.`);
   const seoSlug = sourceHtml.match(/<link rel="canonical" href="https:\/\/omeokji\.com\/recipes\/([^"/]+)"/)?.[1];
   assert(Boolean(seoSlug), `${sourceFile}: 영문 SEO canonical 주소가 없습니다.`);
   if (seoSlug) {

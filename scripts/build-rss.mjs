@@ -3,6 +3,10 @@ import path from 'node:path';
 
 const root = process.cwd();
 const articleDirectory = path.join(root, 'public', 'articles');
+const syncScript = fs.readFileSync(path.join(root, 'scripts', 'sync-seo-recipes.mjs'), 'utf8');
+const publishedArticleFiles = [...syncScript.matchAll(/'([^']+)':\s*'[^']+'/g)]
+  .map((match) => `${match[1]}.html`)
+  .filter((file) => fs.existsSync(path.join(articleDirectory, file)));
 const escapeXml = (value) => String(value)
   .replaceAll('&', '&amp;')
   .replaceAll('<', '&lt;')
@@ -10,8 +14,7 @@ const escapeXml = (value) => String(value)
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&apos;');
 
-const items = fs.readdirSync(articleDirectory)
-  .filter((file) => file.endsWith('.html'))
+const items = publishedArticleFiles
   .map((file) => {
     const html = fs.readFileSync(path.join(articleDirectory, file), 'utf8');
     const title = html.match(/<title>([^<]+)<\/title>/)?.[1]?.replace(/\s*\|\s*오먹지$/, '') || file;

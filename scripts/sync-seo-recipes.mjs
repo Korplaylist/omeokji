@@ -4,6 +4,7 @@ import path from 'node:path';
 const recipePaths = {
   'crispy-kimchi-jeon': 'crispy-kimchi-pancake',
   'dakgalbi-fried-rice': 'cheese-dakgalbi-fried-rice',
+  'eggplant-rice-bowl': 'eggplant-rice-bowl',
   'egg-fried-rice': 'easy-egg-fried-rice',
   'frozen-dumpling-hotpot': 'spicy-frozen-dumpling-hotpot',
   'kimchi-fried-rice': 'kimchi-fried-rice-recipe',

@@ -2,3 +2,4 @@ node_modules/
 .wrangler/
 .server.pid
 qa-*.png
+.automation/
