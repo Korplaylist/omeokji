@@ -9,6 +9,7 @@ const RECIPE_PATHS = {
   'tofu-kongguksu': 'quick-tofu-kongguksu',
   'tomato-egg-stir-fry': 'tomato-egg-stir-fry',
   'potato-stir-fry': 'potato-stir-fry',
+  'spicy-cucumber-salad': 'spicy-cucumber-salad',
   'egg-fried-rice': 'easy-egg-fried-rice',
   'frozen-dumpling-hotpot': 'spicy-frozen-dumpling-hotpot',
   'kimchi-fried-rice': 'kimchi-fried-rice-recipe',
