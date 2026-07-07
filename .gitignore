@@ -3,3 +3,5 @@ node_modules/
 .server.pid
 qa-*.png
 .automation/
+.codex-remote-attachments/
+tmp/
