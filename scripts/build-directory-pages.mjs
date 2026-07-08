@@ -11,7 +11,8 @@ const guides = [
   {title:'남은 치킨 활용 레시피 5가지',copy:'프라이팬 데우기부터 덮밥·볶음밥·또띠아·샐러드·라면까지 정리했습니다.',image:'/images/leftover-chicken/01-ingredients-anchor-640.webp',url:'/recipes/leftover-chicken-recipes',meta:'5 RECIPES · 12 MIN READ'},
   {title:'남은 김밥 활용 레시피 3가지',copy:'딱딱해진 냉장 김밥을 전·볶음밥·전골로 되살리는 방법입니다.',image:'/images/leftover-gimbap/00-cover-640.webp',url:'/recipes/leftover-gimbap-recipes',meta:'3 RECIPES · 10 MIN READ'},
   {title:'남은 식빵 활용 레시피 3가지',copy:'촉촉한 프렌치토스트부터 바삭한 러스크와 식빵피자까지 알려드립니다.',image:'/images/leftover-bread/00-cover-640.webp',url:'/recipes/leftover-bread-recipes',meta:'3 RECIPES · 10 MIN READ'},
-  {title:'남은 족발 활용 레시피 3가지',copy:'질기지 않게 다시 데워 덮밥·볶음밥·냉채로 활용합니다.',image:'/images/leftover-jokbal/00-cover-640.webp',url:'/recipes/leftover-jokbal-recipes',meta:'3 RECIPES · 12 MIN READ'}
+  {title:'남은 족발 활용 레시피 3가지',copy:'질기지 않게 다시 데워 덮밥·볶음밥·냉채로 활용합니다.',image:'/images/leftover-jokbal/00-cover-640.webp',url:'/recipes/leftover-jokbal-recipes',meta:'3 RECIPES · 12 MIN READ'},
+  {title:'남은 밥 활용 레시피 3가지',copy:'냉장고에 남은 밥을 누룽지주먹밥·김치밥전·계란밥죽으로 되살립니다.',image:'/images/leftover-rice/00-cover-640.webp',url:'/recipes/leftover-rice-recipes',meta:'3 RECIPES · 12 MIN READ'}
 ];
 const esc=(v)=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const header=(active)=>`<header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="오먹지 홈"><span class="brand-mark">오</span><span>오먹지</span></a><nav class="desktop-nav" aria-label="주요 메뉴"><a ${active==='recipes'?'aria-current="page" ':''}href="/recipes.html">레시피</a><a ${active==='guides'?'aria-current="page" ':''}href="/guides.html">활용백서</a><a class="nav-test" href="/#taste-test">오늘 뭐 먹지?</a></nav><span class="directory-spacer" aria-hidden="true"></span></div></header>`;
@@ -24,5 +25,5 @@ fs.writeFileSync(path.join(root,'public','recipes.html'),shell('전체 레시피
 
 const guideCards=guides.map(guide=>`<article class="guide-card"><a href="${guide.url}"><img src="${guide.image}" width="640" height="427" loading="lazy" alt="${esc(guide.title)}"><p class="guide-meta">${guide.meta}</p><h2>${esc(guide.title)}</h2><p>${esc(guide.copy)}</p></a></article>`).join('');
 const guidesContent=`<main class="directory-main"><header class="directory-hero"><p class="eyebrow">SMART KITCHEN NOTES</p><h1>활용백서</h1><p>남은 재료를 안전하고 맛있게 다시 사용하는 활용법만 모았습니다.</p></header><section class="directory-grid" aria-label="활용백서 전체 목록">${guideCards}</section></main>`;
-fs.writeFileSync(path.join(root,'public','guides.html'),shell('활용백서','남은 치킨, 김밥, 식빵, 족발을 맛있게 활용하는 오먹지 활용백서입니다.','guides',guidesContent),'utf8');
+fs.writeFileSync(path.join(root,'public','guides.html'),shell('활용백서','남은 치킨, 김밥, 식빵, 족발, 밥을 맛있게 활용하는 오먹지 활용백서입니다.','guides',guidesContent),'utf8');
 console.log(`전용 목록 페이지 생성: 레시피 ${menus.length}개, 활용백서 ${guides.length}개`);
