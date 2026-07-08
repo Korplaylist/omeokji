@@ -6,6 +6,7 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "automation:preflight": "node scripts/automation-preflight.mjs",
+    "publish:preflight": "node scripts/manual-publish-preflight.mjs",
     "qa": "node scripts/quality-audit.mjs",
     "sync:home-css": "node scripts/inline-home-css.mjs",
     "sync:seo-recipes": "node scripts/sync-seo-recipes.mjs",
