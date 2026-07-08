@@ -11,6 +11,7 @@ const RECIPE_PATHS = {
   'potato-stir-fry': 'potato-stir-fry',
   'spicy-cucumber-salad': 'spicy-cucumber-salad',
   'seasoned-mung-bean-sprouts': 'seasoned-mung-bean-sprouts',
+  'soy-quail-eggs': 'soy-quail-eggs',
   'korean-steamed-eggs': 'korean-steamed-eggs',
   'egg-fried-rice': 'easy-egg-fried-rice',
   'frozen-dumpling-hotpot': 'spicy-frozen-dumpling-hotpot',
