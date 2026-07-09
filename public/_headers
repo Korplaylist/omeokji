@@ -6,3 +6,5 @@
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
+/favicon.ico
+  Cache-Control: public, max-age=31536000, immutable
