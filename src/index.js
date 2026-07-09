@@ -3,6 +3,7 @@ const COUPANG_SEARCH_PATH = '/v2/providers/affiliate_open_api/apis/openapi/v1/pr
 
 const RECIPE_PATHS = {
   'crispy-kimchi-jeon': 'crispy-kimchi-pancake',
+  'corn-butter-rice': 'soy-butter-corn-rice',
   'dakgalbi-fried-rice': 'cheese-dakgalbi-fried-rice',
   'eggplant-rice-bowl': 'eggplant-rice-bowl',
   'zucchini-stir-fry': 'zucchini-stir-fry',
