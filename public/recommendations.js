@@ -37,6 +37,7 @@ const recommendationMenus = [
   { title:'12분 뚝배기 계란찜', image:'/images/korean-steamed-eggs/04-finish-640.webp', url:'/recipes/korean-steamed-eggs', time:'12분' },
   { title:'15분 메추리알 장조림', image:'/images/soy-quail-eggs/04-finish-640.webp', url:'/recipes/soy-quail-eggs', time:'15분' },
   { title:'10분 간장 버터 옥수수밥', image:'/images/corn-butter-rice/05-finish-640.webp', url:'/recipes/soy-butter-corn-rice', time:'10분' },
+  { title:'10분 팽이버섯 계란덮밥', image:'/images/enoki-egg-rice/04-finish-640.webp', url:'/recipes/enoki-egg-rice-bowl', time:'10분' },
   { title:'10분 비빔국수', image:'/images/night-bibim-guksu/04-finish-640.webp', url:'/recipes/spicy-bibim-guksu', time:'10분' },
   { title:'5분 전자레인지 콘치즈', image:'/images/microwave-corn-cheese/04-finish-640.webp', url:'/recipes/microwave-corn-cheese', time:'5분' },
   { title:'속 편한 순두부 계란탕', image:'/images/sundubu-egg-soup/04-finish-640.webp', url:'/recipes/sundubu-egg-soup', time:'10분' },
