@@ -2,6 +2,7 @@ const COUPANG_HOST = 'api-gateway.coupang.com';
 const COUPANG_SEARCH_PATH = '/v2/providers/affiliate_open_api/apis/openapi/v1/products/search';
 
 const RECIPE_PATHS = {
+  'cabbage-tuna-rice': 'cabbage-tuna-rice-bowl',
   'crispy-kimchi-jeon': 'crispy-kimchi-pancake',
   'corn-butter-rice': 'soy-butter-corn-rice',
   'dakgalbi-fried-rice': 'cheese-dakgalbi-fried-rice',
