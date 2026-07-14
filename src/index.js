@@ -12,6 +12,7 @@ const RECIPE_PATHS = {
   'zucchini-stir-fry': 'zucchini-stir-fry',
   'tofu-kongguksu': 'quick-tofu-kongguksu',
   'tomato-egg-stir-fry': 'tomato-egg-stir-fry',
+  'tofu-soy-braise': 'soy-braised-tofu',
   'potato-stir-fry': 'potato-stir-fry',
   'spicy-cucumber-salad': 'spicy-cucumber-salad',
   'seasoned-mung-bean-sprouts': 'seasoned-mung-bean-sprouts',
