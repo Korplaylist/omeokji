@@ -8,6 +8,7 @@ const recipePaths = {
   'dakgalbi-fried-rice': 'cheese-dakgalbi-fried-rice',
   'eggplant-rice-bowl': 'eggplant-rice-bowl',
   'enoki-egg-rice': 'enoki-egg-rice-bowl',
+  'king-oyster-mushroom-butter': 'soy-butter-king-oyster-mushrooms',
   'zucchini-stir-fry': 'zucchini-stir-fry',
   'tofu-kongguksu': 'quick-tofu-kongguksu',
   'tomato-egg-stir-fry': 'tomato-egg-stir-fry',
