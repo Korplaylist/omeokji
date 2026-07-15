@@ -41,6 +41,7 @@ const recommendationMenus = [
   { title:'10분 양배추 참치덮밥', image:'/images/cabbage-tuna-rice/04-finish-640.webp', url:'/recipes/cabbage-tuna-rice-bowl', time:'10분' },
   { title:'15분 새송이버섯 간장버터구이', image:'/images/king-oyster-mushroom-butter/04-finish-640.webp', url:'/recipes/soy-butter-king-oyster-mushrooms', time:'15분' },
   { title:'15분 두부조림 황금레시피', image:'/images/tofu-soy-braise/04-finish-640.webp', url:'/recipes/soy-braised-tofu', time:'15분' },
+  { title:'15분 감자조림 황금레시피', image:'/images/potato-soy-braise/04-finish-640.webp', url:'/recipes/soy-braised-potatoes', time:'15분' },
   { title:'10분 비빔국수', image:'/images/night-bibim-guksu/04-finish-640.webp', url:'/recipes/spicy-bibim-guksu', time:'10분' },
   { title:'5분 전자레인지 콘치즈', image:'/images/microwave-corn-cheese/04-finish-640.webp', url:'/recipes/microwave-corn-cheese', time:'5분' },
   { title:'속 편한 순두부 계란탕', image:'/images/sundubu-egg-soup/04-finish-640.webp', url:'/recipes/sundubu-egg-soup', time:'10분' },
