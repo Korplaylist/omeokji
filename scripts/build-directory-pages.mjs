@@ -12,7 +12,9 @@ const guides = [
   {title:'남은 김밥 활용 레시피 3가지',copy:'딱딱해진 냉장 김밥을 전·볶음밥·전골로 되살리는 방법입니다.',image:'/images/leftover-gimbap/00-cover-640.webp',url:'/recipes/leftover-gimbap-recipes',meta:'3 RECIPES · 10 MIN READ'},
   {title:'남은 식빵 활용 레시피 3가지',copy:'촉촉한 프렌치토스트부터 바삭한 러스크와 식빵피자까지 알려드립니다.',image:'/images/leftover-bread/00-cover-640.webp',url:'/recipes/leftover-bread-recipes',meta:'3 RECIPES · 10 MIN READ'},
   {title:'남은 족발 활용 레시피 3가지',copy:'질기지 않게 다시 데워 덮밥·볶음밥·냉채로 활용합니다.',image:'/images/leftover-jokbal/00-cover-640.webp',url:'/recipes/leftover-jokbal-recipes',meta:'3 RECIPES · 12 MIN READ'},
-  {title:'남은 밥 활용 레시피 3가지',copy:'냉장고에 남은 밥을 누룽지주먹밥·김치밥전·계란밥죽으로 되살립니다.',image:'/images/leftover-rice/00-cover-640.webp',url:'/recipes/leftover-rice-recipes',meta:'3 RECIPES · 12 MIN READ'}
+  {title:'남은 밥 활용 레시피 3가지',copy:'냉장고에 남은 밥을 누룽지주먹밥·김치밥전·계란밥죽으로 되살립니다.',image:'/images/leftover-rice/00-cover-640.webp',url:'/recipes/leftover-rice-recipes',meta:'3 RECIPES · 12 MIN READ'},
+  {title:'남은 두부 활용 레시피 2가지',copy:'남은 두부를 매콤 두부덮밥과 두부채소전으로 다시 씁니다.',image:'/images/leftover-tofu/00-cover-640.webp',url:'/recipes/leftover-tofu-recipes',meta:'2 RECIPES · 8 MIN READ'},
+  {title:'남은 감자 활용 레시피 2가지',copy:'삶은 감자를 감자치즈전과 감자샐러드 샌드위치로 활용합니다.',image:'/images/leftover-potato/00-cover-640.webp',url:'/recipes/leftover-potato-recipes',meta:'2 RECIPES · 8 MIN READ'}
 ];
 const esc=(v)=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const header=(active)=>`<header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="오먹지 홈"><span class="brand-mark">오</span><span>오먹지</span></a><nav class="desktop-nav" aria-label="주요 메뉴"><a ${active==='recipes'?'aria-current="page" ':''}href="/recipes.html">레시피</a><a ${active==='guides'?'aria-current="page" ':''}href="/guides.html">활용백서</a><a class="nav-test" href="/#taste-test">오늘 뭐 먹지?</a></nav><span class="directory-spacer" aria-hidden="true"></span></div></header>`;
