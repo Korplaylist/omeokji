@@ -30,6 +30,8 @@ const recommendationMenus = [
   { title:'두부채소전', image:'/images/leftover-tofu/08-patty-finish-640.webp', url:'/recipes/leftover-tofu-recipes#tofu-vegetable-patties', time:'15분' },
   { title:'감자치즈전', image:'/images/leftover-potato/04-cheese-finish-640.webp', url:'/recipes/leftover-potato-recipes#potato-cheese-pancakes', time:'15분' },
   { title:'감자샐러드 샌드위치', image:'/images/leftover-potato/08-sandwich-finish-640.webp', url:'/recipes/leftover-potato-recipes#potato-salad-sandwich', time:'12분' },
+  { title:'매콤 만두덮밥', image:'/images/leftover-dumplings/04-spicy-dumpling-finish-640.webp', url:'/recipes/leftover-dumplings-recipes#spicy-dumpling-bowl', time:'12분' },
+  { title:'만두계란전', image:'/images/leftover-dumplings/08-egg-finish-640.webp', url:'/recipes/leftover-dumplings-recipes#dumpling-egg-jeon', time:'10분' },
   { title:'미역오이냉국', image:'/images/miyeok-oi-naengguk/04-finish-640.webp', url:'/recipes/seaweed-cucumber-cold-soup', time:'10분' },
   { title:'간장 가지덮밥', image:'/images/eggplant-rice-bowl/04-finish-640.webp', url:'/recipes/eggplant-rice-bowl', time:'15분' },
   { title:'새우젓 없는 애호박볶음', image:'/images/zucchini-stir-fry/04-finish-640.webp', url:'/recipes/zucchini-stir-fry', time:'10분' },
