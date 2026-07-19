@@ -31,6 +31,7 @@ const RECIPE_PATHS = {
   'leftover-tofu': 'leftover-tofu-recipes',
   'leftover-potato': 'leftover-potato-recipes',
   'leftover-dumplings': 'leftover-dumplings-recipes',
+  'leftover-sausage': 'leftover-sausage-recipes',
   'leftover-pork-belly-rice': 'leftover-pork-belly-rice-bowl',
   'miyeok-oi-naengguk': 'seaweed-cucumber-cold-soup',
   'microwave-corn-cheese': 'microwave-corn-cheese',
