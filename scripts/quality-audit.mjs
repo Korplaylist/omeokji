@@ -68,7 +68,7 @@ const recipesDirectory = read('public/recipes.html');
 const guidesDirectory = read('public/guides.html');
 const menuImages = [...app.matchAll(/image:\s*'([^']+-640\.webp)'/g)].map((match) => match[1]);
 assert((recipesDirectory.match(/class="recipe-card"/g) || []).length === menuImages.length, `레시피 전용 페이지 카드 수가 메뉴 수와 다릅니다: cards=${(recipesDirectory.match(/class="recipe-card"/g) || []).length}, menus=${menuImages.length}`);
-assert((guidesDirectory.match(/class="guide-card"/g) || []).length === 9, '활용백서 전용 페이지의 글 수가 맞지 않습니다.');
+assert((guidesDirectory.match(/class="guide-card"/g) || []).length === 10, '활용백서 전용 페이지의 글 수가 맞지 않습니다.');
 assert(recipesDirectory.includes('640w" sizes='), '레시피 전용 페이지에 고화질 640px 반응형 이미지가 없습니다.');
 assert(!guidesDirectory.includes('-home-640.webp'), '활용백서 전용 페이지에서 저압축 홈 전용 표지를 사용하면 안 됩니다.');
 assert(!/[�]/.test(recipesDirectory) && !/[�]/.test(guidesDirectory), '전용 목록 페이지에 깨진 한글이 남아 있습니다.');
