@@ -57,7 +57,8 @@ const recommendationMenus = [
   { title:'5분 전자레인지 콘치즈', image:'/images/microwave-corn-cheese/04-finish-640.webp', url:'/recipes/microwave-corn-cheese', time:'5분' },
   { title:'속 편한 순두부 계란탕', image:'/images/sundubu-egg-soup/04-finish-640.webp', url:'/recipes/sundubu-egg-soup', time:'10분' },
   { title:'바삭 김치전', image:'/images/crispy-kimchi-jeon/04-finish-640.webp', url:'/recipes/crispy-kimchi-pancake', time:'15분' },
-  { title:'15분 포장마차 어묵탕', image:'/images/simple-fishcake-soup/04-finish-640.webp', url:'/recipes/korean-fish-cake-soup', time:'15분' }
+  { title:'15분 포장마차 어묵탕', image:'/images/simple-fishcake-soup/04-finish-640.webp', url:'/recipes/korean-fish-cake-soup', time:'15분' },
+  { title:'15분 간장 콩나물밥', image:'/images/bean-sprout-rice/04-finish-640.webp', url:'/recipes/soy-bean-sprout-rice', time:'15분' }
 ];
 
 const shareStrip = document.querySelector('.share-strip');
