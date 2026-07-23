@@ -58,7 +58,11 @@ const recommendationMenus = [
   { title:'속 편한 순두부 계란탕', image:'/images/sundubu-egg-soup/04-finish-640.webp', url:'/recipes/sundubu-egg-soup', time:'10분' },
   { title:'바삭 김치전', image:'/images/crispy-kimchi-jeon/04-finish-640.webp', url:'/recipes/crispy-kimchi-pancake', time:'15분' },
   { title:'15분 포장마차 어묵탕', image:'/images/simple-fishcake-soup/04-finish-640.webp', url:'/recipes/korean-fish-cake-soup', time:'15분' },
-  { title:'15분 간장 콩나물밥', image:'/images/bean-sprout-rice/04-finish-640.webp', url:'/recipes/soy-bean-sprout-rice', time:'15분' }
+  { title:'15분 간장 콩나물밥', image:'/images/bean-sprout-rice/04-finish-640.webp', url:'/recipes/soy-bean-sprout-rice', time:'15분' },
+  { title:'15분 간장 닭가슴살덮밥', image:'/images/chicken-breast-soy-rice/04-finish-640.webp', url:'/recipes/soy-chicken-breast-rice-bowl', time:'15분' },
+  { title:'10분 고추장 참치비빔밥', image:'/images/gochujang-tuna-bibimbap/04-finish-640.webp', url:'/recipes/gochujang-tuna-bibimbap', time:'10분' },
+  { title:'12분 오이 두부냉채', image:'/images/cucumber-tofu-cold-salad/04-finish-640.webp', url:'/recipes/cucumber-tofu-cold-salad', time:'12분' },
+  { title:'15분 들기름 버섯소면', image:'/images/perilla-mushroom-somen/04-finish-640.webp', url:'/recipes/perilla-mushroom-somen', time:'15분' }
 ];
 
 const shareStrip = document.querySelector('.share-strip');
