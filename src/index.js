@@ -12,6 +12,7 @@ const RECIPE_PATHS = {
   'gochujang-tuna-bibimbap': 'gochujang-tuna-bibimbap',
   'cucumber-tofu-cold-salad': 'cucumber-tofu-cold-salad',
   'perilla-mushroom-somen': 'perilla-mushroom-somen',
+  'perilla-tuna-pancake': 'perilla-leaf-tuna-pancake',
   'enoki-egg-rice': 'enoki-egg-rice-bowl',
   'king-oyster-mushroom-butter': 'soy-butter-king-oyster-mushrooms',
   'zucchini-stir-fry': 'zucchini-stir-fry',
