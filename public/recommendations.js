@@ -63,7 +63,8 @@ const recommendationMenus = [
   { title:'10분 고추장 참치비빔밥', image:'/images/gochujang-tuna-bibimbap/04-finish-640.webp', url:'/recipes/gochujang-tuna-bibimbap', time:'10분' },
   { title:'12분 오이 두부냉채', image:'/images/cucumber-tofu-cold-salad/04-finish-640.webp', url:'/recipes/cucumber-tofu-cold-salad', time:'12분' },
   { title:'15분 들기름 버섯소면', image:'/images/perilla-mushroom-somen/04-finish-640.webp', url:'/recipes/perilla-mushroom-somen', time:'15분' },
-  { title:'15분 깻잎 참치전', image:'/images/perilla-tuna-pancake/04-finish-640.webp', url:'/recipes/perilla-leaf-tuna-pancake', time:'15분' }
+  { title:'15분 깻잎 참치전', image:'/images/perilla-tuna-pancake/04-finish-640.webp', url:'/recipes/perilla-leaf-tuna-pancake', time:'15분' },
+  { title:'15분 감자 계란국', image:'/images/potato-egg-soup/04-finish-640.webp', url:'/recipes/potato-egg-soup', time:'15분' }
 ];
 
 const shareStrip = document.querySelector('.share-strip');

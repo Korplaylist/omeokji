@@ -13,6 +13,7 @@ const recipePaths = {
   'cucumber-tofu-cold-salad': 'cucumber-tofu-cold-salad',
   'perilla-mushroom-somen': 'perilla-mushroom-somen',
   'perilla-tuna-pancake': 'perilla-leaf-tuna-pancake',
+  'potato-egg-soup': 'potato-egg-soup',
   'enoki-egg-rice': 'enoki-egg-rice-bowl',
   'king-oyster-mushroom-butter': 'soy-butter-king-oyster-mushrooms',
   'zucchini-stir-fry': 'zucchini-stir-fry',
