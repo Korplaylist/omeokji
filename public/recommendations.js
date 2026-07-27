@@ -64,7 +64,11 @@ const recommendationMenus = [
   { title:'12분 오이 두부냉채', image:'/images/cucumber-tofu-cold-salad/04-finish-640.webp', url:'/recipes/cucumber-tofu-cold-salad', time:'12분' },
   { title:'15분 들기름 버섯소면', image:'/images/perilla-mushroom-somen/04-finish-640.webp', url:'/recipes/perilla-mushroom-somen', time:'15분' },
   { title:'15분 깻잎 참치전', image:'/images/perilla-tuna-pancake/04-finish-640.webp', url:'/recipes/perilla-leaf-tuna-pancake', time:'15분' },
-  { title:'15분 감자 계란국', image:'/images/potato-egg-soup/04-finish-640.webp', url:'/recipes/potato-egg-soup', time:'15분' }
+  { title:'15분 감자 계란국', image:'/images/potato-egg-soup/04-finish-640.webp', url:'/recipes/potato-egg-soup', time:'15분' },
+  { title:'15분 김치콩나물국', image:'/images/kimchi-bean-sprout-soup/04-finish-640.webp', url:'/recipes/kimchi-bean-sprout-soup', time:'15분' },
+  { title:'10분 스팸 계란덮밥', image:'/images/spam-egg-rice-bowl/04-finish-640.webp', url:'/recipes/spam-egg-rice-bowl', time:'10분' },
+  { title:'12분 간장 어묵볶음', image:'/images/soy-fishcake-stir-fry/04-finish-640.webp', url:'/recipes/soy-fishcake-stir-fry', time:'12분' },
+  { title:'15분 두부 가지구이', image:'/images/tofu-eggplant-grill/04-finish-640.webp', url:'/recipes/soy-tofu-eggplant-grill', time:'15분' }
 ];
 
 const shareStrip = document.querySelector('.share-strip');
