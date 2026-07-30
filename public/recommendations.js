@@ -68,7 +68,10 @@ const recommendationMenus = [
   { title:'15분 김치콩나물국', image:'/images/kimchi-bean-sprout-soup/04-finish-640.webp', url:'/recipes/kimchi-bean-sprout-soup', time:'15분' },
   { title:'10분 스팸 계란덮밥', image:'/images/spam-egg-rice-bowl/04-finish-640.webp', url:'/recipes/spam-egg-rice-bowl', time:'10분' },
   { title:'12분 간장 어묵볶음', image:'/images/soy-fishcake-stir-fry/04-finish-640.webp', url:'/recipes/soy-fishcake-stir-fry', time:'12분' },
-  { title:'15분 두부 가지구이', image:'/images/tofu-eggplant-grill/04-finish-640.webp', url:'/recipes/soy-tofu-eggplant-grill', time:'15분' }
+  { title:'15분 두부 가지구이', image:'/images/tofu-eggplant-grill/04-finish-640.webp', url:'/recipes/soy-tofu-eggplant-grill', time:'15분' },
+  { title:'12분 새우 계란볶음밥', image:'/images/shrimp-egg-fried-rice/04-finish-640.webp', url:'/recipes/shrimp-egg-fried-rice', time:'12분' },
+  { title:'15분 팽이버섯전', image:'/images/enoki-pancake/04-finish-640.webp', url:'/recipes/enoki-mushroom-pancake', time:'15분' },
+  { title:'15분 참치 애호박찌개', image:'/images/tuna-zucchini-jjigae/04-finish-640.webp', url:'/recipes/tuna-zucchini-jjigae', time:'15분' }
 ];
 
 const shareStrip = document.querySelector('.share-strip');
