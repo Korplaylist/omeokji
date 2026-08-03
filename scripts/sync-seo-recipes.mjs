@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const recipePaths = {
+  'bok-choy-oyster-stir-fry': 'bok-choy-oyster-sauce-stir-fry',
   'cabbage-tuna-rice': 'cabbage-tuna-rice-bowl',
   'crispy-kimchi-jeon': 'crispy-kimchi-pancake',
   'corn-butter-rice': 'soy-butter-corn-rice',

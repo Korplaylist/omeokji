@@ -71,7 +71,8 @@ const recommendationMenus = [
   { title:'15분 두부 가지구이', image:'/images/tofu-eggplant-grill/04-finish-640.webp', url:'/recipes/soy-tofu-eggplant-grill', time:'15분' },
   { title:'12분 새우 계란볶음밥', image:'/images/shrimp-egg-fried-rice/04-finish-640.webp', url:'/recipes/shrimp-egg-fried-rice', time:'12분' },
   { title:'15분 팽이버섯전', image:'/images/enoki-pancake/04-finish-640.webp', url:'/recipes/enoki-mushroom-pancake', time:'15분' },
-  { title:'15분 참치 애호박찌개', image:'/images/tuna-zucchini-jjigae/04-finish-640.webp', url:'/recipes/tuna-zucchini-jjigae', time:'15분' }
+  { title:'15분 참치 애호박찌개', image:'/images/tuna-zucchini-jjigae/04-finish-640.webp', url:'/recipes/tuna-zucchini-jjigae', time:'15분' },
+  { title:'10분 청경채 굴소스볶음', image:'/images/bok-choy-oyster-stir-fry/04-finish-640.webp', url:'/recipes/bok-choy-oyster-sauce-stir-fry', time:'10분' }
 ];
 
 const shareStrip = document.querySelector('.share-strip');
