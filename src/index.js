@@ -3,6 +3,11 @@ const COUPANG_SEARCH_PATH = '/v2/providers/affiliate_open_api/apis/openapi/v1/pr
 
 const RECIPE_PATHS = {
   'bok-choy-oyster-stir-fry': 'bok-choy-oyster-sauce-stir-fry',
+  'cucumber-crabstick-cold-salad': 'cucumber-crabstick-cold-salad',
+  'doenjang-eggplant-stir-fry': 'soybean-paste-eggplant-stir-fry',
+  'potato-tuna-braise': 'potato-tuna-braise',
+  'chive-egg-stir-fry': 'chive-egg-stir-fry',
+  'tofu-mushroom-hotpot': 'tofu-mushroom-hotpot',
   'cabbage-tuna-rice': 'cabbage-tuna-rice-bowl',
   'crispy-kimchi-jeon': 'crispy-kimchi-pancake',
   'corn-butter-rice': 'soy-butter-corn-rice',

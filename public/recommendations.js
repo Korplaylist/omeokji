@@ -73,6 +73,12 @@ const recommendationMenus = [
   { title:'15분 팽이버섯전', image:'/images/enoki-pancake/04-finish-640.webp', url:'/recipes/enoki-mushroom-pancake', time:'15분' },
   { title:'15분 참치 애호박찌개', image:'/images/tuna-zucchini-jjigae/04-finish-640.webp', url:'/recipes/tuna-zucchini-jjigae', time:'15분' },
   { title:'10분 청경채 굴소스볶음', image:'/images/bok-choy-oyster-stir-fry/04-finish-640.webp', url:'/recipes/bok-choy-oyster-sauce-stir-fry', time:'10분' }
+,
+  { title:'10분 오이 맛살냉채', image:'/images/cucumber-crabstick-cold-salad/04-finish-640.webp', url:'/recipes/cucumber-crabstick-cold-salad', time:'10분' },
+  { title:'12분 가지 된장볶음', image:'/images/doenjang-eggplant-stir-fry/04-finish-640.webp', url:'/recipes/soybean-paste-eggplant-stir-fry', time:'12분' },
+  { title:'15분 감자 참치조림', image:'/images/potato-tuna-braise/04-finish-640.webp', url:'/recipes/potato-tuna-braise', time:'15분' },
+  { title:'10분 부추 계란볶음', image:'/images/chive-egg-stir-fry/04-finish-640.webp', url:'/recipes/chive-egg-stir-fry', time:'10분' },
+  { title:'15분 두부 버섯전골', image:'/images/tofu-mushroom-hotpot/04-finish-640.webp', url:'/recipes/tofu-mushroom-hotpot', time:'15분' }
 ];
 
 const shareStrip = document.querySelector('.share-strip');
